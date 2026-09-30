@@ -1,0 +1,33 @@
+{
+  "name": "habit-tracker-api",
+  "version": "1.0.0",
+  "description": "Production-grade Habit Tracker REST API with streak calculation, analytics, and data export",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run"
+  },
+  "keywords": ["habit-tracker", "rest-api", "express", "sqlite", "analytics", "streaks"],
+  "author": "Automat",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "uuid": "^11.0.5",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.4",
+    "@types/supertest": "^6.0.2",
+    "@types/uuid": "^10.0.0",
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.6"
+  }
+}
