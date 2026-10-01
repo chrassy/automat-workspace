@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Validación y Analítica | AjedrezPro</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header class="container">
+        <div class="admin-header">
+            <div>
+                <a href="/" class="logo">
+                    <span class="logo-icon">♟️</span>
+                    <span>Ajedrez<span style="color: var(--primary);">Pro</span> Analytics</span>
+                </a>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">
+                    Monitorización de Validación de Mercado (España & LATAM)
+                </p>
+            </div>
+            <div style="display: flex; gap: 0.75rem;">
+                <a href="/api/export/csv" class="btn btn-outline btn-sm">📥 Descargar Leads (CSV)</a>
+                <a href="/?variant=A" class="btn btn-primary btn-sm">👁️ Ver Landing Page</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: 1rem;">
+        
+        <!-- Go / No-Go Decision Card -->
+        <div style="background: #022c22; border: 1px solid #065f46; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+                <div style="font-size: 0.8rem; color: #a7f3d0; text-transform: uppercase; font-weight: 700;">Estado de la Decisión</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #6ee7b7; margin-top: 0.2rem;">
+                    {{ analytics.validation_status }} (Puntuación: {{ analytics.validation_score }}/100)
+                </div>
+                <div style="font-size: 0.9rem; color: #d1fae5; margin-top: 0.5rem;">
+                    {% for rec in analytics.recommendations %}
+                    <div>• {{ rec }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <span class="badge badge-green" style="font-size: 1rem; padding: 0.5rem 1rem;">Métrica: Validación Activa</span>
+            </div>
+        </div>
+
+        <!-- Top KPI Cards -->
+        <div class="admin-stats-grid">
+            <div class="stat-box">
+                <div class="stat-box-label">Total Leads Registrados</div>
+                <div class="stat-box-val">{{ analytics.total_leads }}</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Lista de espera activa</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-label">Precio Medio Aceptado</div>
+                <div class="stat-box-val">€{{ "%.2f"|format(analytics.avg_willingness_to_pay) }}</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Disposición de pago (WTP)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-label">Variante Ganadora</div>
+                <div class="stat-box-val" style="color: var(--accent-gold);">
+                    {% set max_var = 'A' %}
+                    {% if analytics.leads_by_variant.B > analytics.leads_by_variant.A and analytics.leads_by_variant.B > analytics.leads_by_variant.C %}
+                        Variante B (IA)
+                    {% elif analytics.leads_by_variant.C > analytics.leads_by_variant.A and analytics.leads_by_variant.C > analytics.leads_by_variant.B %}
+                        Variante C (Niños)
+                    {% else %}
+                        Variante A (15 Min)
+                    {% endif %}
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Mayor tracción en anuncios</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-label">Facturación Potencial Preventa</div>
+                <div class="stat-box-val" style="color: var(--accent-blue);">€{{ "%.2f"|format(analytics.projected_revenue) }}</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Conversión estimada 12%</div>
+            </div>
+        </div>
+
+        <!-- Breakdown Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+            <!-- Variants -->
+            <div class="feature-card">
+                <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Distribución por Variante Probada</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.25rem;">
+                            <span>Variante A (15 Minutos al día - Adultos)</span>
+                            <strong>{{ analytics.leads_by_variant.A }} leads</strong>
+                        </div>
+                        <div style="height: 8px; background: #0f172a; border-radius: 9999px; overflow: hidden;">
+                            <div style="height: 100%; background: var(--primary); width: {{ (analytics.leads_by_variant.A / (analytics.total_leads if analytics.total_leads > 0 else 1) * 100)|round }}%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.25rem;">
+                            <span>Variante B (Masterclass + Tutor IA)</span>
+                            <strong>{{ analytics.leads_by_variant.B }} leads</strong>
+                        </div>
+                        <div style="height: 8px; background: #0f172a; border-radius: 9999px; overflow: hidden;">
+                            <div style="height: 100%; background: var(--accent-blue); width: {{ (analytics.leads_by_variant.B / (analytics.total_leads if analytics.total_leads > 0 else 1) * 100)|round }}%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.25rem;">
+                            <span>Variante C (Ajedrez Niños & Familia)</span>
+                            <strong>{{ analytics.leads_by_variant.C }} leads</strong>
+                        </div>
+                        <div style="height: 8px; background: #0f172a; border-radius: 9999px; overflow: hidden;">
+                            <div style="height: 100%; background: var(--accent-gold); width: {{ (analytics.leads_by_variant.C / (analytics.total_leads if analytics.total_leads > 0 else 1) * 100)|round }}%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELO Ranges -->
+            <div class="feature-card">
+                <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Perfil y Nivel de Jugadores (ELO)</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    {% for elo_k, elo_cnt in analytics.leads_by_elo.items() %}
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
+                        <span style="color: var(--text-muted);">
+                            {% if elo_k == 'beginner' %}Principiante (0 - 800)
+                            {% elif elo_k == '800-1200' %}Amateur (800 - 1200 ELO)
+                            {% elif elo_k == '1200-1600' %}Intermedio (1200 - 1600 ELO)
+                            {% else %}Avanzado (+1600 ELO){% endif %}
+                        </span>
+                        <span class="badge badge-green">{{ elo_cnt }} usuarios</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Market Ad Spend & ROI Simulator -->
+        <div class="feature-card" style="margin-bottom: 2.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <div>
+                    <h3 style="font-size: 1.25rem;">🧮 Simulador de Inversión y Retorno en Anuncios (Meta / Google)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Calcula el ROI proyectado ajustando el presupuesto de prueba y métricas de tráfico.</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="form-group">
+                    <label class="form-label">Presupuesto: <strong id="simSpendVal" style="color: var(--primary);">€300</strong></label>
+                    <input type="range" id="simSpend" min="50" max="2000" step="50" value="300" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Coste por Clic (CPC): <strong id="simCpcVal" style="color: var(--accent-blue);">€0.20</strong></label>
+                    <input type="range" id="simCpc" min="0.05" max="1.00" step="0.05" value="0.20" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Conv. Landing: <strong id="simConvVal" style="color: var(--primary);">22%</strong></label>
+                    <input type="range" id="simConv" min="5" max="50" step="1" value="22" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Conv. Preventa: <strong id="simPreorderVal" style="color: var(--accent-gold);">8%</strong></label>
+                    <input type="range" id="simPreorder" min="1" max="20" step="1" value="8" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Precio Pack: <strong id="simPriceVal" style="color: var(--text-main);">€29</strong></label>
+                    <input type="range" id="simPrice" min="9" max="99" step="5" value="29" style="width: 100%;">
+                </div>
+            </div>
+
+            <!-- Simulator Results -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; text-align: center;">
+                <div style="background: #0f172a; padding: 1rem; border-radius: 8px;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Clics Estimados</div>
+                    <div id="resClicks" style="font-size: 1.3rem; font-weight: 700; margin-top: 0.25rem;">1,500</div>
+                </div>
+                <div style="background: #0f172a; padding: 1rem; border-radius: 8px;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Leads Captados</div>
+                    <div id="resLeads" style="font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem;">330</div>
+                </div>
+                <div style="background: #0f172a; padding: 1rem; border-radius: 8px;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Compradores Preventa</div>
+                    <div id="resBuyers" style="font-size: 1.3rem; font-weight: 700; color: var(--accent-gold); margin-top: 0.25rem;">26</div>
+                </div>
+                <div style="background: #0f172a; padding: 1rem; border-radius: 8px;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Ingresos Estimados</div>
+                    <div id="resRevenue" style="font-size: 1.3rem; font-weight: 700; color: var(--accent-blue); margin-top: 0.25rem;">€754</div>
+                </div>
+                <div style="background: #0f172a; padding: 1rem; border-radius: 8px;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Beneficio Neto</div>
+                    <div id="resProfit" style="font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem;">+€454</div>
+                </div>
+                <div style="background: #0f172a; padding: 1rem; border-radius: 8px;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">ROAS / CPL</div>
+                    <div style="font-size: 1.1rem; font-weight: 700; margin-top: 0.25rem;"><span id="resRoas">2.51x</span> / <span id="resCpl">€0.91</span></div>
+                </div>
+            </div>
+            <div id="resVerdict" class="puzzle-feedback success" style="margin-top: 1.25rem; display: block;">
+                🟢 Altamente Rentable: Retorno inmediato positivo sobre la inversión publicitaria.
+            </div>
+        </div>
+
+        <!-- Leads Table -->
+        <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="font-size: 1.25rem;">Leads Registrados Recientes</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Mostrando {{ leads|length }} registros</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Nombre</th>
+                            <th>Variante</th>
+                            <th>Nivel ELO</th>
+                            <th>Plan de Interés</th>
+                            <th>Fuente (UTM)</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for lead in leads %}
+                        <tr>
+                            <td>#{{ lead.id }}</td>
+                            <td><strong>{{ lead.email }}</strong></td>
+                            <td>{{ lead.name or '-' }}</td>
+                            <td>
+                                <span class="badge {% if lead.variant == 'A' %}badge-green{% elif lead.variant == 'B' %}badge-blue{% else %}badge-gold{% endif %}">
+                                    Var {{ lead.variant }}
+                                </span>
+                            </td>
+                            <td>{{ lead.elo_range }}</td>
+                            <td>{{ lead.interested_tier }} (€{{ lead.willingness_to_pay }})</td>
+                            <td>{{ lead.utm_source or 'direct' }}</td>
+                            <td style="color: var(--text-muted); font-size: 0.8rem;">{{ lead.created_at[:16] if lead.created_at else '-' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>AjedrezPro Growth & Market Validation Engine</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjedrezPro | Domina el Tablero en Español</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Variant Switcher Toolbar for Testing -->
+    <div class="variant-banner">
+        <span>🧪 <strong>Modo Test de Mercado:</strong> Estás viendo la</span>
+        <div class="variant-selector">
+            <a href="/?variant=A" class="variant-btn {% if variant == 'A' %}active{% endif %}">Variante A: 15 Min/Día</a>
+            <a href="/?variant=B" class="variant-btn {% if variant == 'B' %}active{% endif %}">Variante B: Masterclass IA</a>
+            <a href="/?variant=C" class="variant-btn {% if variant == 'C' %}active{% endif %}">Variante C: Niños & Familias</a>
+        </div>
+        <a href="/admin" class="btn btn-outline btn-sm" style="margin-left: 1rem;">📊 Ver Panel Analítico</a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="container">
+        <nav class="navbar">
+            <a href="/" class="logo">
+                <span class="logo-icon">♟️</span>
+                <span>Ajedrez<span style="color: var(--primary);">Pro</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#metodo" class="nav-link">El Método</a>
+                <a href="#puzzle" class="nav-link">Reto Táctico</a>
+                <a href="#precios" class="nav-link">Precios</a>
+                <a href="#faq" class="nav-link">Preguntas</a>
+                <button class="btn btn-primary btn-sm trigger-preorder" data-tier="course_29" data-price="29">Acceso VIP 50% Dto</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Dynamic Content -->
+    <section class="container hero">
+        <div class="hero-left">
+            {% if variant == 'A' %}
+            <div class="hero-badge">⚡ El Método Rápido para Adultos Ocupados</div>
+            <h1 class="hero-title">Sube <span class="hero-highlight">+300 puntos de ELO</span> entrenando solo 15 minutos al día</h1>
+            <p class="hero-desc">
+                Deja de jugar partidas rápidas sin rumbo y cometer errores absurdos. Nuestro sistema de reconocimiento de patrones te enseña a calcular como un maestro en el tiempo libre de tu día.
+            </p>
+            {% elif variant == 'B' %}
+            <div class="hero-badge">🤖 Masterclass + Tutor Inteligente</div>
+            <h1 class="hero-title">Aprende ajedrez con <span class="hero-highlight">análisis guiado paso a paso</span> en español</h1>
+            <p class="hero-desc">
+                La combinación definitiva: explicaciones claras sin rollos teóricos y un entrenador interactivo que detecta tus puntos ciegos antes de tu próxima partida.
+            </p>
+            {% else %}
+            <div class="hero-badge">🎓 Ajedrez Educativo para Niños y Familias</div>
+            <h1 class="hero-title">Desarrolla la <span class="hero-highlight">concentración y lógica</span> de tus hijos jugando</h1>
+            <p class="hero-desc">
+                Un programa gamificado en español diseñado por pedagogos para que los más pequeños aprendan a pensar antes de actuar mientras se divierten.
+            </p>
+            {% endif %}
+
+            <div style="display: flex; gap: 1.5rem; align-items: center; margin-top: 1.5rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="color: var(--accent-gold); font-size: 1.2rem;">⭐⭐⭐⭐⭐</span>
+                    <span style="font-size: 0.9rem; color: var(--text-muted);">4.9/5 valoración media</span>
+                </div>
+                <div style="font-size: 0.9rem; color: var(--text-muted);">
+                    ♟️ <strong>+1,420</strong> en lista de espera
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="hero-card">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">🎁 Descarga Gratis la Guía Maestra</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Únete a la preventa con <strong>50% de descuento</strong> y recibe de inmediato <em>"Los 15 Patrones de Mate Esenciales"</em> en PDF.
+                </p>
+
+                <form id="quickLeadForm">
+                    <div class="form-group">
+                        <label class="form-label" for="quickEmail">Tu correo electrónico:</label>
+                        <input type="email" id="quickEmail" class="form-input" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="quickElo">Tu nivel actual aproximado:</label>
+                        <select id="quickElo" class="form-select">
+                            <option value="beginner">Principiante / Aprendiendo las reglas</option>
+                            <option value="800-1200" selected>Amateur (800 - 1200 ELO)</option>
+                            <option value="1200-1600">Intermedio (1200 - 1600 ELO)</option>
+                            <option value="1600+">Avanzado (+1600 ELO)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                        Desbloquear Guía y Acceso VIP
+                    </button>
+                    <div id="quickLeadStatus" class="puzzle-feedback" style="margin-top: 1rem;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tactical Demo Section -->
+    <section id="puzzle" class="container">
+        <div class="puzzle-section">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div class="hero-badge">🧩 Demo Interactiva en Vivo</div>
+                <h2 style="font-size: 2rem; margin-top: 0.5rem;">Prueba tu Visión Táctica</h2>
+                <p style="color: var(--text-muted);">¿Eres capaz de encontrar la jugada ganadora en esta posición?</p>
+            </div>
+
+            <div class="puzzle-layout">
+                <div>
+                    <!-- Visual Mock Chessboard -->
+                    <div class="chessboard-mock">
+                        <!-- 8x8 Grid simulation -->
+                        <div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light">♚</div><div class="chess-sq dark"></div>
+                        <div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light">♟</div><div class="chess-sq dark">♟</div><div class="chess-sq light">♟</div>
+                        <div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div>
+                        <div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div>
+                        <div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div>
+                        <div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div>
+                        <div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark">♙</div><div class="chess-sq light">♙</div><div class="chess-sq dark">♙</div>
+                        <div class="chess-sq dark"></div><div class="chess-sq light highlight">♖</div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark"></div><div class="chess-sq light"></div><div class="chess-sq dark">♔</div><div class="chess-sq light"></div>
+                    </div>
+                </div>
+
+                <div class="puzzle-controls">
+                    <div style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 700;">JUEGAN BLANCAS Y DAN MATE</div>
+                    <h3 style="font-size: 1.4rem;">Mate del Pasillo</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        El rey negro está atrapado por sus propios peones en f7, g7 y h7. ¿Cuál es el movimiento que remata la partida?
+                    </p>
+
+                    <div class="puzzle-move-options">
+                        <button class="puzzle-option-btn" data-puzzle-id="puzzle-1" data-move="Rb8#">1. Tb8# (Torre a b8)</button>
+                        <button class="puzzle-option-btn" data-puzzle-id="puzzle-1" data-move="Ra1">1. Ta1 (Torre a a1)</button>
+                        <button class="puzzle-option-btn" data-puzzle-id="puzzle-1" data-move="Kf1">1. Rf1 (Rey a f1)</button>
+                        <button class="puzzle-option-btn" data-puzzle-id="puzzle-1" data-move="h3">1. h3 (Peón a h3)</button>
+                    </div>
+
+                    <div id="puzzleFeedback" class="puzzle-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Core Pillars Section -->
+    <section id="metodo" class="container section">
+        <h2 class="section-title">¿Por qué el 90% de los jugadores se estanca?</h2>
+        <p class="section-subtitle">Jugar cientos de partidas rápidas en el móvil sin un método solo refuerza tus malos hábitos. Esto es lo que cambia con AjedrezPro:</p>
+
+        <div class="grid-3">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">1. Protocolo Anti-Descuidos</h3>
+                <p class="feature-text">El 80% de las partidas en 800-1400 ELO se deciden por piezas colgadas. Aprende el escáner mental de 3 segundos antes de cada jugada.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">2. Repertorio sin Memorizar</h3>
+                <p class="feature-text">Olvídate de memorizar 30 jugadas teóricas. Te enseñamos estructuras sólidas y planes claros que funcionan contra cualquier respuesta rival.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⏱️</div>
+                <h3 class="feature-title">3. Rutinas de 15 Minutos</h3>
+                <p class="feature-text">Diseñado para adaptarse a tu vida: 5 minutos de conceptos clave + 10 minutos de puzzles interactivos con feedback inmediato.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Smoke Test Section -->
+    <section id="precios" class="container section">
+        <h2 class="section-title">Oferta Especial de Preventa</h2>
+        <p class="section-subtitle">Reserva tu plaza con 50% de descuento antes del lanzamiento oficial.</p>
+
+        <div class="pricing-grid">
+            <!-- Tier 1 -->
+            <div class="pricing-card">
+                <div class="pricing-title">Starter Pack</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Fundamentos y Táctica Esencial</p>
+                <div class="pricing-amount">€19 <span>/ pago único</span></div>
+                <ul class="pricing-features">
+                    <li><span>✔</span> Guía Maestra de 50 Patrones Tácticos</li>
+                    <li><span>✔</span> Módulo 1: Protocolo Cero Errores</li>
+                    <li><span>✔</span> 100 Puzzles Interactivos</li>
+                    <li><span>✔</span> Acceso de por vida</li>
+                </ul>
+                <button class="btn btn-outline trigger-preorder" data-tier="starter_19" data-price="19">
+                    Reservar con 50% Dto
+                </button>
+            </div>
+
+            <!-- Tier 2: Featured -->
+            <div class="pricing-card featured">
+                <div class="pricing-badge">MÁS POPULAR</div>
+                <div class="pricing-title">Curso Completo + App</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">El sistema completo de 800 a 1600 ELO</p>
+                <div class="pricing-amount">€29 <span>/ pago único</span></div>
+                <ul class="pricing-features">
+                    <li><span>✔</span> <strong>Todo lo del plan Starter</strong></li>
+                    <li><span>✔</span> Los 4 Módulos en vídeo y ejercicios</li>
+                    <li><span>✔</span> Repertorio de Aperturas Simplificado</li>
+                    <li><span>✔</span> Banco de 500+ Puzzles con explicaciones</li>
+                    <li><span>✔</span> Certificado de finalización</li>
+                </ul>
+                <button class="btn btn-primary trigger-preorder" data-tier="course_29" data-price="29">
+                    Quiero el Curso Completo
+                </button>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="pricing-card">
+                <div class="pricing-title">Club VIP + Mentoría</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Para quienes buscan subir de nivel rápido</p>
+                <div class="pricing-amount">€9.99 <span>/ mes</span></div>
+                <ul class="pricing-features">
+                    <li><span>✔</span> Acceso a todos los cursos y apps</li>
+                    <li><span>✔</span> Análisis mensual de tus partidas con IA</li>
+                    <li><span>✔</span> Torneos privados semanales con premios</li>
+                    <li><span>✔</span> Soporte directo y sesiones de dudas</li>
+                </ul>
+                <button class="btn btn-accent trigger-preorder" data-tier="vip_membership_9" data-price="9.99">
+                    Unirme al Club VIP
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container section">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div style="max-width: 750px; margin: 2rem auto 0; display: flex; flex-direction: column; gap: 1rem;">
+            <div class="feature-card">
+                <h4 style="margin-bottom: 0.5rem;">¿Cuánto tiempo necesito dedicar al día?</h4>
+                <p class="feature-text">El método está diseñado específicamente para 15 minutos al día. No necesitas maratones de estudio para ver avances reales en tu ELO.</p>
+            </div>
+            <div class="feature-card">
+                <h4 style="margin-bottom: 0.5rem;">¿Funciona desde el teléfono móvil?</h4>
+                <p class="feature-text">Sí, la plataforma es 100% responsive y funciona directamente en tu navegador móvil, tablet o PC sin necesidad de instalaciones complejas.</p>
+            </div>
+            <div class="feature-card">
+                <h4 style="margin-bottom: 0.5rem;">¿Qué pasa tras registrarme en la lista de espera?</h4>
+                <p class="feature-text">Recibirás inmediatamente tu guía en PDF por email y te reservaremos el 50% de descuento con el cupón BETA50 para cuando abramos las plazas de la beta privada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification Modal -->
+    <div id="qualificationModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">🎯 Reserva Tu Acceso VIP</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                Completa esta breve encuesta para activar tu <strong>50% de descuento</strong> en el lanzamiento.
+            </p>
+
+            <form id="surveyForm">
+                <input type="hidden" id="selectedTierInput" value="course_29">
+                <input type="hidden" id="selectedPriceInput" value="29">
+
+                <div class="form-group">
+                    <label class="form-label" for="modalName">Tu Nombre:</label>
+                    <input type="text" id="modalName" class="form-input" placeholder="Ej. Carlos" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modalEmail">Tu Correo Electrónico:</label>
+                    <input type="email" id="modalEmail" class="form-input" placeholder="tu@correo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modalElo">Tu Nivel Actual de Ajedrez:</label>
+                    <select id="modalElo" class="form-select">
+                        <option value="beginner">Principiante (0 - 800 ELO)</option>
+                        <option value="800-1200" selected>Amateur (800 - 1200 ELO)</option>
+                        <option value="1200-1600">Intermedio (1200 - 1600 ELO)</option>
+                        <option value="1600+">Avanzado (+1600 ELO)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modalFrustration">¿Cuál es tu mayor obstáculo en el ajedrez?</label>
+                    <select id="modalFrustration" class="form-select">
+                        <option value="blunders">Cometo errores tontos y descuidos de piezas</option>
+                        <option value="openings">Me pierdo en la apertura tras las primeras jugadas</option>
+                        <option value="middlegame">No sé qué plan seguir en el medio juego</option>
+                        <option value="endgame">Tengo ventaja pero pierdo o empato en el final</option>
+                        <option value="kids_concentration">Quiero que mi hijo mejore su concentración</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                    Confirmar Mi Reserva con 50% Dto
+                </button>
+                <div id="modalStatus" class="puzzle-feedback" style="margin-top: 1rem;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 AjedrezPro. Todos los derechos reservados. Validación de mercado para el ecosistema hispanohablante.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
