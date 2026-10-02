@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build and output
+dist/
+build/
+out/
+coverage/
+.next/
+
+# Python
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Logs and runtime databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+data/
+.DS_Store

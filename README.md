@@ -18,3 +18,4 @@ independent project.
 ## Projects
 
 <!-- One line per project: - [folder](folder/): description -->
+- [martial-arts-signup](martial-arts-signup/): Martial arts school sign-up platform featuring interactive registration forms, QR code generation & check-in scanning, automated email notifications, and staff dashboard.
