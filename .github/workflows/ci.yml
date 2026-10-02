@@ -1,0 +1,72 @@
+# Monorepo CI: tests every top-level project changed by a pull request.
+#
+# Contract: each project folder has a `ci.sh` that installs its dependencies
+# and runs its full test suite, exiting non-zero on failure. Node 24 and
+# Python 3.12 are available. A changed project without ci.sh fails CI.
+#
+# Owned by the founder. The AI developer may not modify workflows.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# The AI-written ci.sh scripts run with a read-only token and no secrets.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: Find changed projects
+    runs-on: ubuntu-latest
+    outputs:
+      projects: ${{ steps.find.outputs.projects }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: find
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -z "$BASE" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            BASE=$(git rev-list --max-parents=0 HEAD | tail -1)
+          fi
+          projects=$(git diff --name-only "$BASE" HEAD \
+            | awk -F/ 'NF > 1 && $1 !~ /^\./ {print $1}' | sort -u \
+            | while read -r dir; do [ -d "$dir" ] && echo "$dir"; done \
+            | jq -R . | jq -cs .)
+          echo "Changed projects: $projects"
+          echo "projects=$projects" >> "$GITHUB_OUTPUT"
+
+  test:
+    name: Test ${{ matrix.project }}
+    needs: changes
+    if: needs.changes.outputs.projects != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ${{ fromJson(needs.changes.outputs.projects) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run ci.sh
+        working-directory: ${{ matrix.project }}
+        run: |
+          if [ ! -f ci.sh ]; then
+            echo "::error::${{ matrix.project }} has no ci.sh. Every project needs one that installs dependencies and runs its tests."
+            exit 1
+          fi
+          bash ci.sh
