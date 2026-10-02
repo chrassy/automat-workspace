@@ -70,3 +70,15 @@ jobs:
             exit 1
           fi
           bash ci.sh
+      - name: Check the demo build (deploy.sh)
+        if: hashFiles(format('{0}/deploy.sh', matrix.project)) != ''
+        working-directory: ${{ matrix.project }}
+        env:
+          OUTPUT_DIR: ${{ runner.temp }}/site/${{ matrix.project }}
+          BASE_PATH: /${{ github.event.repository.name }}/${{ matrix.project }}/
+        run: |
+          bash deploy.sh
+          if [ ! -f "$OUTPUT_DIR/index.html" ]; then
+            echo "::error::deploy.sh must build a static site with an index.html into \$OUTPUT_DIR"
+            exit 1
+          fi

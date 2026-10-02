@@ -1,0 +1,92 @@
+# Publishes demo projects to GitHub Pages after every push to main.
+#
+# Opt-in: a project is deployed only if its folder has a `deploy.sh`. It must
+# build a static site into "$OUTPUT_DIR" (an absolute path), using "$BASE_PATH"
+# (e.g. /automat-workspace/my-project/) as the site's base URL path. Node 24 and
+# Python 3.12 are available. Remove deploy.sh to take a demo down.
+#
+# Each demo is served at https://<owner>.github.io/<repo>/<project>/ and listed
+# on an index page at the site root.
+#
+# Owned by the founder. The AI developer may not modify workflows.
+name: Demos
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build demos
+    runs-on: ubuntu-latest
+    # The AI-written deploy.sh scripts run here with a read-only token.
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build each project with a deploy.sh
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: |
+          set -euo pipefail
+          SITE="$RUNNER_TEMP/site"
+          mkdir -p "$SITE"
+          : > "$RUNNER_TEMP/demos.txt"
+          for script in */deploy.sh; do
+            [ -f "$script" ] || continue
+            project=$(dirname "$script")
+            echo "::group::Building $project"
+            (
+              cd "$project"
+              OUTPUT_DIR="$SITE/$project" BASE_PATH="/$REPO_NAME/$project/" bash deploy.sh
+            )
+            if [ ! -f "$SITE/$project/index.html" ]; then
+              echo "::error::$project/deploy.sh did not produce \$OUTPUT_DIR/index.html"
+              exit 1
+            fi
+            echo "$project" >> "$RUNNER_TEMP/demos.txt"
+            echo "::endgroup::"
+          done
+          # Index page linking every demo.
+          {
+            echo '<!doctype html><html><head><meta charset="utf-8">'
+            echo '<meta name="viewport" content="width=device-width, initial-scale=1">'
+            echo '<title>Automat demos</title>'
+            echo '<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1rem}a{color:#0a58ca}</style>'
+            echo '</head><body><h1>Automat demos</h1><ul>'
+            while read -r project; do
+              echo "<li><a href=\"./$project/\">$project</a></li>"
+            done < "$RUNNER_TEMP/demos.txt"
+            echo '</ul></body></html>'
+          } > "$SITE/index.html"
+          touch "$SITE/.nojekyll"
+          echo "Deployed demos: $(paste -sd, "$RUNNER_TEMP/demos.txt")"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    # Only this job can publish, and it runs no project code.
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
