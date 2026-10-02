@@ -18,4 +18,5 @@ independent project.
 ## Projects
 
 <!-- One line per project: - [folder](folder/): description -->
+- [iphone-18-case-landing](iphone-18-case-landing/): Next-generation iPhone 18 AERO-SHIELD Pro case landing page with interactive 3D configurator, drop impact physics simulator, MagSafe 3.0 visualizer, and pre-order checkout.
 - [martial-arts-signup](martial-arts-signup/): Martial arts school sign-up platform featuring interactive registration forms, QR code generation & check-in scanning, automated email notifications, and staff dashboard.
