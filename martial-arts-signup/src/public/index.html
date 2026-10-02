@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Martial Arts Academy - Sign-Up & Dojo Pass</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="brand" onclick="switchTab('signup'); return false;">
+        <div class="brand-icon">🥋</div>
+        <div class="brand-title">
+          <span>Apex Martial Arts Academy</span>
+          <span class="brand-subtitle">Dojo Management & QR Sign-Up Hub</span>
+        </div>
+      </a>
+
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="signup" onclick="switchTab('signup')">
+          <span>🥋</span> Student Sign-Up
+        </button>
+        <button class="nav-tab" data-tab="qr" onclick="switchTab('qr')">
+          <span>📱</span> QR Posters & Kiosk
+        </button>
+        <button class="nav-tab" data-tab="scanner" onclick="switchTab('scanner')">
+          <span>🎯</span> Front Desk Check-In
+        </button>
+        <button class="nav-tab" data-tab="admin" onclick="switchTab('admin')">
+          <span>📊</span> Staff Dashboard
+        </button>
+        <button class="nav-tab" data-tab="emails" onclick="switchTab('emails')">
+          <span>✉️</span> Email Logs
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ==============================================
+         TAB 1: STUDENT SIGN-UP PORTAL
+         ============================================== -->
+    <section id="tab-signup" class="tab-content active">
+      <div class="hero-banner">
+        <div class="hero-badge">⚡ Start Your Journey Today</div>
+        <h1 class="hero-title">Claim Your Free Introductory Martial Arts Pass</h1>
+        <p class="hero-subtitle">
+          Join our world-class academy for Brazilian Jiu-Jitsu, Muay Thai Kickboxing, Karate, MMA, and Judo. Register below to receive your digital QR Dojo Pass and class orientation guide.
+        </p>
+      </div>
+
+      <div class="card">
+        <!-- Progress Stepper -->
+        <div class="step-indicator" id="signup-stepper">
+          <div class="step-item active" data-step="1">
+            <div class="step-circle">1</div>
+            <div class="step-label">Program</div>
+          </div>
+          <div class="step-item" data-step="2">
+            <div class="step-circle">2</div>
+            <div class="step-label">Student Info</div>
+          </div>
+          <div class="step-item" data-step="3">
+            <div class="step-circle">3</div>
+            <div class="step-label">Schedule & Goals</div>
+          </div>
+          <div class="step-item" data-step="4">
+            <div class="step-circle">4</div>
+            <div class="step-label">Waiver</div>
+          </div>
+          <div class="step-item" data-step="5">
+            <div class="step-circle">5</div>
+            <div class="step-label">Dojo Pass</div>
+          </div>
+        </div>
+
+        <form id="signup-form" onsubmit="handleSignupSubmit(event)">
+          
+          <!-- STEP 1: Discipline & Program -->
+          <div class="form-step active" id="step-1">
+            <h2 class="card-title">1. Select Your Martial Arts Discipline</h2>
+            <p class="card-subtitle">Choose the martial art style you wish to train in:</p>
+
+            <div class="discipline-grid" id="discipline-options">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+            <input type="hidden" id="selected-discipline" name="discipline" value="bjj" required>
+
+            <h3 class="card-title" style="margin-top: 2rem;">Select Membership or Trial Option</h3>
+            <p class="card-subtitle">All trials include personalized coach evaluation and free academy gear rental.</p>
+
+            <div class="program-grid" id="program-options">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+            <input type="hidden" id="selected-program" name="program" value="free-trial" required>
+
+            <div class="form-actions">
+              <div></div>
+              <button type="button" class="btn btn-primary" onclick="goToStep(2)">
+                Continue to Student Info ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Student Details -->
+          <div class="form-step" id="step-2">
+            <h2 class="card-title">2. Student & Contact Information</h2>
+            <p class="card-subtitle">Please provide the attendee contact information for confirmation and safety records.</p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="full-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="full-name" name="fullName" class="form-control" placeholder="e.g. Marcus Aurelius" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="marcus@example.com" required>
+                <small style="font-size: 0.75rem; color: #64748b;">Your QR pass & class guide will be delivered here.</small>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 234-5678" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="age">Student Age</label>
+                <input type="number" id="age" name="age" class="form-control" placeholder="e.g. 26" min="4" max="100">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="experience-level">Experience Level</label>
+                <select id="experience-level" name="experienceLevel" class="form-control">
+                  <option value="Beginner (No Experience)">Beginner (First Time / No Experience)</option>
+                  <option value="Some Experience (< 1 year)">Some Experience (Less than 1 year)</option>
+                  <option value="Intermediate (1 - 3 years)">Intermediate (1 - 3 years / Colored Belt)</option>
+                  <option value="Advanced / Black Belt">Advanced (3+ years / Black Belt / Competition)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="uniform-size">Uniform / Gi Size</label>
+                <select id="uniform-size" name="uniformSize" class="form-control">
+                  <option value="Kids Small (Ages 5-7)">Kids Small (Ages 5-7)</option>
+                  <option value="Kids Medium (Ages 8-10)">Kids Medium (Ages 8-10)</option>
+                  <option value="Kids Large (Ages 11-13)">Kids Large (Ages 11-13)</option>
+                  <option value="Adult A0 (4'10 - 5'2)">Adult A0 (4'10 - 5'2)</option>
+                  <option value="Adult A1 (5'2 - 5'6)">Adult A1 (5'2 - 5'6)</option>
+                  <option value="Adult A2 (5'6 - 5'10)" selected>Adult A2 (5'6 - 5'10)</option>
+                  <option value="Adult A3 (5'10 - 6'1)">Adult A3 (5'10 - 6'1)</option>
+                  <option value="Adult A4 (6'1 - 6'4)">Adult A4 (6'1 - 6'4)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emergency-name">Emergency Contact Name</label>
+                <input type="text" id="emergency-name" name="emergencyContactName" class="form-control" placeholder="e.g. Sarah Connor">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emergency-phone">Emergency Contact Phone</label>
+                <input type="tel" id="emergency-phone" name="emergencyContactPhone" class="form-control" placeholder="(555) 987-6543">
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" onclick="goToStep(1)">
+                ⬅ Back
+              </button>
+              <button type="button" class="btn btn-primary" onclick="validateAndGoToStep3()">
+                Continue to Schedule ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Goals & Schedule Preferences -->
+          <div class="form-step" id="step-3">
+            <h2 class="card-title">3. Schedule Preferences & Training Goals</h2>
+            <p class="card-subtitle">Help us personalize your first training session at the dojo.</p>
+
+            <div class="form-group">
+              <label class="form-label">Primary Training Goals (Select all that apply):</label>
+              <div class="goals-grid">
+                <label class="goal-chip active">
+                  <input type="checkbox" name="goals" value="Self Defense" checked> 🛡️ Self Defense
+                </label>
+                <label class="goal-chip active">
+                  <input type="checkbox" name="goals" value="Physical Fitness & Cardio" checked> 🏋️ Physical Fitness & Cardio
+                </label>
+                <label class="goal-chip">
+                  <input type="checkbox" name="goals" value="Mental Discipline & Focus"> 🧘 Mental Discipline & Focus
+                </label>
+                <label class="goal-chip">
+                  <input type="checkbox" name="goals" value="Weight Loss"> ⚡ Weight Loss
+                </label>
+                <label class="goal-chip">
+                  <input type="checkbox" name="goals" value="Competition & Sparring"> 🏆 Competition & Sparring
+                </label>
+                <label class="goal-chip">
+                  <input type="checkbox" name="goals" value="Kids Confidence & Bully Defense"> 🌟 Anti-Bullying / Confidence
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="preferred-schedule">Preferred First Class Day & Time</label>
+              <select id="preferred-schedule" name="preferredSchedule" class="form-control">
+                <option value="Monday Evening (6:00 PM - 7:30 PM)">Monday Evening (6:00 PM - 7:30 PM)</option>
+                <option value="Tuesday Evening (6:30 PM - 8:00 PM)">Tuesday Evening (6:30 PM - 8:00 PM)</option>
+                <option value="Wednesday Evening (6:00 PM - 7:30 PM)">Wednesday Evening (6:00 PM - 7:30 PM)</option>
+                <option value="Thursday Evening (6:30 PM - 8:00 PM)">Thursday Evening (6:30 PM - 8:00 PM)</option>
+                <option value="Friday Striking & Sparring (7:00 PM)">Friday Striking & Sparring (7:00 PM)</option>
+                <option value="Saturday Morning Weekend Warrior (10:00 AM)" selected>Saturday Morning Weekend Warrior (10:00 AM)</option>
+                <option value="Sunday Open Mat (11:00 AM)">Sunday Open Mat (11:00 AM)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="medical-notes">Medical Notes, Previous Injuries, or Allergies (Optional)</label>
+              <textarea id="medical-notes" name="medicalNotes" class="form-control" rows="3" placeholder="Let our coaches know if you have past knee/shoulder injuries or medical conditions..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" onclick="goToStep(2)">
+                ⬅ Back
+              </button>
+              <button type="button" class="btn btn-primary" onclick="goToStep(4)">
+                Continue to Liability Waiver ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Waiver & Electronic Signature -->
+          <div class="form-step" id="step-4">
+            <h2 class="card-title">4. Academy Safety Waiver & Electronic Agreement</h2>
+            <p class="card-subtitle">Please read and acknowledge the academy participant agreement.</p>
+
+            <div class="waiver-box">
+              <p><strong>APEX MARTIAL ARTS ACADEMY PARTICIPATION AGREEMENT & RELEASE OF LIABILITY:</strong></p>
+              <p>1. <strong>Assumption of Risk:</strong> I understand that participation in martial arts disciplines including Brazilian Jiu-Jitsu, Muay Thai, Karate, Judo, and MMA involves intense physical exercise, contact drills, joint manipulation, sparring, and takedowns which carry inherent risks of injury.</p>
+              <p>2. <strong>Physical Health Representation:</strong> I affirm that I (or my enrolled minor child) am physically fit and have no undisclosed medical condition that would prevent safe participation.</p>
+              <p>3. <strong>Dojo Etiquette & Safety Conduct:</strong> I agree to strictly observe all safety directives, tap out immediately upon submission holds, maintain hygienic training gear, and respect all instructors and peers.</p>
+              <p>4. <strong>Electronic Communication Consent:</strong> I consent to receive digital confirmation emails containing my Dojo Pass, class schedule reminders, and safety updates from Apex Martial Arts Academy.</p>
+            </div>
+
+            <label class="waiver-checkbox">
+              <input type="checkbox" id="waiver-agree" name="waiverAccepted" value="true" required>
+              <span>I have read, understood, and agree to the Academy Safety Terms & Liability Waiver. I certify that all information provided is accurate.</span>
+            </label>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" onclick="goToStep(3)">
+                ⬅ Back
+              </button>
+              <button type="submit" class="btn btn-primary" id="submit-btn" style="padding: 0.75rem 2rem;">
+                🥋 Complete Registration & Get QR Pass
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5: Instant Pass Confirmation -->
+          <div class="form-step" id="step-5">
+            <div class="success-card">
+              <div class="success-badge-icon">✓</div>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: #0f172a;">Registration Confirmed!</h2>
+              <p style="color: #64748b; max-width: 550px; margin: 0.5rem auto 1.5rem;">
+                A welcome guide and pass details have been sent to <strong id="success-email"></strong>. Save or screenshot your digital Dojo QR Pass below:
+              </p>
+
+              <!-- Personal Pass Card -->
+              <div class="pass-card-container" id="printable-pass">
+                <div class="pass-header">🥋 Apex Martial Arts Pass</div>
+                <div id="pass-student-name" style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.25rem;"></div>
+                <div id="pass-discipline-badge" style="display: inline-block; font-size: 0.8rem; font-weight: 700; color: #be123c; margin-bottom: 0.75rem; text-transform: uppercase;"></div>
+                
+                <img id="pass-qr-image" class="pass-qr-img" src="" alt="Student Pass QR Code">
+                
+                <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 0.25rem;">PASS CODE</div>
+                <div class="pass-code-display" id="pass-code-text"></div>
+                <div style="font-size: 0.75rem; color: #64748b;">Present this code or scan at the front desk tablet upon entry.</div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="window.print()">
+                  🖨️ Print Pass
+                </button>
+                <button type="button" class="btn btn-primary" onclick="resetSignupForm()">
+                  ➕ Register Another Student
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         TAB 2: QR POSTER & KIOSK GENERATOR
+         ============================================== -->
+    <section id="tab-qr" class="tab-content">
+      <div class="hero-banner">
+        <div class="hero-badge">📱 Smart QR Code Hub</div>
+        <h1 class="hero-title">Instant Dojo Posters & Flyer Generator</h1>
+        <p class="hero-subtitle">
+          Generate high-resolution printable QR code posters for your front window, community flyers, or front-desk check-in kiosks. Prospective students scan and land directly on your customized registration form.
+        </p>
+      </div>
+
+      <div class="poster-preview-container">
+        <!-- Poster Customization Controls -->
+        <div class="card poster-controls">
+          <h2 class="card-title">⚙️ Poster Customizer</h2>
+          <p class="card-subtitle">Customize target program, headline, and promotional discount.</p>
+
+          <div class="form-group">
+            <label class="form-label" for="poster-discipline-select">Featured Discipline</label>
+            <select id="poster-discipline-select" class="form-control" onchange="updatePosterPreview()">
+              <option value="all">All Academy Disciplines</option>
+              <option value="bjj">Brazilian Jiu-Jitsu (BJJ)</option>
+              <option value="muay-thai">Muay Thai Kickboxing</option>
+              <option value="karate">Traditional Karate</option>
+              <option value="taekwondo">Taekwondo</option>
+              <option value="mma">Mixed Martial Arts (MMA)</option>
+              <option value="judo">Judo</option>
+              <option value="krav-maga">Krav Maga</option>
+              <option value="kids">Kids Martial Arts & Bullyproof</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="poster-program-select">Featured Program / Offer</label>
+            <select id="poster-program-select" class="form-control" onchange="updatePosterPreview()">
+              <option value="free-trial">Free Introductory Trial Class</option>
+              <option value="starter-pass">2-Week Beginner Quick-Start ($49)</option>
+              <option value="monthly-unlimited">Monthly Unlimited Membership</option>
+              <option value="kids-monthly">Kids Junior Champion Program</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="poster-promo-input">Promo / Campaign Code (Optional)</label>
+            <input type="text" id="poster-promo-input" class="form-control" placeholder="e.g. SUMMERPASS2025" oninput="updatePosterPreview()">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="poster-style-select">Poster Theme Style</label>
+            <select id="poster-style-select" class="form-control" onchange="togglePosterTheme()">
+              <option value="dark">Dojo Dark Carbon (Sleek Modern)</option>
+              <option value="light">Classic Clean White (Print-friendly)</option>
+            </select>
+          </div>
+
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+            <button class="btn btn-primary" onclick="window.print()">
+              🖨️ Print Dojo Poster
+            </button>
+            <button class="btn btn-outline" onclick="copyPosterUrl()">
+              📋 Copy Scan URL
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Printable Poster Preview Sheet -->
+        <div class="poster-sheet poster-sheet-dark" id="poster-sheet-element">
+          <div class="poster-badge" id="poster-badge-text">🥋 Apex Martial Arts Academy</div>
+          <h2 class="poster-headline" id="poster-headline-text">SCAN TO CLAIM YOUR FREE MARTIAL ARTS PASS</h2>
+          <p class="poster-sub" id="poster-sub-text">Join Brazilian Jiu-Jitsu, Muay Thai & Boxing. No experience needed!</p>
+
+          <div class="poster-qr-frame">
+            <img id="poster-qr-image" src="" alt="Sign-Up QR Code">
+          </div>
+
+          <div class="poster-cta">👉 Scan with Phone Camera</div>
+          <div class="poster-url" id="poster-url-display">http://localhost:3000</div>
+          
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: #94a3b8;">
+            📍 742 Bushido Way, Suite 100 • 📞 (415) 888-DOJO • apexmartialarts.com
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         TAB 3: FRONT DESK SCANNER & CHECK-IN
+         ============================================== -->
+    <section id="tab-scanner" class="tab-content">
+      <div class="hero-banner">
+        <div class="hero-badge">🎯 Front Desk Hub</div>
+        <h1 class="hero-title">Student Attendance & QR Check-In</h1>
+        <p class="hero-subtitle">
+          Scan student digital passes with your barcode reader, front-desk camera, or enter the pass code manually for instant attendance tracking.
+        </p>
+      </div>
+
+      <div class="scanner-grid">
+        <!-- Scan / Code Entry Card -->
+        <div class="card">
+          <h2 class="card-title">🔍 Quick Check-In Scanner</h2>
+          <p class="card-subtitle">Scan student QR code pass or enter their unique Pass Code (e.g. BJJ-1234):</p>
+
+          <form id="checkin-form" onsubmit="handleCheckInSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="checkin-code-input">Pass Code or QR Payload</label>
+              <input type="text" id="checkin-code-input" class="form-control" placeholder="Scan barcode or type code e.g. BJJ-4821" autofocus required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              ⚡ Verify & Check In Student
+            </button>
+          </form>
+
+          <!-- Check-In Result Banner -->
+          <div id="checkin-result" style="display: none; margin-top: 1.25rem;"></div>
+        </div>
+
+        <!-- Recent Check-Ins Card -->
+        <div class="card">
+          <h2 class="card-title">🕒 Recent Mats Attendance</h2>
+          <p class="card-subtitle">Live check-in feed for today's classes:</p>
+          <div id="recent-checkins-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <!-- Rendered by JS -->
+            <div style="color: #64748b; font-size: 0.9rem; text-align: center; padding: 2rem 0;">
+              No check-ins recorded yet today.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         TAB 4: STAFF DASHBOARD & ATTENDEE LIST
+         ============================================== -->
+    <section id="tab-admin" class="tab-content">
+      <!-- Stats Overview -->
+      <div class="stats-grid" id="stats-container">
+        <div class="stat-card">
+          <div class="stat-icon red">🥋</div>
+          <div>
+            <div class="stat-value" id="stat-total-signups">0</div>
+            <div class="stat-title">Total Sign-Ups</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">✅</div>
+          <div>
+            <div class="stat-value" id="stat-checked-in">0</div>
+            <div class="stat-title">Checked In</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon blue">✉️</div>
+          <div>
+            <div class="stat-value" id="stat-emails-sent">0</div>
+            <div class="stat-title">Emails Delivered</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon amber">🏆</div>
+          <div>
+            <div class="stat-value" id="stat-top-discipline">BJJ</div>
+            <div class="stat-title">Top Discipline</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+          <div>
+            <h2 class="card-title" style="margin-bottom: 0.2rem;">📋 Student Registrations</h2>
+            <p class="card-subtitle" style="margin-bottom: 0;">Manage enrollments, inspect passes, and trigger welcome emails.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="/api/export" class="btn btn-secondary btn-sm" download>
+              📥 Export CSV
+            </a>
+            <button class="btn btn-outline btn-sm" onclick="loadRegistrationsTable()">
+              🔄 Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters Bar -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1rem;">
+          <input type="text" id="filter-search" class="form-control" placeholder="Search name, email, pass..." oninput="debounceSearch()">
+          <select id="filter-discipline" class="form-control" onchange="loadRegistrationsTable()">
+            <option value="all">All Disciplines</option>
+            <option value="bjj">Brazilian Jiu-Jitsu</option>
+            <option value="muay-thai">Muay Thai</option>
+            <option value="karate">Karate</option>
+            <option value="taekwondo">Taekwondo</option>
+            <option value="mma">MMA</option>
+            <option value="judo">Judo</option>
+            <option value="krav-maga">Krav Maga</option>
+            <option value="kids">Kids Program</option>
+          </select>
+          <select id="filter-status" class="form-control" onchange="loadRegistrationsTable()">
+            <option value="all">All Statuses</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="checked_in">Checked In</option>
+            <option value="pending">Pending</option>
+          </select>
+        </div>
+
+        <!-- Registrations Table -->
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Contact</th>
+                <th>Discipline & Program</th>
+                <th>Pass Code</th>
+                <th>Status</th>
+                <th>Check-ins</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="registrations-tbody">
+              <tr>
+                <td colspan="7" style="text-align: center; color: #64748b; padding: 2rem;">Loading registrations...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         TAB 5: SENT EMAIL LOGS & HTML PREVIEW
+         ============================================== -->
+    <section id="tab-emails" class="tab-content">
+      <div class="hero-banner">
+        <div class="hero-badge">✉️ Automated Email Dispatch</div>
+        <h1 class="hero-title">Sent Confirmation Emails & Orientation Guides</h1>
+        <p class="hero-subtitle">
+          Inspect automated welcome emails delivered to newly registered students. Includes embedded QR Dojo passes, attire guidelines, and dojo etiquette tips.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <h2 class="card-title" style="margin-bottom: 0;">Dispatched Email Queue</h2>
+          <button class="btn btn-outline btn-sm" onclick="loadEmailLogs()">
+            🔄 Refresh Logs
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Sent At</th>
+                <th>Recipient</th>
+                <th>Subject</th>
+                <th>Pass Code</th>
+                <th>Delivery Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="emails-tbody">
+              <tr>
+                <td colspan="6" style="text-align: center; color: #64748b; padding: 2rem;">Loading email logs...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       MODALS
+       ============================================== -->
+
+  <!-- Student Pass View Modal -->
+  <div id="pass-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">🥋 Student QR Pass</h3>
+        <button class="modal-close" onclick="closeModal('pass-modal')">&times;</button>
+      </div>
+      <div class="modal-body" id="pass-modal-body" style="text-align: center;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Email HTML Preview Modal -->
+  <div id="email-preview-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 750px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="email-modal-subject">Email Preview</h3>
+        <button class="modal-close" onclick="closeModal('email-preview-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="email-modal-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #64748b;"></div>
+        <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
+          <iframe id="email-preview-iframe" style="width: 100%; height: 480px; border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
