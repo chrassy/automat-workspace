@@ -1,0 +1,103 @@
+{
+  "source": "Issue #16 Market Research & Pricing Benchmarks",
+  "currency": "USD",
+  "tiers": {
+    "oneTime": [
+      {
+        "id": "early-bird-lifetime",
+        "name": "Early Bird Lifetime Access",
+        "priceUSD": 49.00,
+        "originalPriceUSD": 99.00,
+        "billing": "one-time",
+        "badge": "Early Validation — 50% Off",
+        "highlight": true,
+        "description": "Full lifetime access to core 4-phase tactical survival course, CCT blunder radar drills, and all future updates.",
+        "features": [
+          "Complete 4-Phase Blunder Prevention Curriculum",
+          "Checks-Captures-Threats (CCT) Subconscious Reflex Trainer",
+          "Interactive In-Browser Tactical Simulator (Zero Video)",
+          "15-Minute Daily Micro-Drill Habits",
+          "Targeted for 800–1600 Elo Adult Improvers",
+          "Lifetime Access & Free Updates",
+          "30-Day Blunder-Free Money-Back Guarantee"
+        ],
+        "ctaText": "Claim $49 Lifetime Pass"
+      },
+      {
+        "id": "standard-lifetime",
+        "name": "Standard Lifetime Access",
+        "priceUSD": 69.00,
+        "originalPriceUSD": 99.00,
+        "billing": "one-time",
+        "badge": "Standard Launch Tier",
+        "highlight": false,
+        "description": "Complete lifetime course pass for adult improvers breaking the 1000–1400 plateau.",
+        "features": [
+          "All Early Bird Modules & Future Tactical Packs",
+          "Full CCT Habit Engine & Daily Training Regimen",
+          "Tactical Blunder Radar with Instant Consequence Visualizer",
+          "Endgame Conversion Drills (Anti-Stalemate Protocol)",
+          "Priority Community Support & Analysis Feedback"
+        ],
+        "ctaText": "Select $69 Lifetime Pass"
+      }
+    ],
+    "monthly": [
+      {
+        "id": "light-monthly",
+        "name": "Light Tactical Monthly",
+        "priceUSD": 7.99,
+        "billing": "monthly",
+        "annualEquivalentUSD": 79.00,
+        "badge": "Most Flexible",
+        "highlight": false,
+        "description": "Flexible month-to-month access to the full course and weekly fresh blunder drills.",
+        "features": [
+          "Full Access to Interactive Simulator",
+          "Weekly Fresh Blunder Drills & CCT Challenges",
+          "Progress Tracking & Rating Plateau Diagnostics",
+          "Cancel Anytime with 1 Click",
+          "No 40-hour bloated opening commitments"
+        ],
+        "ctaText": "Start at $7.99 / Month"
+      }
+    ]
+  },
+  "marketComparison": [
+    {
+      "platform": "Chessable Video Courses",
+      "price": "$100–$300+",
+      "model": "Per course purchase",
+      "verdict": "Bloated 40-hr opening memory lines with low completion rate"
+    },
+    {
+      "platform": "Chessly (GothamChess)",
+      "price": "$89.99/yr or $19.99/mo",
+      "model": "Subscription or $69–$99 single course",
+      "verdict": "Passive video watching creates illusion of competence"
+    },
+    {
+      "platform": "Chess.com Diamond",
+      "price": "$120/yr ($15.99/mo)",
+      "model": "Annual recurring subscription",
+      "verdict": "Fragmented lessons and subscription churn"
+    },
+    {
+      "platform": "Aimchess",
+      "price": "$8–$15/mo",
+      "model": "Monthly analytics subscription",
+      "verdict": "Diagnostic reports without structured tactical habit training"
+    },
+    {
+      "platform": "BlunderProof Chess (Us)",
+      "price": "$49–$69 one-time or $7.99/mo",
+      "model": "Accessible validation tier",
+      "verdict": "Active CCT drills, 15 min/day, zero video fluff, 70% cheaper"
+    }
+  ],
+  "accessibleValidationTier": {
+    "oneTimeRange": "$49–$69 one-time",
+    "monthlyOption": "$7.99/mo",
+    "targetAudience": "Adult Improvers (800–1600 Elo)"
+  }
+}

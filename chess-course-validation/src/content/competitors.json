@@ -1,0 +1,118 @@
+{
+  "source": "Issue #16 Market Research Report",
+  "lastVerified": "2026-10",
+  "competitors": [
+    {
+      "id": "chessable",
+      "name": "Chessable (by Play Magnus / Chess.com)",
+      "url": "https://chessable.com",
+      "model": "Course marketplace + MoveTrainer PRO subscription add-on",
+      "pricing": {
+        "videoCourses": "$100–$300+",
+        "basicCourses": "$29.99–$49.99 (text/PGN only)",
+        "moveTrainerProAnnual": "$60/yr ($59.99/yr)",
+        "moveTrainerProMonthly": "$9.99/mo",
+        "freeTier": "Basic MoveTrainer with restricted active course slots"
+      },
+      "strengths": [
+        "Spaced repetition engine (MoveTrainer) reinforces memory retention",
+        "Author catalog features elite Grandmasters (Magnus Carlsen, Anish Giri, Daniel Naroditsky)",
+        "Deep opening repertoire depth"
+      ],
+      "weaknesses": [
+        "Bloated 40-hour opening courses memorizing 30-move theoretical variations opponents rarely play",
+        "Prohibitive video course costs ($100–$300+)",
+        "Punishing and robotic UX that frustrates 800–1600 Elo adult improvers",
+        "Prioritizes rote memorization over dynamic tactical radar and piece protection instincts"
+      ],
+      "customerComplaints": [
+        "\"MoveTrainer forces me to repeat 20 moves of opening theory my opponents never play.\"",
+        "\"Video upgrades double or triple the cost to $100–$250 for content I barely finish.\"",
+        "\"Felt like studying for a brutal exam rather than enjoying chess improvement.\""
+      ]
+    },
+    {
+      "id": "chessly",
+      "name": "Chessly (by GothamChess / Levy Rozman)",
+      "url": "https://chessly.com",
+      "model": "Annual/monthly subscription or standalone course purchases",
+      "pricing": {
+        "annualSubscription": "$89.99/yr",
+        "monthlySubscription": "$19.99/mo",
+        "singleCourse": "$69.00–$99.00 one-time",
+        "bundlePass": "$149.00–$249.00 one-time"
+      },
+      "strengths": [
+        "Massive brand recognition through YouTube (GothamChess 5M+ subscribers)",
+        "Charismatic, entertaining video delivery",
+        "Integrated chapter PGN drills"
+      ],
+      "weaknesses": [
+        "Video-heavy: users spend hours passively watching rather than actively solving",
+        "High recurring subscription cost ($89.99/yr or $19.99/mo) and single course price ($69–$99)",
+        "Heavy emphasis on opening repertoires that low-rated opponents deviate from by move 3",
+        "Passive watching creates an 'illusion of competence' that evaporates during live rapid games"
+      ],
+      "customerComplaints": [
+        "\"I watched 3 hours of video, felt confident, and hung a piece on move 8 in my next rapid game.\"",
+        "\"$89.99/yr is steep for casual adult improvers with only 15 minutes a day.\"",
+        "\"Felt like watching YouTube with a small quiz at the end rather than hands-on tactical training.\""
+      ]
+    },
+    {
+      "id": "chess-com-diamond",
+      "name": "Chess.com Diamond",
+      "url": "https://chess.com",
+      "model": "Recurring membership subscription",
+      "pricing": {
+        "diamondAnnual": "$120/yr ($119.88/yr)",
+        "diamondMonthly": "$15.99/mo",
+        "platinumAnnual": "$79.99/yr",
+        "goldAnnual": "$49.99/yr"
+      },
+      "strengths": [
+        "Native ecosystem where games are played with integrated Game Review",
+        "Unlimited tactical puzzles and bot matches",
+        "Extensive lesson video catalog"
+      ],
+      "weaknesses": [
+        "Puzzle system rapidly serves obscure multi-move deflections rather than basic pattern hygiene",
+        "Recurring $120/yr creates subscription fatigue and continuous churn",
+        "Lessons are brief disconnected video snippets without structured tactile habit-building"
+      ],
+      "customerComplaints": [
+        "\"Game Review points out my blunders, but doesn't teach my brain how to spot them before clicking.\"",
+        "\"Tired of paying $120/year when I only have 15 minutes on lunch breaks to practice.\"",
+        "\"Puzzles jump from simple forks to complex Grandmaster deflections with zero guidance.\""
+      ]
+    },
+    {
+      "id": "aimchess",
+      "name": "Aimchess",
+      "url": "https://aimchess.com",
+      "model": "SaaS analytics and training subscription",
+      "pricing": {
+        "monthly": "$8–$15/mo ($7.99–$14.99/mo)",
+        "annual": "$58–$96/yr"
+      },
+      "strengths": [
+        "Connects to Chess.com/Lichess to pinpoint historical weaknesses",
+        "Generates customized tactical drills based on user game mistakes"
+      ],
+      "weaknesses": [
+        "Diagnostic rather than prescriptive: informs you of mistakes without rewiring real-time reflexes",
+        "Requires large game volume to generate statistically significant data",
+        "Adds another monthly recurring bill for passive statistical dashboards"
+      ],
+      "customerComplaints": [
+        "\"Aimchess diagnosed that I blundered rooks, but didn't give me a structured habit to fix it.\"",
+        "\"Another recurring monthly bill for analytics when what I need is tactile survival training.\""
+      ]
+    }
+  ],
+  "marketSummary": {
+    "highEndVideo": "Chessable ($100–$300+) and Chessly ($69–$99 / $89.99/yr) dominate video courses but suffer low completion (<15%) and passive fatigue.",
+    "subscriptionFatigue": "Chess.com Diamond ($120/yr) and Aimchess ($8–$15/mo) lock users into indefinite recurring billing without addressing the root cause of plateaus.",
+    "ourValidationTier": "BlunderProof offers an accessible $49–$69 one-time lifetime tier or light $7.99/mo subscription, focused 100% on active blunder prevention and Checks-Captures-Threats (CCT)."
+  }
+}

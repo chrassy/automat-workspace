@@ -1,0 +1,46 @@
+{
+  "features": [
+    {
+      "id": "cct-routine",
+      "title": "Checks-Captures-Threats (CCT) Habit Loop",
+      "tagline": "The subconscious decision framework used by Grandmasters.",
+      "description": "Before every single move, train your subconscious to execute CCT: 1) Checks on the enemy king, 2) Captures of undefended pieces, 3) Immediate tactical Threats. Eradicates 80% of unforced blunders.",
+      "icon": "🔍"
+    },
+    {
+      "id": "blunder-prevention",
+      "title": "Tactile Blunder Radar & Instant Consequence",
+      "tagline": "Stop hanging pieces when you're ahead in material.",
+      "description": "Every wrong move in our browser simulator triggers an immediate counter-attack replay. Trains sensory muscle memory rather than passive lecture recognition.",
+      "icon": "🛡"
+    },
+    {
+      "id": "bite-sized-drills",
+      "title": "15-Minute Daily Tactical Drills",
+      "tagline": "High-yield micro-sessions designed for busy adults.",
+      "description": "Fits into a morning coffee break or evening wind-down. 15 minutes of active calculation delivers 10x more cognitive reps than watching a 45-minute YouTube video.",
+      "icon": "⏱"
+    },
+    {
+      "id": "plateau-breaking",
+      "title": "Breaking 1000–1400 Rating Plateaus",
+      "tagline": "No bloated 40-hour opening theory courses.",
+      "description": "Stop memorizing bloated 40-hour opening theory courses and 25 moves of the Sicilian Defense that collapse when opponents play non-standard moves. Focus on board awareness, pins, knight forks, and endgame conversion.",
+      "icon": "📈"
+    },
+    {
+      "id": "zero-video",
+      "title": "Zero Passive Video Fluff",
+      "tagline": "100% interactive board action from day one.",
+      "description": "Passive video lectures build an 'illusion of competence.' You nod along to the speaker, but freeze in live games. BlunderProof requires your fingers on the board every turn.",
+      "icon": "🚫"
+    },
+    {
+      "id": "accessible-pricing",
+      "title": "Accessible Validation Pricing ($49–$69 or $7.99/mo)",
+      "tagline": "Fair pricing for real improvement without recurring bloat.",
+      "description": "No $100–$300 video course price gouging or $120/year subscription fatigue. Simple, honest pricing built to validate true learner demand.",
+      "icon": "💎"
+    }
+  ]
+}

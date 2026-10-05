@@ -6,6 +6,11 @@ const icpPositioning = require('../content/icp-positioning.json');
 const landingCopy = require('../content/landing-copy.json');
 const distributionPlaybook = require('../content/distribution-playbook.json');
 
+const competitorsData = require('../content/competitors.json');
+const heroData = require('../content/hero.json');
+const pricingData = require('../content/pricing.json');
+const featuresData = require('../content/features.json');
+
 const puzzleEngine = require('../services/puzzleEngine');
 const waitlistService = require('../services/waitlistService');
 const icpScorer = require('../services/icpScorer');
@@ -13,15 +18,36 @@ const icpScorer = require('../services/icpScorer');
 // Comprehensive Agent Deliverables Payload
 router.get('/validation-data', (req, res) => {
   res.json({
-    project: 'Interactive Beginner Chess Course Market Validation',
+    project: 'Interactive Beginner & Adult Improver Chess Course Market Validation',
     generatedBy: 'Autonomous Market Validation Agent Team (Agents 1-4)',
     status: 'ACTIVE_VALIDATION',
+    researchBasis: 'GitHub Issue #16 Verified Market Research Report',
     agent1_CompetitorAnalysis: competitorAnalysis,
     agent2_IcpPositioning: icpPositioning,
     agent3_LandingPageCopy: landingCopy,
     agent4_DistributionPlaybook: distributionPlaybook,
+    competitors: competitorsData,
+    hero: heroData,
+    pricing: pricingData,
+    features: featuresData,
     liveWaitlistMetrics: waitlistService.getWaitlistStats()
   });
+});
+
+router.get('/competitors', (req, res) => {
+  res.json(competitorsData);
+});
+
+router.get('/hero', (req, res) => {
+  res.json(heroData);
+});
+
+router.get('/pricing', (req, res) => {
+  res.json(pricingData);
+});
+
+router.get('/features', (req, res) => {
+  res.json(featuresData);
 });
 
 router.get('/competitor-analysis', (req, res) => {

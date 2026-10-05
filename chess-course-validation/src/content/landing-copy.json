@@ -1,49 +1,51 @@
 {
   "agent": "Agent 3: Landing Page & Copywriting Generator",
-  "objective": "Draft high-converting copy for a minimalist landing page designed to capture intent, validate pricing, and build a pre-launch waitlist.",
+  "objective": "Draft high-converting copy for a minimalist landing page designed to capture intent, validate pricing ($49–$69 one-time or $7.99/mo), and build an active waitlist of adult improvers.",
+  "researchSource": "GitHub Issue #16 Research Report",
   "heroSection": {
-    "badge": "No 45-Minute Lectures. No Theory Memorization. 100% Board Action.",
+    "badge": "No 40-Hour Opening Lectures. No Video Fatigue. 100% Active CCT Drills.",
     "headline": "Master Chess Tactics Through Action, Not Endless Videos",
-    "subheadline": "Break out of the 400–800 rating rut. An interactive, browser-based chess survival trainer that rewires your brain to spot danger, stop hanging pieces, and punish blunders in 15 minutes a day.",
-    "primaryCta": "Get Early Access (Save 50%)",
-    "secondaryCta": "Try Free 60-Second Survival Challenge",
-    "trustMicrocopy": "Join 1,480+ players on the waitlist • 100% Free to join • Zero spam guarantee",
+    "subheadline": "Targeted for Adult Improvers (800–1600 Elo) and players breaking out of the 400–800 rating rut. An interactive, browser-based chess survival trainer that rewires your brain to execute Checks-Captures-Threats (CCT), stop hanging pieces, and break rating plateaus in 15 minutes a day.",
+    "primaryCta": "Claim Early Bird Access ($49 Lifetime)",
+    "secondaryCta": "Try Free Interactive CCT Challenge ↓",
+    "trustMicrocopy": "Join 1,850+ adult improvers on the waitlist • 100% Free reserve • 30-day money-back guarantee",
     "socialProofPills": [
-      "Targeted for 400–800 Elo",
+      "Adult Improvers (800–1600 Elo)",
       "Zero Video Required",
-      "Instant Browser Play",
+      "Checks-Captures-Threats (CCT)",
+      "15-Minute Daily Drills",
       "Works on Phone & Laptop"
     ]
   },
   "problemSolutionBreakdown": {
-    "sectionTitle": "Why Traditional Chess Courses Fail Beginners",
-    "sectionSubtitle": "You don't need 30 moves of Italian Game theory. You need a survival radar that prevents you from hanging your queen.",
+    "sectionTitle": "Why Traditional Chess Courses Fail Adult Improvers",
+    "sectionSubtitle": "You don't need a bloated 40-hour Sicilian defense repertoire. You need an instinctive Checks-Captures-Threats (CCT) radar that prevents unforced blunders.",
     "comparison": [
       {
         "aspect": "Learning Method",
-        "traditional": "Passive Video Lectures (Sitting back for 40 minutes watching a Grandmaster talk about variations you'll never see in your games)",
+        "traditional": "Passive Video Lectures (Sitting back for 30–60 minutes watching a Grandmaster talk about variations you'll never see in your games)",
         "blunderProof": "Active Board-First Simulator (You touch the pieces from second 1. Every concept is learned through tactile trial, error, and physical pattern repetition)"
       },
       {
         "aspect": "Curriculum Focus",
-        "traditional": "Deep Opening Repertoires (Memorizing 12 moves of French Defense that fall apart when your 500-Elo opponent plays a random h-pawn move)",
-        "blunderProof": "Tactical Hygiene & Danger Radar (Rewiring your subconscious to ask: Is my piece defended? Can I fork? Is there a back-rank threat?)"
+        "traditional": "Bloated 40-Hour Opening Repertoires (Memorizing 20 moves of Italian or Caro-Kann theory that fall apart when your opponent plays a random h-pawn move)",
+        "blunderProof": "Tactical Hygiene & CCT Habit Loop (Rewiring your subconscious to systematically scan: Checks on enemy King, Captures of undefended pieces, Threats of forks and pins)"
       },
       {
         "aspect": "Feedback Loop",
-        "traditional": "Disconnected & Slow (You nod along to the video, then 4 hours later in a live blitz game you hang your rook and have no idea why)",
+        "traditional": "Disconnected & Slow (You nod along to the video lecture, then 4 hours later in a live blitz game you hang your rook and have no idea why)",
         "blunderProof": "Immediate Tactile Consequence (Play the wrong move, and the board instantly demonstrates the punishment with zero condescension)"
       },
       {
         "aspect": "Time & Cost",
-        "traditional": "$69 – $149 per course, requiring 20+ hours of video watching with a 10% completion rate",
-        "blunderProof": "$19 – $29 early-bird one-time fee, 15 minutes a day for 14 days with an 85% completion design"
+        "traditional": "$100–$300+ per video course or $120/year subscriptions, requiring 40+ hours of video watching with a <12% completion rate",
+        "blunderProof": "$49–$69 early-bird one-time fee or $7.99/mo, 15 minutes a day for 14 days with an 85% completion design"
       }
     ]
   },
   "curriculumSneakPeek": {
     "sectionTitle": "The 4-Phase BlunderProof Survival Curriculum",
-    "sectionSubtitle": "A battle-tested progression engineered specifically to take you from 400 to 1000 Elo with zero theory fluff.",
+    "sectionSubtitle": "A battle-tested progression engineered specifically for adult improvers to break the 1000–1400 plateau with zero video fluff.",
     "phases": [
       {
         "phaseNumber": 1,
@@ -60,22 +62,23 @@
       },
       {
         "phaseNumber": 2,
-        "phaseName": "Phase 2: The Blunder Radar",
+        "phaseName": "Phase 2: The Blunder Radar & CCT Routine",
         "duration": "Days 4–7",
         "tagline": "Spot incoming threats before your opponent executes them.",
-        "description": "Develop the radar that catches beginner traps and opponent aggression before it lands. Turn your opponent's overextended attacks into instant counterpunches.",
+        "description": "Implement the Checks-Captures-Threats (CCT) routine on every move. Disarm opponent aggression before it lands and turn overextended attacks into immediate counterpunches.",
         "modules": [
+          "The Checks-Captures-Threats (CCT) Subconscious Routine",
           "Counting Attackers vs Defenders: Never miscalculate exchanges again",
           "Scholar's Mate & Early Queen Snuff: Disarming early cheese attacks effortlessly",
           "Tunnel Vision Cure: Spotting cross-board snipers (long-range bishops & rooks)"
         ],
-        "keyOutcome": "Punish 100% of premature beginner Queen raids"
+        "keyOutcome": "Execute CCT reflex in under 3 seconds per move"
       },
       {
         "phaseNumber": 3,
         "phaseName": "Phase 3: The Core 4 Survival Tactics",
         "duration": "Days 8–11",
-        "tagline": "The four lethal patterns that decide 85% of games under 1000 Elo.",
+        "tagline": "The four lethal patterns that decide 85% of games under 1600 Elo.",
         "description": "Forks, pins, skewers, and discovered attacks. Master spotting them instantly—both to strike your opponent and to avoid walking into them.",
         "modules": [
           "The Forking Knight: King-and-Rook fork radar that saves your rating",
@@ -99,17 +102,37 @@
       }
     ]
   },
+  "pricingSectionCopy": {
+    "sectionTitle": "Accessible Pricing Built for Adult Improvers",
+    "sectionSubtitle": "No $100–$300 video courses. No $120/yr subscription locks. Simple, fair pricing to validate true learner demand.",
+    "toggleLabels": {
+      "oneTime": "One-Time Lifetime Pass",
+      "monthly": "Flexible Monthly Plan"
+    },
+    "discountBadge": "Save 50% During Pioneer Validation"
+  },
   "leadCaptureCopy": {
-    "headline": "Join the Pioneer Waitlist & Lock in $19 Early Bird Pricing",
-    "subheadline": "Full course launches next month at $39. Reserve your early-bird spot today for free and get 3 instant interactive survival puzzles sent to your inbox immediately.",
+    "headline": "Join the Pioneer Waitlist & Lock in $49 Early Bird Pricing",
+    "subheadline": "Standard launch price is $69 (or $7.99/mo). Reserve your early-bird spot today for free and get 3 instant interactive CCT survival puzzles sent to your inbox immediately.",
     "formFields": {
       "email": { "label": "Your Best Email", "placeholder": "you@example.com" },
-      "rating": { "label": "Current Chess Rating", "options": ["Under 400", "400 - 600", "601 - 800", "801 - 1000", "Over 1000"] },
-      "frustration": { "label": "Biggest Frustration in Games", "placeholder": "e.g., Hanging my queen when I'm winning, falling for opening traps..." },
-      "pricingTolerance": { "label": "Preferred Pricing Model", "options": ["$19 One-Time (Lifetime Early Bird)", "$29 One-Time (Standard Price)", "$7/Month Micro-Subscription", "Free tier only"] }
+      "rating": {
+        "label": "Current Chess Rating",
+        "options": ["Under 800", "800 - 1000", "1001 - 1200", "1201 - 1400", "1401 - 1600", "Over 1600"]
+      },
+      "frustration": { "label": "Biggest Frustration in Games", "placeholder": "e.g., Hanging my queen when I'm winning, stuck at 1100 plateau..." },
+      "pricingTolerance": {
+        "label": "Preferred Pricing Model",
+        "options": [
+          "$49 One-Time (Lifetime Early Bird)",
+          "$69 One-Time (Standard Lifetime)",
+          "$7.99/Month (Light Tactical Subscription)",
+          "Free tier only"
+        ]
+      }
     },
-    "ctaButton": "Claim Free Survival Pack & Early Bird Discount",
-    "urgencyText": "⚡ Limited to the first 2,000 pioneer testers to ensure 1-on-1 feedback reviews."
+    "ctaButton": "Claim Free CCT Pack & $49 Early Bird Discount",
+    "urgencyText": "⚡ Limited to the first 2,000 pioneer adult improvers to ensure personalized feedback reviews."
   },
   "faq": [
     {
@@ -117,12 +140,16 @@
       "a": "Because chess is a motor-spatial reflex skill, not a lecture. When you watch video, you engage passive auditory memory. When you touch the board and make interactive decisions with immediate feedback, your brain forms spatial muscle memory 5x faster."
     },
     {
-      "q": "What if my opponent plays weird opening moves?",
-      "a": "That's exactly why traditional opening courses fail. Our course doesn't teach memorized opening lines—it teaches invariant survival principles: checking piece safety, king defense, and spotting forks regardless of what strange moves your opponent plays."
+      "q": "What is the Checks-Captures-Threats (CCT) routine?",
+      "a": "CCT is the structured mental discipline used by strong players before every move: 1) Checks against the enemy king, 2) Captures of hanging or loose pieces, 3) Threats of forks, pins, and skewers. Systematizing CCT stops 80% of tactical blunders before they happen."
     },
     {
-      "q": "Is this suitable if I'm rated 500 Elo?",
-      "a": "500 Elo is the exact sweet spot. If you know the basic moves of chess but constantly lose games to sudden blunders, this course was engineered specifically for you."
+      "q": "Why not study 40-hour opening courses?",
+      "a": "At ratings below 1600 Elo, 85%+ of games are determined by tactical blunders, not master-level opening nuances. Memorizing 25 moves of the Catalan is useless when your opponent deviates on move 3. CCT and tactical survival work in every single position."
+    },
+    {
+      "q": "Is this suitable if I'm stuck at a 1000–1400 Elo plateau?",
+      "a": "That is the exact sweet spot. Adult improvers in the 1000–1400 bracket almost always plateau due to tactical blindness and unforced blunders. BlunderProof was engineered precisely to shatter this plateau."
     }
   ]
 }

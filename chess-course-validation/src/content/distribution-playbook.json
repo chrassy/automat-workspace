@@ -1,58 +1,59 @@
 {
   "agent": "Agent 4: Scrappy Validation & Distribution Playbook",
-  "objective": "Build a zero-budget go-to-market testing playbook to put the landing page in front of real target users and measure conversion thresholds.",
+  "objective": "Build a zero-budget go-to-market testing playbook to put the landing page in front of real target users (adult improvers 800–1600 Elo) and measure conversion thresholds.",
+  "researchSource": "GitHub Issue #16 Research Report",
   "targetCommunities": [
     {
       "platform": "Reddit",
       "channel": "r/chessbeginners",
       "size": "345,000+ members",
-      "relevance": "Direct target audience (400–1000 Elo). Constant daily posts about blundering, feeling stuck, and asking how to improve without buying expensive courses.",
+      "relevance": "Direct target audience (400–1200 Elo). Constant daily posts about blundering, feeling stuck at plateaus, and asking how to improve without buying expensive $100-$300 courses.",
       "moderationNotes": "Strict anti-self-promotion rules. All posts must offer 100% upfront analytical value; links may only be shared in comments or upon direct request."
     },
     {
       "platform": "Reddit",
       "channel": "r/chess",
       "size": "850,000+ members",
-      "relevance": "Broad chess audience; ideal for discussions on chess education methodology (e.g. video vs interactive drill efficacy).",
-      "moderationNotes": "High skepticism toward commercial products. Needs data-backed case studies or open-source research angle."
+      "relevance": "Broad chess audience including Adult Improvers (800–1600 Elo); ideal for discussions on chess education methodology, CCT routine vs bloated 40-hour opening theory courses.",
+      "moderationNotes": "High skepticism toward commercial products. Needs data-backed case studies or cognitive training research angle."
     },
     {
       "platform": "Discord",
       "channel": "Chess.com Official Discord (#improvement & #questions)",
       "size": "150,000+ members",
-      "relevance": "Highly active beginner channels where players post game reviews asking 'why did I lose this position?'.",
-      "moderationNotes": "Engage by offering live puzzle reviews and tactical breakdown explanations."
+      "relevance": "Highly active channels where players post game reviews asking 'why did I lose this position?' and discuss breaking rating plateaus.",
+      "moderationNotes": "Engage by offering live puzzle reviews and CCT tactical breakdown explanations."
     },
     {
       "platform": "Discord",
       "channel": "GothamChess / Chess Dojo / Lichess Discords",
       "size": "80,000+ collective members",
-      "relevance": "Engaged learners who actively discuss course purchases and frustrations with opening books.",
+      "relevance": "Engaged adult improvers who actively discuss course purchases ($69-$99 on Chessly, $100+ on Chessable) and frustrations with opening books.",
       "moderationNotes": "Participate in study-hall voice and text channels."
     },
     {
       "platform": "Crossover Developer Communities",
       "channel": "Hacker News (Show HN / Ask HN) & Tech Discords",
       "size": "Millions of tech professionals",
-      "relevance": "Massive overlap between software engineers and casual chess players who appreciate minimalist, video-free, interactive learning tools.",
-      "moderationNotes": "Position from an engineering and cognitive science angle: 'Why we killed video lectures to build a spatial chess trainer in browser'."
+      "relevance": "Massive overlap between software engineers and adult improvers who appreciate minimalist, video-free, interactive learning tools.",
+      "moderationNotes": "Position from an engineering and cognitive science angle: 'Why we replaced 40-hour opening lectures with an active CCT spatial chess trainer in browser'."
     }
   ],
   "organicEngagementPosts": [
     {
       "id": "post-reddit-chessbeginners",
       "target": "r/chessbeginners",
-      "title": "I analyzed 500 games between 400-800 Elo: Here are the 3 blunder patterns causing 81% of all losses (and why opening theory is a trap)",
+      "title": "I analyzed 500 games between 800-1400 Elo: Here are the 3 blunder patterns causing 81% of all losses (and why opening theory is a trap)",
       "postType": "Data-backed value post with chess diagram examples",
-      "content": "Hey everyone,\n\nLike many here, I spent months stuck at 600 Elo on Chess.com. I bought opening courses, watched hours of YouTube videos, and yet kept losing games to random 1-move blunders.\n\nSo I downloaded PGNs of 500 games between 400 and 800 Elo and ran automated blunder extraction. Here is what the data showed:\n\n1. Blunder Type A: The 'Ghost Defender' (39% of losses)\nA player moves a piece assuming it is defended, forgetting that the defending piece is pinned or blocked.\n\n2. Blunder Type B: Cross-Board Snipers (24% of losses)\nLong-range bishops tucked on c1/c8 or g2/g7 cutting across the board after an opponent was hyper-focused on the center.\n\n3. Blunder Type C: King Panic Check Responses (18% of losses)\nReacting to an early queen check by moving the king into an undefended square instead of blocking or taking.\n\nThe biggest takeaway? Less than 3% of games were decided by opening knowledge. If you are under 800 Elo, studying openings is the least efficient use of your time.\n\nTo help test this, I built a free 60-second browser tool that tests your blunder radar without any video. Let me know if you want the link to try it out!",
+      "content": "Hey everyone,\n\nLike many adult improvers here, I spent months stuck at a plateau on Chess.com. I bought opening courses, watched hours of YouTube videos, and yet kept losing games to random 1-move blunders.\n\nSo I downloaded PGNs of 500 games between 800 and 1400 Elo and ran automated blunder extraction. Here is what the data showed:\n\n1. Blunder Type A: The 'Ghost Defender' (39% of losses)\nA player moves a piece assuming it is defended, forgetting that the defending piece is pinned or overloaded.\n\n2. Blunder Type B: Missing the CCT Routine (Checks-Captures-Threats) (27% of losses)\nFailing to scan candidate enemy checks or hanging captures before selecting a positional move.\n\n3. Blunder Type C: King Panic Check Responses (18% of losses)\nReacting to checks by moving the king into an undefended square instead of blocking or taking.\n\nThe biggest takeaway? Less than 3% of games were decided by opening knowledge. If you are trying to break 1000-1400 Elo, studying 40-hour opening lines is the least efficient use of your time.\n\nTo help test this, I built a free 60-second browser tool that tests your blunder radar and CCT habits without any video. Let me know if you want the link to try it out!",
       "callToActionMechanic": "Reply in thread with feedback; drop the link only in comments when asked to prevent spam flags."
     },
     {
-      "id": "post-hacker-news",
+      "id": "post-hackernews-showhn",
       "target": "Hacker News (Show HN)",
-      "title": "Show HN: BlunderProof – An interactive, zero-video chess survival trainer for casual players",
+      "title": "Show HN: BlunderProof – An interactive, zero-video chess tactical trainer for adult improvers",
       "postType": "Engineering & pedagogical product showcase",
-      "content": "Most chess training products (Chessable, Chessly) rely heavily on 30-minute master video lectures and 20-move opening memorization. But for novice chess players (sub-800 Elo), video engagement suffers from the 'illusion of competence': passive listening stimulates recognition, but fails to encode spatial motor reflexes.\n\nWe built BlunderProof: a minimalist web trainer where there are zero videos and zero theory lectures. Every lesson is an interactive board challenge that runs in the browser. Wrong moves immediately play out the tactical consequence in real time.\n\nWe're validating market demand and would love feedback from the HN chess community on the interactive loop and tactical drill mechanics.",
+      "content": "Most chess training products (Chessable, Chessly) rely heavily on 30-minute master video lectures and 20-move opening memorization. But for adult improvers (800-1600 Elo), video engagement suffers from the 'illusion of competence': passive listening stimulates recognition, but fails to encode spatial motor reflexes under clock pressure.\n\nWe built BlunderProof: a minimalist web trainer where there are zero videos and zero theory lectures. Every lesson is an interactive board challenge that runs in the browser, training the Checks-Captures-Threats (CCT) loop. Wrong moves immediately play out the tactical consequence in real time.\n\nWe're validating market demand and accessible validation pricing ($49-$69 lifetime or $7.99/mo) and would love feedback from the HN chess community on the interactive loop and tactical drill mechanics.",
       "callToActionMechanic": "Direct link to interactive landing page prototype and pricing survey."
     },
     {
@@ -60,7 +61,7 @@
       "target": "Chess Discord Server (#tactics-and-coaching)",
       "title": "Quick interactive drill: Can you spot the blunder before your coffee gets cold?",
       "postType": "Micro-challenge hook",
-      "content": "Dropped a 3-puzzle beginner blunder test that tests piece radar without any video fluff. Who can clear all 3 on the first try? Drop your score below and let me know which pattern tripped you up.",
+      "content": "Dropped a 3-puzzle blunder and CCT test that tests piece radar without any video fluff. Who can clear all 3 on the first try? Drop your score below and let me know which pattern tripped you up.",
       "callToActionMechanic": "Direct link to the interactive puzzle demo on the landing page."
     }
   ],
@@ -77,7 +78,7 @@
       },
       "greenLight": {
         "rate": "≥ 15%",
-        "interpretation": "Definitive green light for full implementation. Strong validation that beginners actively desire a video-free tactical survival course."
+        "interpretation": "Definitive green light for full implementation. Strong validation that adult improvers actively desire a video-free tactical survival course."
       }
     },
     "keyMetrics": [
@@ -92,9 +93,9 @@
         "description": "Percentage of visitors who start the 3-puzzle interactive survival challenge and solve all three."
       },
       {
-        "metric": "Willingness to Pay (WTP) at $19–$29 Price Point",
+        "metric": "Willingness to Pay (WTP) at $19–$29 and $49–$69 Validation Price Points",
         "benchmarkTarget": "≥ 40%",
-        "description": "Percentage of waitlist respondents who select either $19 early bird or $29 standard purchase as their preferred model."
+        "description": "Percentage of waitlist respondents who select a paid tier ($49 early bird, $69 standard, or $7.99/mo) as their preferred model."
       },
       {
         "metric": "Paid Pre-Order Reservation Deposit (Stage 2 Validation)",

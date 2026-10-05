@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlunderProof Chess — Interactive Tactics Course (No Video Fluff)</title>
-  <meta name="description" content="Master chess tactics through action, not endless videos. The interactive browser-first chess survival course for players rated 400-800.">
-  <link rel="stylesheet" href="styles.css">
+  <title>BlunderProof Chess — Interactive Tactics Course for Adult Improvers (No Video Fluff)</title>
+  <meta name="description" content="Break the 1000–1400 plateau and eliminate unforced blunders through active board training and Checks-Captures-Threats (CCT). Zero video fluff, 15 minutes a day.">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -13,47 +13,51 @@
   <div class="top-banner">
     <div style="display: flex; align-items: center; gap: 8px;">
       <span class="badge">Market Validation</span>
-      <span>Live GTM Validation Experiment: Testing Pricing Tolerance & Demand for No-Video Chess Course</span>
+      <span>Issue #16 Verified Research: Adult Improvers (800–1600 Elo) • Accessible Tier ($49–$69 or $7.99/mo)</span>
     </div>
-    <button class="btn-secondary-sm" id="openDossierBtn">🔍 View Agent Strategy Dossier (Agents 1-4)</button>
+    <button class="btn-secondary-sm" id="openDossierBtn">🔍 View Strategy Dossier & Research</button>
   </div>
 
   <!-- Header -->
   <header>
     <div class="container nav-wrap">
-      <div class="brand">
+      <a href="#" class="brand">
         <div class="brand-icon">♞</div>
         <span>BlunderProof<span style="color: var(--accent-green);">Chess</span></span>
-      </div>
+      </a>
       <nav class="nav-links">
         <a href="#interactive-demo" class="nav-link">Interactive Demo</a>
+        <a href="#cct-features" class="nav-link">CCT Method</a>
         <a href="#problem-solution" class="nav-link">Why No Video?</a>
         <a href="#curriculum" class="nav-link">Curriculum</a>
+        <a href="#competitor-matrix" class="nav-link">Competitors</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#icp-quiz" class="nav-link">Fit Quiz</a>
         <a href="#waitlist" class="btn-primary" style="padding: 8px 18px; font-size: 0.9rem;">Join Waitlist (50% Off)</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section (Agent 3 Deliverable) -->
+  <!-- Hero Section (Agent 3 Deliverable + Issue #16 Research Findings) -->
   <section class="hero">
     <div class="container">
       <div class="pill-badge">
-        <span>⚡ Zero Video Lectures • Zero Opening Theory • 100% Board Action</span>
+        <span>⚡ No 40-Hour Opening Lectures • No Video Fatigue • 100% Active CCT Drills</span>
       </div>
       <h1>Master Chess Tactics Through <span class="gradient-text">Action, Not Endless Videos</span></h1>
       <p class="hero-subtitle">
-        Break out of the 400–800 rating rut. An interactive, board-first survival training course designed to eliminate tactical blunders and build instant danger radar in 15 minutes a day.
+        Break out of the 1000–1400 plateau (and 400–800 blunder rut). An interactive, browser-based chess survival trainer for Adult Improvers that rewires your brain to execute Checks-Captures-Threats (CCT), stop hanging pieces, and win games in 15 minutes a day.
       </p>
       <div class="hero-cta-group">
-        <a href="#waitlist" class="btn-primary">Get Early Access (Save 50%)</a>
-        <a href="#interactive-demo" class="btn-secondary">Try Free 60-Second Challenge ↓</a>
+        <a href="#pricing" class="btn-primary">Claim Early Bird Access ($49 Lifetime)</a>
+        <a href="#interactive-demo" class="btn-secondary">Try Free Interactive CCT Challenge ↓</a>
       </div>
       <div class="social-pills">
-        <span class="social-pill">🎯 Engineered for 400–800 Elo</span>
-        <span class="social-pill">⏱ 15 Minutes / Day</span>
-        <span class="social-pill">🧠 Tactile Muscle Memory</span>
-        <span class="social-pill">💻 100% In-Browser (Mobile & Desktop)</span>
+        <span class="social-pill">🎯 Adult Improvers (800–1600 Elo)</span>
+        <span class="social-pill">⏱ 15 Min/Day Bite-Sized Drills</span>
+        <span class="social-pill">🔍 Checks-Captures-Threats (CCT)</span>
+        <span class="social-pill">🛡 Blunder Prevention First</span>
+        <span class="social-pill">🚫 Zero Video Fluff</span>
       </div>
     </div>
   </section>
@@ -63,16 +67,16 @@
     <div class="container">
       <div class="section-head">
         <div class="section-tag">Interactive Proof of Concept</div>
-        <h2>Test Your Survival Radar Right Now</h2>
-        <p>No video lecture. Touch the pieces, make the move, and experience the tactile feedback loop in real time.</p>
+        <h2>Test Your CCT Survival Radar Right Now</h2>
+        <p>No video lecture. Touch the pieces, execute Checks-Captures-Threats, and experience instant tactile feedback in real time.</p>
       </div>
 
       <div class="puzzle-interactive-card">
         <div class="puzzle-controls">
           <div class="puzzle-tabs">
-            <button class="puzzle-tab-btn active" onclick="selectPuzzle(0)">Challenge 1: Hanging Queen</button>
-            <button class="puzzle-tab-btn" onclick="selectPuzzle(1)">Challenge 2: Knight Fork</button>
-            <button class="puzzle-tab-btn" onclick="selectPuzzle(2)">Challenge 3: Back-Rank Mate</button>
+            <button class="puzzle-tab-btn active" onclick="selectPuzzle(0)">Challenge 1: Hanging Queen (Captures)</button>
+            <button class="puzzle-tab-btn" onclick="selectPuzzle(1)">Challenge 2: Knight Fork (Threats)</button>
+            <button class="puzzle-tab-btn" onclick="selectPuzzle(2)">Challenge 3: Back-Rank Mate (Checks)</button>
           </div>
           <span style="font-size: 0.85rem; color: var(--text-muted);">Click a white piece to pick it up, then click destination</span>
         </div>
@@ -91,7 +95,7 @@
           <div class="puzzle-info-panel">
             <div class="puzzle-meta">
               <span class="meta-pill" id="puzzlePhase">Phase 1: Board Awareness</span>
-              <span class="meta-elo" id="puzzleElo">400 - 600 Elo</span>
+              <span class="meta-elo" id="puzzleElo">400 - 800 Elo</span>
             </div>
             <div class="puzzle-prompt-box">
               <h3 id="puzzleTitle">Radar 1: Punish the Hanging Queen</h3>
@@ -104,12 +108,67 @@
             <div id="puzzleFeedback" class="feedback-card"></div>
 
             <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px; margin-top: auto;">
-              <h5 style="color: var(--accent-green); font-size: 0.85rem; margin-bottom: 4px;">WHY THIS WORKS:</h5>
+              <h5 style="color: var(--accent-green); font-size: 0.85rem; margin-bottom: 4px;">THE CCT PRINCIPLE:</h5>
               <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
-                Watching a 40-minute video engages passive auditory memory. By having your fingers commit the move and seeing immediate board consequences, your brain develops instinctive danger detection.
+                Watching a 40-minute video engages passive auditory memory. By committing the move with your fingers and verifying Checks, Captures, and Threats, your brain develops instinctive board danger detection.
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features / CCT Method Section -->
+  <section class="features-section" id="cct-features">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Methodology & Features</div>
+        <h2>The Core Pillars of BlunderProof Chess</h2>
+        <p>Engineered for busy adult improvers who need high-yield tactile practice without opening memorization traps.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Checks-Captures-Threats (CCT)</h3>
+          <div class="tagline">The Grandmaster mental checklist, simplified.</div>
+          <p>Train your subconscious to scan CCT before every single move: 1) Checks on enemy king, 2) Captures of loose pieces, 3) Immediate tactical Threats. Eradicates 80% of unforced blunders.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡</div>
+          <h3>Tactile Blunder Radar</h3>
+          <div class="tagline">Stop throwing away winning +8 positions.</div>
+          <p>Every mistake in our simulator triggers an immediate counter-attack replay. Trains sensory muscle memory rather than passive lecture recognition.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⏱</div>
+          <h3>15-Minute Daily Micro-Drills</h3>
+          <div class="tagline">High-yield training for busy working adults.</div>
+          <p>Fits right into a morning coffee break or evening wind-down. 15 minutes of active calculation delivers 10x more cognitive reps than sitting through a 45-minute video.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Breaking 1000–1400 Plateaus</h3>
+          <div class="tagline">No bloated 40-hour opening theory courses.</div>
+          <p>Skip 25 moves of Italian or Sicilian theory that opponents never play. Focus on dynamic board awareness, knight forks, absolute pins, and clean endgame conversions.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🚫</div>
+          <h3>Zero Passive Video Fluff</h3>
+          <div class="tagline">100% interactive board action from day one.</div>
+          <p>Video courses create an 'illusion of competence' that collapses under blitz clock pressure. BlunderProof requires your fingers on the board for every decision.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💎</div>
+          <h3>Accessible Validation Tier</h3>
+          <div class="tagline">$49–$69 one-time or $7.99/mo light access.</div>
+          <p>No $100–$300 video course price gouging or $120/year subscription fatigue. Simple, honest pricing to validate true learner demand.</p>
         </div>
       </div>
     </div>
@@ -120,42 +179,42 @@
     <div class="container">
       <div class="section-head">
         <div class="section-tag">The Radical Difference</div>
-        <h2>Why Traditional Beginner Chess Courses Fail</h2>
-        <p>Contrast passive video courses with an active, board-first interactive learning loop.</p>
+        <h2>Why Traditional Chess Courses Fail Adult Improvers</h2>
+        <p>Contrast passive video masterclasses and bloated opening theory with an active, CCT-first interactive learning loop.</p>
       </div>
 
       <div class="comparison-grid">
         <!-- Negative Card -->
         <div class="comp-card negative">
-          <h3 style="color: #f87171;">❌ The Old Way: Passive Video Hell</h3>
+          <h3 style="color: #f87171;">❌ The Old Way: Passive Video & Theory Hell</h3>
           <div class="comp-item">
             <div class="aspect">Delivery Method</div>
             <div class="desc">Sitting through 30–60 minute Grandmaster lectures where you nod along on the couch without ever touching the board.</div>
           </div>
           <div class="comp-item">
             <div class="aspect">Curriculum</div>
-            <div class="desc">Deep opening theory (15 moves of Italian or Caro-Kann) that completely collapses when a 500-Elo opponent plays a random h-pawn push.</div>
+            <div class="desc">Bloated 40-hour opening repertoires (15-20 moves of Italian or Caro-Kann) that collapse when an 1100-Elo opponent plays a non-standard move.</div>
           </div>
           <div class="comp-item">
             <div class="aspect">Feedback Loop</div>
-            <div class="desc">Zero tactile feedback. You suffer from the "illusion of competence" until you hang your queen in your next live rapid game.</div>
+            <div class="desc">Zero tactile feedback. Suffer from the 'illusion of competence' until you hang a knight or queen in your next live rapid game.</div>
           </div>
           <div class="comp-item">
             <div class="aspect">Pricing & Completion</div>
-            <div class="desc">$69 – $150+ one-off or $16/mo recurring subscription, with an industry completion rate of under 12%.</div>
+            <div class="desc">$100 – $300+ per video course or recurring $120/year subscriptions with a dismal &lt;12% completion rate.</div>
           </div>
         </div>
 
         <!-- Positive Card -->
         <div class="comp-card positive">
-          <h3 style="color: #4ade80;">✅ The BlunderProof Way: Active Board Reflexes</h3>
+          <h3 style="color: var(--accent-green);">✓ BlunderProof: Active CCT Muscle Memory</h3>
           <div class="comp-item">
             <div class="aspect">Delivery Method</div>
-            <div class="desc">100% interactive simulator. No video fluff. You touch pieces from second one and learn solely through tactile trial and error.</div>
+            <div class="desc">100% interactive in-browser board action. From second 1, you evaluate Checks-Captures-Threats and physically move the pieces.</div>
           </div>
           <div class="comp-item">
             <div class="aspect">Curriculum</div>
-            <div class="desc">Pure survival tactics: Defended vs undefended piece radar, counting attackers, king safety, and punishing early cheese attacks.</div>
+            <div class="desc">Tactical hygiene, blunder prevention, CCT habit loops, and disarming aggressive cheese attacks and forks.</div>
           </div>
           <div class="comp-item">
             <div class="aspect">Feedback Loop</div>
@@ -163,9 +222,100 @@
           </div>
           <div class="comp-item">
             <div class="aspect">Pricing & Completion</div>
-            <div class="desc">$19 early-bird one-time lifetime pass. 15-minute daily micro-sessions with an 85% completion design.</div>
+            <div class="desc">Accessible $49–$69 one-time lifetime pass (or $7.99/mo). 15-minute daily micro-sessions with an 85% completion design.</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitor Landscape Comparison Table (Agent 1 Deliverable & Issue #16 Research) -->
+  <section class="matrix-section" id="competitor-matrix">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Market Comparison</div>
+        <h2>How We Stack Up Against Alternatives</h2>
+        <p>Verified market research across competitor offerings, pricing benchmarks, and learning efficacy.</p>
+      </div>
+
+      <div class="matrix-table-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Platform / Alternative</th>
+              <th>Format</th>
+              <th>Tactical Focus vs Theory</th>
+              <th>Verified Pricing Model</th>
+              <th>Beginner / Improver Completion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chessable (Play Magnus)</strong></td>
+              <td>MoveTrainer + Video Masterclasses</td>
+              <td>Bloated 40-hr opening memorization</td>
+              <td>Video $100–$300+ / PRO $60/yr ($9.99/mo)</td>
+              <td>~12% (Robotic repetition fatigue)</td>
+            </tr>
+            <tr>
+              <td><strong>Chessly (GothamChess)</strong></td>
+              <td>Video lectures + PGN drills</td>
+              <td>Heavy opening system video lectures</td>
+              <td>$89.99/yr or $19.99/mo ($69–$99 single)</td>
+              <td>~15% (Passive video fatigue)</td>
+            </tr>
+            <tr>
+              <td><strong>Chess.com Diamond</strong></td>
+              <td>Video snippets + unlimited puzzles</td>
+              <td>Fragmented disconnected puzzle ratings</td>
+              <td>$120/yr ($119.88/yr, $15.99/mo)</td>
+              <td>High recurring churn / fatigue</td>
+            </tr>
+            <tr>
+              <td><strong>Aimchess</strong></td>
+              <td>Post-game analytics SaaS</td>
+              <td>Diagnostic reports without habit training</td>
+              <td>$8–$15/mo ($58–$96/yr)</td>
+              <td>Dashboard fatigue without habit loop</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>BlunderProof Chess (Us)</strong></td>
+              <td>100% Interactive In-Browser Board</td>
+              <td>Checks-Captures-Threats (CCT) & Blunders</td>
+              <td>$49 Early Bird / $69 Lifetime ($7.99/mo)</td>
+              <td>85% Target (15 min/day micro-drills)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated Pricing Section with Interactive Toggle -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Fair & Accessible Pricing</div>
+        <h2>Accessible Pricing Built for Adult Improvers</h2>
+        <p>No $100–$300 video courses. No $120/yr recurring subscription locks. Select the plan that fits your learning journey.</p>
+      </div>
+
+      <!-- Interactive Pricing Toggle -->
+      <div class="pricing-toggle-container">
+        <div class="pricing-toggle-wrap">
+          <button class="pricing-toggle-btn active" id="toggleOneTimeBtn" onclick="setPricingMode('oneTime')">
+            One-Time Lifetime Pass
+          </button>
+          <button class="pricing-toggle-btn" id="toggleMonthlyBtn" onclick="setPricingMode('monthly')">
+            Monthly Subscription
+          </button>
+        </div>
+        <span class="pricing-save-badge">Save 50% Early Bird</span>
+      </div>
+
+      <!-- Pricing Cards Container -->
+      <div class="pricing-cards-grid" id="pricingCardsGrid">
+        <!-- Rendered dynamically by app.js based on toggle selection -->
       </div>
     </div>
   </section>
@@ -174,9 +324,9 @@
   <section class="curriculum-section" id="curriculum">
     <div class="container">
       <div class="section-head">
-        <div class="section-tag">Step-by-Step Mastery</div>
-        <h2>The 4-Phase BlunderProof Curriculum</h2>
-        <p>Engineered specifically to bridge the survival gap and push you past 1000 Elo.</p>
+        <div class="section-tag">Step-by-Step Progression</div>
+        <h2>The 4-Phase BlunderProof Survival Curriculum</h2>
+        <p>Engineered specifically for adult improvers to break the 1000–1400 plateau with zero video fluff.</p>
       </div>
 
       <div class="curriculum-grid">
@@ -199,15 +349,16 @@
         <div class="curriculum-card">
           <div>
             <span class="phase-tag">Phase 2 • Days 4–7</span>
-            <h4>The Blunder Radar</h4>
-            <p>Catch beginner traps and aggressive raids before they land. Punish early Queen excursions.</p>
+            <h4>The Blunder Radar & CCT Routine</h4>
+            <p>Implement Checks-Captures-Threats (CCT) on every move. Disarm opponent aggression and early Queen raids.</p>
             <ul class="module-list">
+              <li>The Checks-Captures-Threats (CCT) routine</li>
               <li>Attacker vs. defender counting speed</li>
               <li>Disarming Scholar's Mate & cheese attacks</li>
               <li>Curing tunnel vision (cross-board snipers)</li>
             </ul>
           </div>
-          <div class="phase-outcome">Outcome: Punish 100% of premature Queen raids</div>
+          <div class="phase-outcome">Outcome: Execute CCT reflex in &lt;3s per move</div>
         </div>
 
         <!-- Phase 3 -->
@@ -215,7 +366,7 @@
           <div>
             <span class="phase-tag">Phase 3 • Days 8–11</span>
             <h4>The Core 4 Survival Tactics</h4>
-            <p>The four lethal patterns that decide 85% of games under 1000 Elo: Forks, Pins, Skewers, and Discoveries.</p>
+            <p>The four lethal patterns that decide 85% of games under 1600 Elo: Forks, Pins, Skewers, and Discoveries.</p>
             <ul class="module-list">
               <li>The Forking Knight (King & Rook radar)</li>
               <li>Absolute & relative pin exploitation</li>
@@ -243,68 +394,13 @@
     </div>
   </section>
 
-  <!-- Competitor Landscape Comparison Table (Agent 1 Deliverable) -->
-  <section class="matrix-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-tag">Market Comparison</div>
-        <h2>How We Stack Up Against Alternatives</h2>
-        <p>Mapped across pricing tiers, delivery format, and beginner tactical focus.</p>
-      </div>
-
-      <div class="matrix-table-wrap">
-        <table class="matrix-table">
-          <thead>
-            <tr>
-              <th>Platform / Course</th>
-              <th>Format</th>
-              <th>Theory vs Survival</th>
-              <th>Pricing Model</th>
-              <th>Beginner Completion</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Chessly (GothamChess)</strong></td>
-              <td>Video lectures + PGN</td>
-              <td>Heavy opening theory</td>
-              <td>$69 – $249 one-off</td>
-              <td>~10% (Video fatigue)</td>
-            </tr>
-            <tr>
-              <td><strong>Chessable MoveTrainer</strong></td>
-              <td>Rote line repetition + video</td>
-              <td>Grandmaster variation trees</td>
-              <td>$30 – $100+ / course</td>
-              <td>~15% (Robotic memorization)</td>
-            </tr>
-            <tr>
-              <td><strong>Chess.com Diamond</strong></td>
-              <td>Video clips + random puzzles</td>
-              <td>Fragmented disconnected tips</td>
-              <td>$15.99 / mo ($119 / yr)</td>
-              <td>Ongoing subscription churn</td>
-            </tr>
-            <tr class="highlight-row">
-              <td><strong>BlunderProof Chess (Us)</strong></td>
-              <td>100% Interactive Board Simulator</td>
-              <td>Survival tactics & blunder elimination</td>
-              <td>$19 Early Bird / $29 Lifetime</td>
-              <td>85% Target (15 min/day micro-drills)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
   <!-- Interactive ICP Qualification Quiz (Agent 2 Deliverable) -->
   <section class="quiz-section" id="icp-quiz">
     <div class="container">
       <div class="section-head">
-        <div class="section-tag">Ideal Customer Profile Check</div>
-        <h2>Are You in the 400–800 "Blunder Rut"?</h2>
-        <p>Answer 4 quick questions to see if our active survival system matches your plateau.</p>
+        <div class="section-tag">Audience Fit Diagnosis</div>
+        <h2>Are You in the Adult Improver "Blunder Rut"?</h2>
+        <p>Answer 4 quick questions to see if our active CCT survival system matches your plateau.</p>
       </div>
 
       <div class="quiz-card">
@@ -312,29 +408,32 @@
           <div class="form-group">
             <label for="quizRating">What is your current Chess.com or Lichess rating?</label>
             <select id="quizRating" class="form-control" required>
-              <option value="400 - 600" selected>400 – 600 Elo (Struggling with piece drops)</option>
-              <option value="601 - 800">601 – 800 Elo (Plateaued, frequent tactical blunders)</option>
+              <option value="1001 - 1200" selected>1001 – 1200 Elo (Plateaued Adult Improver, unforced blunders)</option>
+              <option value="1201 - 1400">1201 – 1400 Elo (Stuck at intermediate plateau, missing CCT)</option>
+              <option value="800 - 1000">800 – 1000 Elo (Frequent hanging pieces & knight forks)</option>
+              <option value="1401 - 1600">1401 – 1600 Elo (Looking to eliminate endgame blunder leaks)</option>
+              <option value="400 - 600">400 – 600 Elo (Beginner struggling with basic piece drops)</option>
+              <option value="601 - 800">601 – 800 Elo (Early tactical habit building)</option>
               <option value="Under 400">Under 400 Elo (Just learned basic piece rules)</option>
-              <option value="801 - 1000">801 – 1000 Elo (Looking to solidify fundamentals)</option>
-              <option value="Over 1000">Over 1000 Elo (Advanced casual player)</option>
+              <option value="Over 1600">Over 1600 Elo (Advanced player)</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="quizBlunders">How often do you lose games to a sudden 1-move piece blunder?</label>
+            <label for="quizBlunders">How often do you lose games to an unforced tactical blunder?</label>
             <select id="quizBlunders" class="form-control" required>
-              <option value="almost_every_game" selected>Almost every single game (Hanging queen/rook)</option>
+              <option value="almost_every_game" selected>Almost every single game (Hanging knight, rook, or queen)</option>
               <option value="frequent">Frequently (1 in 2 games)</option>
               <option value="occasional">Occasionally (1 in 4 games)</option>
-              <option value="rare">Rarely (Games decided by deep strategy)</option>
+              <option value="rare">Rarely (Games decided by deep positional strategy)</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="quizStudy">How have you tried to improve chess so far?</label>
             <select id="quizStudy" class="form-control" required>
-              <option value="youtube_binge" selected>Binge-watching YouTube / Gotham / Naroditsky</option>
-              <option value="opening_memorization">Memorizing opening lines (e.g. Italian, Caro-Kann)</option>
+              <option value="youtube_binge" selected>Binge-watching YouTube / GothamChess / Naroditsky</option>
+              <option value="opening_memorization">Studying 40-hr opening video courses / Chessable</option>
               <option value="random_puzzles">Doing random puzzles on Chess.com / Lichess</option>
               <option value="none">Just playing lots of blitz games without studying</option>
             </select>
@@ -349,7 +448,7 @@
             </select>
           </div>
 
-          <button type="submit" class="btn-primary" style="width: 100%;">Calculate My Course Fit & Diagnosis →</button>
+          <button type="submit" class="btn-primary" style="width: 100%;">Calculate My Course Fit & CCT Diagnosis →</button>
         </form>
 
         <div id="quizResultBox" class="quiz-result-box"></div>
@@ -361,9 +460,9 @@
   <section class="waitlist-section" id="waitlist">
     <div class="container">
       <div class="waitlist-card">
-        <h2>Join the Pioneer Waitlist & Lock in $19 Early Bird</h2>
+        <h2>Join the Pioneer Waitlist & Lock in $49 Early Bird</h2>
         <p class="subtitle">
-          Full course launches at $39. Enter your email and current rating to get 3 instant bonus survival drills today, plus 50% lifetime discount on launch day.
+          Full course standard price is $69. Enter your email and current rating to get 3 instant interactive CCT drills today, plus 50% lifetime discount on launch day.
         </p>
 
         <form id="waitlistForm">
@@ -375,34 +474,37 @@
           <div class="form-group">
             <label for="wlRating">Current Rating (Chess.com or Lichess)</label>
             <select id="wlRating" class="form-control" required>
+              <option value="1001 - 1200" selected>1001 – 1200 Elo (Adult Improver)</option>
+              <option value="1201 - 1400">1201 – 1400 Elo (Adult Improver)</option>
+              <option value="800 - 1000">800 – 1000 Elo (Adult Improver)</option>
+              <option value="1401 - 1600">1401 – 1600 Elo (Intermediate)</option>
+              <option value="400 - 600">400 – 600 Elo (Beginner)</option>
+              <option value="601 - 800">601 – 800 Elo (Beginner)</option>
               <option value="Under 400">Under 400 Elo</option>
-              <option value="400 - 600" selected>400 – 600 Elo</option>
-              <option value="601 - 800">601 – 800 Elo</option>
-              <option value="801 - 1000">801 – 1000 Elo</option>
-              <option value="Over 1000">1000+ Elo</option>
+              <option value="Over 1600">1600+ Elo</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="wlFrustration">What is your biggest frustration when playing chess?</label>
-            <input type="text" id="wlFrustration" class="form-control" placeholder="e.g. Hanging my queen when I'm completely winning" required>
+            <input type="text" id="wlFrustration" class="form-control" placeholder="e.g. Hanging my queen when I'm completely winning, plateaued at 1250" required>
           </div>
 
           <div class="form-group">
-            <label for="wlPricing">Which pricing model do you prefer?</label>
+            <label for="wlPricing">Which pricing tier do you prefer?</label>
             <select id="wlPricing" class="form-control" required>
-              <option value="$19 One-Time (Lifetime Early Bird)" selected>$19 One-Time (Lifetime Early Bird Access)</option>
-              <option value="$29 One-Time (Standard Price)">$29 One-Time (Standard Course Price)</option>
-              <option value="$7/Month Micro-Subscription">$7 / Month (Micro-Subscription with monthly puzzle packs)</option>
+              <option value="$49 One-Time (Lifetime Early Bird)" selected>$49 One-Time (Lifetime Early Bird Access — 50% Off)</option>
+              <option value="$69 One-Time (Standard Lifetime)">$69 One-Time (Standard Lifetime Course Pass)</option>
+              <option value="$7.99/Month (Light Tactical Subscription)">$7.99 / Month (Light Tactical Monthly Subscription)</option>
               <option value="Free tier only">I only use free tools</option>
             </select>
           </div>
 
           <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.1rem; padding: 16px;">
-            Claim $19 Early Bird Spot & Free Survival Pack →
+            Claim $49 Early Bird Spot & Free CCT Pack →
           </button>
           <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
-            🔒 Zero spam. We only notify you when early access opens. 100% money-back guarantee.
+            🔒 Zero spam. We only notify you when early access opens. 30-day money-back guarantee.
           </p>
         </form>
 
@@ -411,35 +513,42 @@
     </div>
   </section>
 
-  <!-- Dossier Modal (Agents 1-4 Full Artifacts) -->
+  <!-- Dossier Modal (Agents 1-4 Full Artifacts + Issue #16 Research Report) -->
   <div class="modal-overlay" id="dossierModal">
     <div class="modal-content">
       <div class="modal-header">
         <div>
           <h3 style="font-size: 1.25rem;">Market Validation Strategy Dossier</h3>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">Autonomous Market Validation Agent Team Deliverables</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Issue #16 Verified Research & Autonomous Agent Deliverables</span>
         </div>
         <button class="modal-close-btn" id="closeDossierBtn">&times;</button>
       </div>
 
       <div class="modal-tabs">
-        <button class="modal-tab-btn active" data-target="tabAgent1">Agent 1: Competitor Analysis</button>
+        <button class="modal-tab-btn active" data-target="tabResearch">Issue #16 Research Report</button>
+        <button class="modal-tab-btn" data-target="tabAgent1">Agent 1: Competitors</button>
         <button class="modal-tab-btn" data-target="tabAgent2">Agent 2: ICP & Positioning</button>
-        <button class="modal-tab-btn" data-target="tabAgent3">Agent 3: Copywriting Blueprint</button>
+        <button class="modal-tab-btn" data-target="tabAgent3">Agent 3: Copy & Pricing</button>
         <button class="modal-tab-btn" data-target="tabAgent4">Agent 4: Distribution Playbook</button>
         <button class="modal-tab-btn" data-target="tabMetrics">Live Metrics & WTP</button>
       </div>
 
       <div class="modal-body">
-        <div class="tab-pane active" id="tabAgent1">
+        <div class="tab-pane active" id="tabResearch">
+          <h4 style="margin-bottom: 8px;">Issue #16 Verified Market Research Synthesis</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Verified pricing, competitor offerings, and adult improver demand benchmarks.</p>
+          <pre class="json-pre" id="researchJson">Loading Issue #16 Research data...</pre>
+        </div>
+
+        <div class="tab-pane" id="tabAgent1">
           <h4 style="margin-bottom: 8px;">Competitor & Pricing Gap Analysis</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Detailed breakdown of Chessly, Chessable, Chess.com Diamond, pricing tiers, and the no-video tactical differentiator.</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Breakdown of Chessable ($100-$300+, $60/yr), Chessly ($89.99/yr, $19.99/mo), Chess.com Diamond ($120/yr), and Aimchess ($8-$15/mo).</p>
           <pre class="json-pre" id="agent1Json">Loading Agent 1 data...</pre>
         </div>
 
         <div class="tab-pane" id="tabAgent2">
           <h4 style="margin-bottom: 8px;">ICP & Positioning Strategy</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Demographics, psychographics, the survival gap pain point, positioning statement, and UVP.</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Adult Improvers (800-1600 Elo), CCT habit loop, time poverty, positioning statement, and UVP.</p>
           <pre class="json-pre" id="agent2Json">Loading Agent 2 data...</pre>
         </div>
 
@@ -451,7 +560,7 @@
 
         <div class="tab-pane" id="tabAgent4">
           <h4 style="margin-bottom: 8px;">Scrappy Validation & Distribution Playbook</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Subreddit communities (r/chessbeginners), Hacker News posts, Discord outreach templates, and conversion thresholds.</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Target communities (r/chessbeginners, r/chess, Discord, HN), organic value post templates, and GTM thresholds.</p>
           <pre class="json-pre" id="agent4Json">Loading Agent 4 data...</pre>
         </div>
 
@@ -467,13 +576,13 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p style="margin-bottom: 8px;">&copy; 2026 BlunderProof Chess. All rights reserved. Built for casual chess learners worldwide.</p>
+      <p style="margin-bottom: 8px;">&copy; 2026 BlunderProof Chess. All rights reserved. Built for Adult Improvers worldwide.</p>
       <p style="font-size: 0.8rem; color: #64748b;">
-        Market Validation Project • Zero-Video Interactive Tactical Training Prototype.
+        Market Validation Project • Zero-Video Interactive Tactical Training Prototype • GitHub Pages Demo.
       </p>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
