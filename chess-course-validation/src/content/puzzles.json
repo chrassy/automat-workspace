@@ -1,0 +1,84 @@
+[
+  {
+    "id": "puzzle-1",
+    "title": "Radar 1: Punish the Hanging Queen",
+    "phase": "Phase 1: Board Awareness",
+    "difficulty": "400 - 600 Elo",
+    "fen": "r1b1kbnr/pppp1ppp/2n5/4p3/4P1q1/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 1 4",
+    "prompt": "White to move. Black got greedy and placed their Queen on g4 without any defender. How do you punish this blunder immediately?",
+    "toMove": "white",
+    "board": [
+      ["r", null, "b", null, "k", "b", "n", "r"],
+      ["p", "p", "p", "p", null, "p", "p", "p"],
+      [null, null, "n", null, null, null, null, null],
+      [null, null, null, null, "p", null, null, null],
+      [null, null, null, null, "P", null, "q", null],
+      [null, null, null, "P", null, "N", null, null],
+      ["P", "P", "P", null, null, "P", "P", "P"],
+      ["R", "N", "B", "Q", "K", "B", null, "R"]
+    ],
+    "solution": {
+      "from": "c1",
+      "to": "g5",
+      "altSolutions": [
+        { "from": "h2", "to": "h3", "type": "trap" }
+      ],
+      "bestMove": { "from": "c1", "to": "g5", "san": "Bxg5 or h3" }
+    },
+    "blunderExplanation": "Black's Queen on g4 is completely undefended! Either bishop attack or pawn kick wins the queen, but Bishop to g5 (or h3 trapping) punishes Black's early queen excursion immediately.",
+    "takeaway": "Never make a move until you scan for undefended enemy pieces. In the 400-800 rating range, 1 out of every 4 games contains an undefended queen blunder."
+  },
+  {
+    "id": "puzzle-2",
+    "title": "Radar 2: The Lethal Knight Fork",
+    "phase": "Phase 3: Core 4 Tactics",
+    "difficulty": "500 - 750 Elo",
+    "fen": "r1b1k2r/pp1p1ppp/4pn2/2b5/4P3/2N5/PPP2PPP/R1B1KB1R w KQkq - 0 8",
+    "prompt": "White to move. Black's King on e8 and Rook on a8 are vulnerable. Can your Knight fork king and rook on c7?",
+    "toMove": "white",
+    "board": [
+      ["r", null, "b", null, "k", null, null, "r"],
+      ["p", "p", "1", "p", null, "p", "p", "p"],
+      [null, null, null, null, "p", "n", null, null],
+      [null, null, "b", null, null, null, null, null],
+      [null, null, null, null, "P", null, null, null],
+      [null, null, "N", null, null, null, null, null],
+      ["P", "P", "P", null, null, "P", "P", "P"],
+      ["R", null, "B", "Q", "K", "B", null, "R"]
+    ],
+    "solution": {
+      "from": "c3",
+      "to": "b5",
+      "followUp": "Nc7+",
+      "bestMove": { "from": "c3", "to": "b5", "san": "Nb5" }
+    },
+    "blunderExplanation": "Nb5 threatens Nc7+, which gives check to the King on e8 while attacking the Rook on a8. Black cannot defend both c7 and keep their pieces safe!",
+    "takeaway": "Knights are tactical monsters for beginners because their L-shaped jumps can hit two high-value targets at once without being blocked."
+  },
+  {
+    "id": "puzzle-3",
+    "title": "Radar 3: Back-Rank Checkmate",
+    "phase": "Phase 2: Blunder Radar",
+    "difficulty": "500 - 800 Elo",
+    "fen": "3r2k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
+    "prompt": "White to move. Black's King is trapped behind their own pawns ('pawn shield trap'). Find the crushing 1-move checkmate!",
+    "toMove": "white",
+    "board": [
+      [null, null, null, "r", null, null, "k", null],
+      [null, null, null, null, null, "p", "p", "p"],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, "P", "P", "P"],
+      [null, null, null, null, "R", null, "K", null]
+    ],
+    "solution": {
+      "from": "e1",
+      "to": "e8",
+      "bestMove": { "from": "e1", "to": "e8", "san": "Re8#" }
+    },
+    "blunderExplanation": "Re8+ forces Rxe8, wait: if Re8+, Black has r on d8, so White trades rooks or plays Rd1 / Re8#. When Re8+ is played, Black must take Rxe8, Rxe8# is checkmate! Black's king has no escape square (no 'luft').",
+    "takeaway": "Always create an escape window ('luft') for your king with h3 or g3 before launching deep attacks, and watch for opponents who forget!"
+  }
+]

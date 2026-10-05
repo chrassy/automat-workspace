@@ -1,0 +1,71 @@
+{
+  "agent": "Agent 2: ICP & Positioning Strategist",
+  "objective": "Define the Ideal Customer Profile (ICP) for adult improvers and plateaued players, detail primary pain points, and craft the positioning statement and UVP based on Issue #16 research.",
+  "researchSource": "GitHub Issue #16 Research Report",
+  "icpProfile": {
+    "title": "Adult Improvers (800–1600 Elo) & The Plateaued Casual Competitor",
+    "targetSegment": "Adult Improvers",
+    "demographics": {
+      "ageRange": "22–50 years old",
+      "genderSplit": "65% male, 31% female, 4% non-binary / other",
+      "occupations": "Software engineers, managers, analysts, finance professionals, healthcare workers, working adults",
+      "platforms": ["Chess.com", "Lichess.org", "Chess.com Mobile App"],
+      "ratingRange": "400 – 1600 Elo (Primary Bullseye: Adult Improvers 800–1600 Elo struggling with 1000–1400 plateaus; also supporting 400-800 beginners building survival habits)",
+      "timeCommitment": "15 minutes per day of bite-sized tactical drills during lunch break, commute, or evening wind-down",
+      "hardware": "Desktop web browser, mobile phone, tablet"
+    },
+    "psychographics": {
+      "aspirations": [
+        "Break the stubborn 1000–1400 Elo rating plateau and reach a respectable 1500+ milestone",
+        "Win matches comfortably against peers, colleagues, and club opponents",
+        "Master the Checks-Captures-Threats (CCT) thought process to calculate cleanly under time pressure",
+        "Experience chess as an intellectual thrill rather than an exercise in blunder frustration"
+      ],
+      "frustrations": [
+        "Furious when throwing away a completely winning +8 position due to an unforced 1-move piece blunder",
+        "Disheartened after spending $100+ on bloated 40-hour opening video courses only to lose to early tactical tricks",
+        "Trapped in 1000–1400 rating plateaus for months despite playing hundreds of rapid and blitz games",
+        "Severe time poverty: unable to spend 40 hours sitting through passive video lectures",
+        "Subscription fatigue from recurring $120/yr charges for fragmented features"
+      ],
+      "learningStyle": [
+        "Active tactile problem-solving: learns by moving pieces and seeing dynamic feedback rather than passive listening",
+        "Algorithmic mental checklist: craves structured systems like Checks-Captures-Threats (CCT)",
+        "Gamified bite-sized progression: motivated by 15-minute daily streaks and measurable blunder reduction"
+      ]
+    },
+    "behavioralArchetypes": [
+      {
+        "name": "The 'Plateaued Adult Improver' (1000–1400 Elo)",
+        "traits": "Has played thousands of games on Chess.com. Knows basic openings and piece rules, but repeatedly stalls due to tactical blindness and unforced blunders. Desperately needs the CCT habit loop."
+      },
+      {
+        "name": "The 'Video Course Binge' Victim",
+        "traits": "Bought Chessable video masterclasses or Chessly courses. Suffers from the 'illusion of competence'—understands Grandmaster analysis when watched, but freezes and drops pieces in real games."
+      },
+      {
+        "name": "The 'Time-Poor Professional'",
+        "traits": "Has 15 minutes a day during coffee breaks. Wants high-yield, bite-sized tactical drills without memorizing 30 variations of opening theory."
+      }
+    ]
+  },
+  "primaryPainPoint": {
+    "coreProblem": "The gap between knowing basic piece rules and surviving tactical blunders.",
+    "analysis": "Players understand piece movement and opening guidelines, but live games are decided by tactical blunders, hanging pieces, and missed knight forks. Traditional products sell 40-hour opening courses and Grandmaster lectures, yet 85% of games between 800 and 1600 Elo are determined by outright unforced piece blunders and lack of a systematic Checks-Captures-Threats (CCT) routine. Adult improvers do not suffer from a lack of opening knowledge; they suffer from tactical blindness and blunders under time pressure.",
+    "consequences": [
+      "Endless rating plateaus: remaining stuck between 1000 and 1400 Elo for 6 to 24 months due to recurring blunders.",
+      "Emotional tilt and rage-quitting: blundering winning games induces burnout and frustration.",
+      "Wasted financial investment: spending $100-$300 on video repertoires that are abandoned after chapter 1."
+    ]
+  },
+  "positioningStatement": "For adult improvers and plateaued players stuck between 800 and 1600 Elo (as well as 400 and 800 Elo beginners) who are exhausted from losing winning games to stupid tactical blunders, BlunderProof Chess is a zero-video, browser-first interactive survival course that builds instinctive danger radar in 15 minutes a day. Unlike passive master lectures and bloated 40-hour opening theory courses, our active bite-sized simulator trains your brain to execute Checks-Captures-Threats (CCT), protect pieces, spot killer forks, and punish opponent mistakes through pure hands-on board action at an accessible price ($49–$69 one-time or $7.99/mo).",
+  "uniqueValueProposition": {
+    "headline": "Stop hanging pieces. Start winning games. 100% action, zero video fluff.",
+    "subtext": "The first interactive chess survival course engineered specifically for adult improvers breaking the 1000–1400 plateau through active tactile muscle memory and Checks-Captures-Threats (CCT)—no 40-hour opening memorization required.",
+    "keyMetricsTargeted": [
+      "Cut unforced piece blunders by 75% in 14 days",
+      "Break the 1000–1400 plateau with 15 minutes of daily interactive CCT reps",
+      "Zero hours wasted on bloated opening video lectures"
+    ]
+  }
+}

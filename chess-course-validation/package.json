@@ -1,0 +1,32 @@
+{
+  "name": "chess-course-validation",
+  "version": "1.0.0",
+  "description": "Market validation platform and interactive prototype for a web-based, no-video beginner chess course focused on survival tactics and blunder elimination.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  },
+  "keywords": [
+    "chess",
+    "market-validation",
+    "landing-page",
+    "chess-tactics",
+    "interactive-learning",
+    "edtech"
+  ],
+  "author": "Automat",
+  "license": "MIT"
+}
