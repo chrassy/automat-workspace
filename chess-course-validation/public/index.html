@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlunderProof Chess — Interactive Tactics Course (No Video Fluff)</title>
+  <meta name="description" content="Master chess tactics through action, not endless videos. The interactive browser-first chess survival course for players rated 400-800.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Market Validation Bar -->
+  <div class="top-banner">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span class="badge">Market Validation</span>
+      <span>Live GTM Validation Experiment: Testing Pricing Tolerance & Demand for No-Video Chess Course</span>
+    </div>
+    <button class="btn-secondary-sm" id="openDossierBtn">🔍 View Agent Strategy Dossier (Agents 1-4)</button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="brand-icon">♞</div>
+        <span>BlunderProof<span style="color: var(--accent-green);">Chess</span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#interactive-demo" class="nav-link">Interactive Demo</a>
+        <a href="#problem-solution" class="nav-link">Why No Video?</a>
+        <a href="#curriculum" class="nav-link">Curriculum</a>
+        <a href="#icp-quiz" class="nav-link">Fit Quiz</a>
+        <a href="#waitlist" class="btn-primary" style="padding: 8px 18px; font-size: 0.9rem;">Join Waitlist (50% Off)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section (Agent 3 Deliverable) -->
+  <section class="hero">
+    <div class="container">
+      <div class="pill-badge">
+        <span>⚡ Zero Video Lectures • Zero Opening Theory • 100% Board Action</span>
+      </div>
+      <h1>Master Chess Tactics Through <span class="gradient-text">Action, Not Endless Videos</span></h1>
+      <p class="hero-subtitle">
+        Break out of the 400–800 rating rut. An interactive, board-first survival training course designed to eliminate tactical blunders and build instant danger radar in 15 minutes a day.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#waitlist" class="btn-primary">Get Early Access (Save 50%)</a>
+        <a href="#interactive-demo" class="btn-secondary">Try Free 60-Second Challenge ↓</a>
+      </div>
+      <div class="social-pills">
+        <span class="social-pill">🎯 Engineered for 400–800 Elo</span>
+        <span class="social-pill">⏱ 15 Minutes / Day</span>
+        <span class="social-pill">🧠 Tactile Muscle Memory</span>
+        <span class="social-pill">💻 100% In-Browser (Mobile & Desktop)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Puzzle Demo (Core Differentiator: Active, Puzzle-First, Zero Video) -->
+  <section class="demo-section" id="interactive-demo">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Interactive Proof of Concept</div>
+        <h2>Test Your Survival Radar Right Now</h2>
+        <p>No video lecture. Touch the pieces, make the move, and experience the tactile feedback loop in real time.</p>
+      </div>
+
+      <div class="puzzle-interactive-card">
+        <div class="puzzle-controls">
+          <div class="puzzle-tabs">
+            <button class="puzzle-tab-btn active" onclick="selectPuzzle(0)">Challenge 1: Hanging Queen</button>
+            <button class="puzzle-tab-btn" onclick="selectPuzzle(1)">Challenge 2: Knight Fork</button>
+            <button class="puzzle-tab-btn" onclick="selectPuzzle(2)">Challenge 3: Back-Rank Mate</button>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Click a white piece to pick it up, then click destination</span>
+        </div>
+
+        <div class="puzzle-layout">
+          <div class="board-wrapper">
+            <div id="chessboard" class="chessboard">
+              <!-- Dynamically populated squares -->
+            </div>
+            <div class="board-footer">
+              <span>White to move (you play White)</span>
+              <span>Coordinates: a-h, 1-8</span>
+            </div>
+          </div>
+
+          <div class="puzzle-info-panel">
+            <div class="puzzle-meta">
+              <span class="meta-pill" id="puzzlePhase">Phase 1: Board Awareness</span>
+              <span class="meta-elo" id="puzzleElo">400 - 600 Elo</span>
+            </div>
+            <div class="puzzle-prompt-box">
+              <h3 id="puzzleTitle">Radar 1: Punish the Hanging Queen</h3>
+              <p id="puzzlePrompt" style="color: var(--text-muted); font-size: 0.95rem; margin-top: 4px;">
+                White to move. Black got greedy and placed their Queen on g4 without any defender. How do you punish this blunder immediately?
+              </p>
+            </div>
+
+            <!-- Feedback Alert -->
+            <div id="puzzleFeedback" class="feedback-card"></div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px; margin-top: auto;">
+              <h5 style="color: var(--accent-green); font-size: 0.85rem; margin-bottom: 4px;">WHY THIS WORKS:</h5>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+                Watching a 40-minute video engages passive auditory memory. By having your fingers commit the move and seeing immediate board consequences, your brain develops instinctive danger detection.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem / Solution Breakdown (Agent 3 Deliverable) -->
+  <section class="comparison-section" id="problem-solution">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">The Radical Difference</div>
+        <h2>Why Traditional Beginner Chess Courses Fail</h2>
+        <p>Contrast passive video courses with an active, board-first interactive learning loop.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Negative Card -->
+        <div class="comp-card negative">
+          <h3 style="color: #f87171;">❌ The Old Way: Passive Video Hell</h3>
+          <div class="comp-item">
+            <div class="aspect">Delivery Method</div>
+            <div class="desc">Sitting through 30–60 minute Grandmaster lectures where you nod along on the couch without ever touching the board.</div>
+          </div>
+          <div class="comp-item">
+            <div class="aspect">Curriculum</div>
+            <div class="desc">Deep opening theory (15 moves of Italian or Caro-Kann) that completely collapses when a 500-Elo opponent plays a random h-pawn push.</div>
+          </div>
+          <div class="comp-item">
+            <div class="aspect">Feedback Loop</div>
+            <div class="desc">Zero tactile feedback. You suffer from the "illusion of competence" until you hang your queen in your next live rapid game.</div>
+          </div>
+          <div class="comp-item">
+            <div class="aspect">Pricing & Completion</div>
+            <div class="desc">$69 – $150+ one-off or $16/mo recurring subscription, with an industry completion rate of under 12%.</div>
+          </div>
+        </div>
+
+        <!-- Positive Card -->
+        <div class="comp-card positive">
+          <h3 style="color: #4ade80;">✅ The BlunderProof Way: Active Board Reflexes</h3>
+          <div class="comp-item">
+            <div class="aspect">Delivery Method</div>
+            <div class="desc">100% interactive simulator. No video fluff. You touch pieces from second one and learn solely through tactile trial and error.</div>
+          </div>
+          <div class="comp-item">
+            <div class="aspect">Curriculum</div>
+            <div class="desc">Pure survival tactics: Defended vs undefended piece radar, counting attackers, king safety, and punishing early cheese attacks.</div>
+          </div>
+          <div class="comp-item">
+            <div class="aspect">Feedback Loop</div>
+            <div class="desc">Instant tactile consequence. Every wrong move physically plays out the counter-strike, etching the pattern into spatial memory.</div>
+          </div>
+          <div class="comp-item">
+            <div class="aspect">Pricing & Completion</div>
+            <div class="desc">$19 early-bird one-time lifetime pass. 15-minute daily micro-sessions with an 85% completion design.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Phase Curriculum Sneak Peek (Agent 3 Deliverable) -->
+  <section class="curriculum-section" id="curriculum">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Step-by-Step Mastery</div>
+        <h2>The 4-Phase BlunderProof Curriculum</h2>
+        <p>Engineered specifically to bridge the survival gap and push you past 1000 Elo.</p>
+      </div>
+
+      <div class="curriculum-grid">
+        <!-- Phase 1 -->
+        <div class="curriculum-card">
+          <div>
+            <span class="phase-tag">Phase 1 • Days 1–3</span>
+            <h4>Board Awareness & Rule Survival</h4>
+            <p>Eliminate unforced piece drops before touching strategy. Scan all 64 squares in under 3 seconds.</p>
+            <ul class="module-list">
+              <li>Defended vs. Undefended piece radar</li>
+              <li>King safety 101 & early check evasion</li>
+              <li>The 2-second pre-move survival checklist</li>
+            </ul>
+          </div>
+          <div class="phase-outcome">Outcome: 0 unforced piece drops in opening</div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="curriculum-card">
+          <div>
+            <span class="phase-tag">Phase 2 • Days 4–7</span>
+            <h4>The Blunder Radar</h4>
+            <p>Catch beginner traps and aggressive raids before they land. Punish early Queen excursions.</p>
+            <ul class="module-list">
+              <li>Attacker vs. defender counting speed</li>
+              <li>Disarming Scholar's Mate & cheese attacks</li>
+              <li>Curing tunnel vision (cross-board snipers)</li>
+            </ul>
+          </div>
+          <div class="phase-outcome">Outcome: Punish 100% of premature Queen raids</div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="curriculum-card">
+          <div>
+            <span class="phase-tag">Phase 3 • Days 8–11</span>
+            <h4>The Core 4 Survival Tactics</h4>
+            <p>The four lethal patterns that decide 85% of games under 1000 Elo: Forks, Pins, Skewers, and Discoveries.</p>
+            <ul class="module-list">
+              <li>The Forking Knight (King & Rook radar)</li>
+              <li>Absolute & relative pin exploitation</li>
+              <li>Skewers and discovered check batteries</li>
+            </ul>
+          </div>
+          <div class="phase-outcome">Outcome: Spot & execute winning 2-move combos</div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="curriculum-card">
+          <div>
+            <span class="phase-tag">Phase 4 • Days 12–14</span>
+            <h4>Endgame Conversions & The Finish</h4>
+            <p>Never turn a +10 winning advantage into an accidental stalemate again. Win clean and fast.</p>
+            <ul class="module-list">
+              <li>The Anti-Stalemate Protocol for Queen+King</li>
+              <li>Lawn mower / ladder checkmate mechanics</li>
+              <li>Safely escorting passed pawns to promotion</li>
+            </ul>
+          </div>
+          <div class="phase-outcome">Outcome: 100% conversion rate when up material</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitor Landscape Comparison Table (Agent 1 Deliverable) -->
+  <section class="matrix-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Market Comparison</div>
+        <h2>How We Stack Up Against Alternatives</h2>
+        <p>Mapped across pricing tiers, delivery format, and beginner tactical focus.</p>
+      </div>
+
+      <div class="matrix-table-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Platform / Course</th>
+              <th>Format</th>
+              <th>Theory vs Survival</th>
+              <th>Pricing Model</th>
+              <th>Beginner Completion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chessly (GothamChess)</strong></td>
+              <td>Video lectures + PGN</td>
+              <td>Heavy opening theory</td>
+              <td>$69 – $249 one-off</td>
+              <td>~10% (Video fatigue)</td>
+            </tr>
+            <tr>
+              <td><strong>Chessable MoveTrainer</strong></td>
+              <td>Rote line repetition + video</td>
+              <td>Grandmaster variation trees</td>
+              <td>$30 – $100+ / course</td>
+              <td>~15% (Robotic memorization)</td>
+            </tr>
+            <tr>
+              <td><strong>Chess.com Diamond</strong></td>
+              <td>Video clips + random puzzles</td>
+              <td>Fragmented disconnected tips</td>
+              <td>$15.99 / mo ($119 / yr)</td>
+              <td>Ongoing subscription churn</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>BlunderProof Chess (Us)</strong></td>
+              <td>100% Interactive Board Simulator</td>
+              <td>Survival tactics & blunder elimination</td>
+              <td>$19 Early Bird / $29 Lifetime</td>
+              <td>85% Target (15 min/day micro-drills)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive ICP Qualification Quiz (Agent 2 Deliverable) -->
+  <section class="quiz-section" id="icp-quiz">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Ideal Customer Profile Check</div>
+        <h2>Are You in the 400–800 "Blunder Rut"?</h2>
+        <p>Answer 4 quick questions to see if our active survival system matches your plateau.</p>
+      </div>
+
+      <div class="quiz-card">
+        <form id="icpQuizForm">
+          <div class="form-group">
+            <label for="quizRating">What is your current Chess.com or Lichess rating?</label>
+            <select id="quizRating" class="form-control" required>
+              <option value="400 - 600" selected>400 – 600 Elo (Struggling with piece drops)</option>
+              <option value="601 - 800">601 – 800 Elo (Plateaued, frequent tactical blunders)</option>
+              <option value="Under 400">Under 400 Elo (Just learned basic piece rules)</option>
+              <option value="801 - 1000">801 – 1000 Elo (Looking to solidify fundamentals)</option>
+              <option value="Over 1000">Over 1000 Elo (Advanced casual player)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quizBlunders">How often do you lose games to a sudden 1-move piece blunder?</label>
+            <select id="quizBlunders" class="form-control" required>
+              <option value="almost_every_game" selected>Almost every single game (Hanging queen/rook)</option>
+              <option value="frequent">Frequently (1 in 2 games)</option>
+              <option value="occasional">Occasionally (1 in 4 games)</option>
+              <option value="rare">Rarely (Games decided by deep strategy)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quizStudy">How have you tried to improve chess so far?</label>
+            <select id="quizStudy" class="form-control" required>
+              <option value="youtube_binge" selected>Binge-watching YouTube / Gotham / Naroditsky</option>
+              <option value="opening_memorization">Memorizing opening lines (e.g. Italian, Caro-Kann)</option>
+              <option value="random_puzzles">Doing random puzzles on Chess.com / Lichess</option>
+              <option value="none">Just playing lots of blitz games without studying</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quizTime">How much time can you realistically invest per day?</label>
+            <select id="quizTime" class="form-control" required>
+              <option value="15" selected>15 minutes (Quick coffee break / commute)</option>
+              <option value="30">30 minutes</option>
+              <option value="60">1 hour or more</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%;">Calculate My Course Fit & Diagnosis →</button>
+        </form>
+
+        <div id="quizResultBox" class="quiz-result-box"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture & Pricing Tolerance Survey (Agent 3 Deliverable) -->
+  <section class="waitlist-section" id="waitlist">
+    <div class="container">
+      <div class="waitlist-card">
+        <h2>Join the Pioneer Waitlist & Lock in $19 Early Bird</h2>
+        <p class="subtitle">
+          Full course launches at $39. Enter your email and current rating to get 3 instant bonus survival drills today, plus 50% lifetime discount on launch day.
+        </p>
+
+        <form id="waitlistForm">
+          <div class="form-group">
+            <label for="wlEmail">Your Best Email Address *</label>
+            <input type="email" id="wlEmail" class="form-control" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="wlRating">Current Rating (Chess.com or Lichess)</label>
+            <select id="wlRating" class="form-control" required>
+              <option value="Under 400">Under 400 Elo</option>
+              <option value="400 - 600" selected>400 – 600 Elo</option>
+              <option value="601 - 800">601 – 800 Elo</option>
+              <option value="801 - 1000">801 – 1000 Elo</option>
+              <option value="Over 1000">1000+ Elo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="wlFrustration">What is your biggest frustration when playing chess?</label>
+            <input type="text" id="wlFrustration" class="form-control" placeholder="e.g. Hanging my queen when I'm completely winning" required>
+          </div>
+
+          <div class="form-group">
+            <label for="wlPricing">Which pricing model do you prefer?</label>
+            <select id="wlPricing" class="form-control" required>
+              <option value="$19 One-Time (Lifetime Early Bird)" selected>$19 One-Time (Lifetime Early Bird Access)</option>
+              <option value="$29 One-Time (Standard Price)">$29 One-Time (Standard Course Price)</option>
+              <option value="$7/Month Micro-Subscription">$7 / Month (Micro-Subscription with monthly puzzle packs)</option>
+              <option value="Free tier only">I only use free tools</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.1rem; padding: 16px;">
+            Claim $19 Early Bird Spot & Free Survival Pack →
+          </button>
+          <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
+            🔒 Zero spam. We only notify you when early access opens. 100% money-back guarantee.
+          </p>
+        </form>
+
+        <div id="waitlistStatus"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dossier Modal (Agents 1-4 Full Artifacts) -->
+  <div class="modal-overlay" id="dossierModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.25rem;">Market Validation Strategy Dossier</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Autonomous Market Validation Agent Team Deliverables</span>
+        </div>
+        <button class="modal-close-btn" id="closeDossierBtn">&times;</button>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-target="tabAgent1">Agent 1: Competitor Analysis</button>
+        <button class="modal-tab-btn" data-target="tabAgent2">Agent 2: ICP & Positioning</button>
+        <button class="modal-tab-btn" data-target="tabAgent3">Agent 3: Copywriting Blueprint</button>
+        <button class="modal-tab-btn" data-target="tabAgent4">Agent 4: Distribution Playbook</button>
+        <button class="modal-tab-btn" data-target="tabMetrics">Live Metrics & WTP</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="tab-pane active" id="tabAgent1">
+          <h4 style="margin-bottom: 8px;">Competitor & Pricing Gap Analysis</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Detailed breakdown of Chessly, Chessable, Chess.com Diamond, pricing tiers, and the no-video tactical differentiator.</p>
+          <pre class="json-pre" id="agent1Json">Loading Agent 1 data...</pre>
+        </div>
+
+        <div class="tab-pane" id="tabAgent2">
+          <h4 style="margin-bottom: 8px;">ICP & Positioning Strategy</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Demographics, psychographics, the survival gap pain point, positioning statement, and UVP.</p>
+          <pre class="json-pre" id="agent2Json">Loading Agent 2 data...</pre>
+        </div>
+
+        <div class="tab-pane" id="tabAgent3">
+          <h4 style="margin-bottom: 8px;">Landing Page & Copywriting Blueprint</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Hero copy, problem/solution breakdown, 4-phase curriculum outline, and lead capture hooks.</p>
+          <pre class="json-pre" id="agent3Json">Loading Agent 3 data...</pre>
+        </div>
+
+        <div class="tab-pane" id="tabAgent4">
+          <h4 style="margin-bottom: 8px;">Scrappy Validation & Distribution Playbook</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Subreddit communities (r/chessbeginners), Hacker News posts, Discord outreach templates, and conversion thresholds.</p>
+          <pre class="json-pre" id="agent4Json">Loading Agent 4 data...</pre>
+        </div>
+
+        <div class="tab-pane" id="tabMetrics">
+          <h4 style="margin-bottom: 8px;">Live Waitlist & Willingness-to-Pay Metrics</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Real-time validation counters tracking pricing tolerance, Elo rating distribution, and green-light status.</p>
+          <pre class="json-pre" id="metricsJson">Loading Live Metrics...</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 8px;">&copy; 2026 BlunderProof Chess. All rights reserved. Built for casual chess learners worldwide.</p>
+      <p style="font-size: 0.8rem; color: #64748b;">
+        Market Validation Project • Zero-Video Interactive Tactical Training Prototype.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
