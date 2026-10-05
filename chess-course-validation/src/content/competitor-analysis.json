@@ -1,0 +1,176 @@
+{
+  "agent": "Agent 1: Competitor & Gap Analysis Agent",
+  "objective": "Analyze top market alternatives, map pricing tiers, identify beginner customer complaints, and formulate the specific core differentiator.",
+  "executiveSummary": "Current chess education market is saturated with high-priced master video courses and opening theory memorization trainers that fail beginner players rated 400-800. Beginners suffer from passive video fatigue and memorize theoretical lines that fall apart on move 3. An active, puzzle-first browser experience with zero video delivers immediate tactile muscle memory and direct blunder elimination.",
+  "competitors": [
+    {
+      "id": "chessly",
+      "name": "Chessly (by GothamChess / Levy Rozman)",
+      "url": "https://chessly.com",
+      "model": "Single course purchase or multi-course bundles",
+      "pricingTiers": [
+        { "name": "Single Course", "priceUSD": 69.00, "billing": "one-time" },
+        { "name": "Opening Repertoire Bundle", "priceUSD": 149.00, "billing": "one-time" },
+        { "name": "Lifetime All-Access Pass", "priceUSD": 249.00, "billing": "one-time" }
+      ],
+      "strengths": [
+        "Massive brand recognition through YouTube (GothamChess 5M+ subscribers)",
+        "Charismatic, entertaining video delivery",
+        "Includes interactive chapter PGN drills"
+      ],
+      "weaknesses": [
+        "Video-heavy: users spend hours passively watching rather than playing",
+        "High price point ($69–$249) creates high purchase friction for casual beginners",
+        "Courses heavily emphasize opening systems (e.g. Caro-Kann, Vienna) which low-rated opponents quickly deviate from",
+        "Passive watching creates an illusion of competence that vanishes during real rapid games"
+      ],
+      "customerComplaints": [
+        "\"I watched 3 hours of video, thought I was ready, and hung a bishop on move 7.\"",
+        "\"Too expensive for casual hobbyists who just started playing during lunch breaks.\"",
+        "\"Felt like watching YouTube with a quiz at the end rather than genuine tactical training.\""
+      ]
+    },
+    {
+      "id": "chessable",
+      "name": "Chessable (by Play Magnus / Chess.com)",
+      "url": "https://chessable.com",
+      "model": "Course marketplace + Pro subscription add-on",
+      "pricingTiers": [
+        { "name": "Basic Course (No Video)", "priceUSD": 29.99, "billing": "one-time" },
+        { "name": "Video Course + MoveTrainer", "priceUSD": 89.99, "billing": "one-time" },
+        { "name": "Chessable PRO Membership", "priceUSD": 9.99, "billing": "monthly", "annualEquivalentUSD": 59.99 }
+      ],
+      "strengths": [
+        "Spaced repetition engine (MoveTrainer) scientifically reinforces patterns",
+        "Massive catalog with World Champions (Magnus Carlsen, Anish Giri, Hikaru)",
+        "Deep opening repertoire depth"
+      ],
+      "weaknesses": [
+        "Punishing and robotic: memorizing 40 variations of opening theory",
+        "High barrier to entry: UX is overwhelmingly complex for 400-800 Elo beginners",
+        "Focus on rote memory rather than dynamic board awareness and hanging piece detection",
+        "Overkill for players who need basic tactical survival"
+      ],
+      "customerComplaints": [
+        "\"MoveTrainer forces me to repeat 20 moves of theory my 500-rated opponents never play.\"",
+        "\"Clinical and boring interface feels like studying for an exam rather than having fun.\"",
+        "\"Video upgrades double the cost to nearly $100 for something I barely have time to finish.\""
+      ]
+    },
+    {
+      "id": "chess-com-diamond",
+      "name": "Chess.com Diamond / Lessons",
+      "url": "https://chess.com",
+      "model": "Recurring subscription tier",
+      "pricingTiers": [
+        { "name": "Gold", "priceUSD": 6.99, "billing": "monthly", "annualEquivalentUSD": 49.99 },
+        { "name": "Platinum", "priceUSD": 9.99, "billing": "monthly", "annualEquivalentUSD": 79.99 },
+        { "name": "Diamond", "priceUSD": 15.99, "billing": "monthly", "annualEquivalentUSD": 119.99 }
+      ],
+      "strengths": [
+        "Native ecosystem where games are played",
+        "Game Review / Coach Explain feature",
+        "Unlimited tactical puzzles"
+      ],
+      "weaknesses": [
+        "Puzzle rating system rapidly serves obscure multi-move puzzles instead of basic pattern hygiene",
+        "Subscription fatigue: monthly billing keeps charging even when casual players take breaks",
+        "Lessons are brief disconnected video clips without coherent tactile habit-building"
+      ],
+      "customerComplaints": [
+        "\"The lessons don't stick because you just click through 3 puzzle prompts and forget.\"",
+        "\"Puzzles jump from a simple mate-in-one to an obscure 5-move deflection puzzle.\"",
+        "\"Tired of paying $120/year when I only play 3 games a week.\""
+      ]
+    },
+    {
+      "id": "chessflare-aimchess",
+      "name": "ChessFlare / Aimchess / Micro-Trainers",
+      "url": "https://aimchess.com",
+      "model": "SaaS analytics & training subscription",
+      "pricingTiers": [
+        { "name": "Aimchess Monthly", "priceUSD": 7.99, "billing": "monthly" },
+        { "name": "Aimchess Annual", "priceUSD": 58.00, "billing": "annual" }
+      ],
+      "strengths": [
+        "Pulls real mistakes from user's Chess.com/Lichess games",
+        "Data-driven weakness reports"
+      ],
+      "weaknesses": [
+        "Diagnostic rather than prescriptive: tells you that you blundered, but doesn't rewire instincts",
+        "Requires constant game volume to feed the algorithm",
+        "Lacks beginner step-by-step pedagogical progression"
+      ],
+      "customerComplaints": [
+        "\"Told me I have poor tactical vision, but didn't teach me how to fix it in my head.\"",
+        "\"Another recurring monthly bill for simple stats.\""
+      ]
+    }
+  ],
+  "marketPricingLandscape": {
+    "highTicketVideoCourses": {
+      "priceRange": "$60.00 – $150.00+",
+      "format": "Hours of video lecturing + PGN file download",
+      "sentiment": "High perceived production value, very low completion rate (<12%)"
+    },
+    "subscriptionPlatforms": {
+      "priceRange": "$7.99 – $15.99 / month ($60 – $120 / year)",
+      "format": "Ongoing access to puzzles, bot matches, video clips",
+      "sentiment": "Subscription fatigue, fragmented learning without structured end-to-end outcome"
+    },
+    "freeLichessPractice": {
+      "priceRange": "$0.00",
+      "format": "Crowdsourced tactics by theme",
+      "sentiment": "Excellent free tool, but completely unstructured for absolute beginners who need systematic progression and blunder radar habit loops"
+    },
+    "ourOptimalPricePoint": {
+      "earlyBirdPresale": "$19.00 one-time",
+      "standardLaunchPrice": "$29.00 one-time (lifetime access)",
+      "optionalMicroSubscription": "$6.99 / month (for monthly fresh puzzle packs)",
+      "strategicAdvantage": "Impulse-buy sweet spot under $30 with no recurring subscription anxiety, 70% cheaper than video courses while delivering 10x higher tactical repetitions per minute"
+    }
+  },
+  "customerPainPoints": [
+    {
+      "theme": "Passive Video Fatigue",
+      "summary": "Sitting through 20-40 minute lectures creates an 'illusion of competence' without developing subconscious board reflexes.",
+      "quote": "I understand Levy or Naroditsky when they explain the move, but when I play, my brain freezes and I hang my queen."
+    },
+    {
+      "theme": "Opening Theory Overload",
+      "summary": "Beginner courses teach deep opening theory that completely collapses when opponents at 500 Elo play weird, non-standard moves.",
+      "quote": "I spent days learning the Italian Game, and on move 2 my opponent moved their h-pawn. All my study was useless."
+    },
+    {
+      "theme": "The Blunder Epidemic",
+      "summary": "Games in the 400-800 Elo bracket are not won by positional genius; they are decided by who hangs an undefended piece first.",
+      "quote": "90% of my losses are a 1-move blunder where I leave my rook or queen hanging. No opening video helps with that."
+    },
+    {
+      "theme": "Subscription Bloat",
+      "summary": "Casual beginners resent being pushed into recurring $15+/month subscriptions for features they rarely use.",
+      "quote": "I just want to get better at chess, not add another $120 line item to my credit card."
+    }
+  ],
+  "coreDifferentiator": {
+    "headline": "Active, Puzzle-First Browser Experience with Zero Video Required",
+    "pillars": [
+      {
+        "title": "Zero Passive Video",
+        "description": "No 45-minute lecture monologues. 100% of study time is spent interacting with real boards and making decisions."
+      },
+      {
+        "title": "Tactical Hygiene & Blunder Radar First",
+        "description": "Skip 20 moves of opening theory. Train the subconscious reflex to ask: 'Is anything hanging? Is my king safe? Can I fork?' before every move."
+      },
+      {
+        "title": "Instant Tactile Feedback",
+        "description": "Every wrong move triggers an immediate, visual simulation of the punishment, creating genuine neural muscle memory."
+      },
+      {
+        "title": "15-Minute Micro-Sessions",
+        "description": "Bite-sized modules engineered for busy adults, accessible instantly in any web or mobile browser with zero installation."
+      }
+    ]
+  }
+}

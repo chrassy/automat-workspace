@@ -1,0 +1,128 @@
+{
+  "agent": "Agent 3: Landing Page & Copywriting Generator",
+  "objective": "Draft high-converting copy for a minimalist landing page designed to capture intent, validate pricing, and build a pre-launch waitlist.",
+  "heroSection": {
+    "badge": "No 45-Minute Lectures. No Theory Memorization. 100% Board Action.",
+    "headline": "Master Chess Tactics Through Action, Not Endless Videos",
+    "subheadline": "Break out of the 400–800 rating rut. An interactive, browser-based chess survival trainer that rewires your brain to spot danger, stop hanging pieces, and punish blunders in 15 minutes a day.",
+    "primaryCta": "Get Early Access (Save 50%)",
+    "secondaryCta": "Try Free 60-Second Survival Challenge",
+    "trustMicrocopy": "Join 1,480+ players on the waitlist • 100% Free to join • Zero spam guarantee",
+    "socialProofPills": [
+      "Targeted for 400–800 Elo",
+      "Zero Video Required",
+      "Instant Browser Play",
+      "Works on Phone & Laptop"
+    ]
+  },
+  "problemSolutionBreakdown": {
+    "sectionTitle": "Why Traditional Chess Courses Fail Beginners",
+    "sectionSubtitle": "You don't need 30 moves of Italian Game theory. You need a survival radar that prevents you from hanging your queen.",
+    "comparison": [
+      {
+        "aspect": "Learning Method",
+        "traditional": "Passive Video Lectures (Sitting back for 40 minutes watching a Grandmaster talk about variations you'll never see in your games)",
+        "blunderProof": "Active Board-First Simulator (You touch the pieces from second 1. Every concept is learned through tactile trial, error, and physical pattern repetition)"
+      },
+      {
+        "aspect": "Curriculum Focus",
+        "traditional": "Deep Opening Repertoires (Memorizing 12 moves of French Defense that fall apart when your 500-Elo opponent plays a random h-pawn move)",
+        "blunderProof": "Tactical Hygiene & Danger Radar (Rewiring your subconscious to ask: Is my piece defended? Can I fork? Is there a back-rank threat?)"
+      },
+      {
+        "aspect": "Feedback Loop",
+        "traditional": "Disconnected & Slow (You nod along to the video, then 4 hours later in a live blitz game you hang your rook and have no idea why)",
+        "blunderProof": "Immediate Tactile Consequence (Play the wrong move, and the board instantly demonstrates the punishment with zero condescension)"
+      },
+      {
+        "aspect": "Time & Cost",
+        "traditional": "$69 – $149 per course, requiring 20+ hours of video watching with a 10% completion rate",
+        "blunderProof": "$19 – $29 early-bird one-time fee, 15 minutes a day for 14 days with an 85% completion design"
+      }
+    ]
+  },
+  "curriculumSneakPeek": {
+    "sectionTitle": "The 4-Phase BlunderProof Survival Curriculum",
+    "sectionSubtitle": "A battle-tested progression engineered specifically to take you from 400 to 1000 Elo with zero theory fluff.",
+    "phases": [
+      {
+        "phaseNumber": 1,
+        "phaseName": "Phase 1: Board Awareness & Rule Survival",
+        "duration": "Days 1–3",
+        "tagline": "Stop giving away pieces for free on move 4.",
+        "description": "Master the fundamentals of board safety before ever touching opening strategy. Learn to scan the entire 64-square grid in under 3 seconds.",
+        "modules": [
+          "Defended vs Undefended: The instantaneous piece count check",
+          "King Safety 101: Castling fundamentals and escaping early queen checks",
+          "The 'Hanging Piece Alarm': The subconscious 2-second pre-move checklist"
+        ],
+        "keyOutcome": "Zero unforced undefended piece drops in standard openings"
+      },
+      {
+        "phaseNumber": 2,
+        "phaseName": "Phase 2: The Blunder Radar",
+        "duration": "Days 4–7",
+        "tagline": "Spot incoming threats before your opponent executes them.",
+        "description": "Develop the radar that catches beginner traps and opponent aggression before it lands. Turn your opponent's overextended attacks into instant counterpunches.",
+        "modules": [
+          "Counting Attackers vs Defenders: Never miscalculate exchanges again",
+          "Scholar's Mate & Early Queen Snuff: Disarming early cheese attacks effortlessly",
+          "Tunnel Vision Cure: Spotting cross-board snipers (long-range bishops & rooks)"
+        ],
+        "keyOutcome": "Punish 100% of premature beginner Queen raids"
+      },
+      {
+        "phaseNumber": 3,
+        "phaseName": "Phase 3: The Core 4 Survival Tactics",
+        "duration": "Days 8–11",
+        "tagline": "The four lethal patterns that decide 85% of games under 1000 Elo.",
+        "description": "Forks, pins, skewers, and discovered attacks. Master spotting them instantly—both to strike your opponent and to avoid walking into them.",
+        "modules": [
+          "The Forking Knight: King-and-Rook fork radar that saves your rating",
+          "Absolute & Relative Pins: Paralyzing high-value enemy pieces",
+          "Skewers & Discovered Checks: Unleashing hidden multi-piece battery assaults"
+        ],
+        "keyOutcome": "Instinctively spot and execute winning 1-2 move tactical combos"
+      },
+      {
+        "phaseNumber": 4,
+        "phaseName": "Phase 4: Endgame Conversions & The Finish",
+        "duration": "Days 12–14",
+        "tagline": "Never turn a +10 winning advantage into an accidental stalemate again.",
+        "description": "Converting winning positions cleanly without heartbreak. Eliminate accidental stalemates and master clean king+queen and king+rook checkmate mechanics.",
+        "modules": [
+          "The Anti-Stalemate Protocol: Safe box-shrinking rules for King + Queen",
+          "The Lawn Mower / Ladder Checkmate: Effortless 2-rook execution",
+          "Pawn Escort: Promoting pawns safely past the enemy king"
+        ],
+        "keyOutcome": "100% win conversion when ahead in material"
+      }
+    ]
+  },
+  "leadCaptureCopy": {
+    "headline": "Join the Pioneer Waitlist & Lock in $19 Early Bird Pricing",
+    "subheadline": "Full course launches next month at $39. Reserve your early-bird spot today for free and get 3 instant interactive survival puzzles sent to your inbox immediately.",
+    "formFields": {
+      "email": { "label": "Your Best Email", "placeholder": "you@example.com" },
+      "rating": { "label": "Current Chess Rating", "options": ["Under 400", "400 - 600", "601 - 800", "801 - 1000", "Over 1000"] },
+      "frustration": { "label": "Biggest Frustration in Games", "placeholder": "e.g., Hanging my queen when I'm winning, falling for opening traps..." },
+      "pricingTolerance": { "label": "Preferred Pricing Model", "options": ["$19 One-Time (Lifetime Early Bird)", "$29 One-Time (Standard Price)", "$7/Month Micro-Subscription", "Free tier only"] }
+    },
+    "ctaButton": "Claim Free Survival Pack & Early Bird Discount",
+    "urgencyText": "⚡ Limited to the first 2,000 pioneer testers to ensure 1-on-1 feedback reviews."
+  },
+  "faq": [
+    {
+      "q": "Why is there zero video?",
+      "a": "Because chess is a motor-spatial reflex skill, not a lecture. When you watch video, you engage passive auditory memory. When you touch the board and make interactive decisions with immediate feedback, your brain forms spatial muscle memory 5x faster."
+    },
+    {
+      "q": "What if my opponent plays weird opening moves?",
+      "a": "That's exactly why traditional opening courses fail. Our course doesn't teach memorized opening lines—it teaches invariant survival principles: checking piece safety, king defense, and spotting forks regardless of what strange moves your opponent plays."
+    },
+    {
+      "q": "Is this suitable if I'm rated 500 Elo?",
+      "a": "500 Elo is the exact sweet spot. If you know the basic moves of chess but constantly lose games to sudden blunders, this course was engineered specifically for you."
+    }
+  ]
+}
