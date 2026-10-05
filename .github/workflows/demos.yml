@@ -51,6 +51,11 @@ jobs:
               echo "::error::$project/deploy.sh did not produce \$OUTPUT_DIR/index.html"
               exit 1
             fi
+            # Demos are static: a _worker.js would run as server code on Cloudflare.
+            if [ -e "$SITE/$project/_worker.js" ]; then
+              echo "::error::$project: demos must be static; _worker.js (server code) is not allowed"
+              exit 1
+            fi
             if ! grep -q "/v1/automat.js" "$SITE/$project/index.html"; then
               echo "::warning::$project has no Automat tracking script: its results won't be measured."
             fi

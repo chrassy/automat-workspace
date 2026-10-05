@@ -83,6 +83,10 @@ jobs:
             echo "::error::deploy.sh must build a static site with an index.html into \$OUTPUT_DIR"
             exit 1
           fi
+          if [ -e "$OUTPUT_DIR/_worker.js" ]; then
+            echo "::error::Demos must be static: _worker.js (server code on Cloudflare) is not allowed."
+            exit 1
+          fi
           if ! grep -q "/v1/automat.js" "$OUTPUT_DIR/index.html" || ! grep -q "data-project=\"$PROJECT\"" "$OUTPUT_DIR/index.html"; then
             echo "::error::Demo pages must include the Automat tracking script with data-project=\"$PROJECT\" (see the developer instructions)."
             exit 1
