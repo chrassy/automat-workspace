@@ -10,10 +10,12 @@ independent project.
 - Every project has a `ci.sh` that installs its dependencies and runs its full
   test suite. CI (`.github/workflows/ci.yml`) runs it for each project a pull
   request changes; pull requests are merged only when CI passes.
-- Demos (opt-in): a project with a `deploy.sh` is published to GitHub Pages
-  after every merge (`.github/workflows/demos.yml`). `deploy.sh` builds a
-  static site into `$OUTPUT_DIR`, using `$BASE_PATH` as its base URL path. Demos
-  are served at `https://chrassy.github.io/automat-workspace/<project>/`.
+- Demos (opt-in): a project with a `deploy.sh` is published to Cloudflare
+  Pages (`automat-demo-<project>`) after every merge
+  (`.github/workflows/demos.yml`). `deploy.sh` builds a static site into
+  `$OUTPUT_DIR`, served from the root. The demo index lists the live URLs.
+- Measurement: demo pages include the Automat tracking script (visits and
+  signups with ad/variant attribution, no cookies); CI enforces it.
 
 ## Projects
 

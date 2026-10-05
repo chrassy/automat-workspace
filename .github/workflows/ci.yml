@@ -75,10 +75,15 @@ jobs:
         working-directory: ${{ matrix.project }}
         env:
           OUTPUT_DIR: ${{ runner.temp }}/site/${{ matrix.project }}
-          BASE_PATH: /${{ github.event.repository.name }}/${{ matrix.project }}/
+          BASE_PATH: /
+          PROJECT: ${{ matrix.project }}
         run: |
           bash deploy.sh
           if [ ! -f "$OUTPUT_DIR/index.html" ]; then
             echo "::error::deploy.sh must build a static site with an index.html into \$OUTPUT_DIR"
+            exit 1
+          fi
+          if ! grep -q "/v1/automat.js" "$OUTPUT_DIR/index.html" || ! grep -q "data-project=\"$PROJECT\"" "$OUTPUT_DIR/index.html"; then
+            echo "::error::Demo pages must include the Automat tracking script with data-project=\"$PROJECT\" (see the developer instructions)."
             exit 1
           fi

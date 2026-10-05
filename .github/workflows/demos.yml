@@ -1,12 +1,14 @@
-# Publishes demo projects to GitHub Pages after every push to main.
+# Publishes demo projects to Cloudflare Pages after every push to main.
 #
 # Opt-in: a project is deployed only if its folder has a `deploy.sh`. It must
-# build a static site into "$OUTPUT_DIR" (an absolute path), using "$BASE_PATH"
-# (e.g. /automat-workspace/my-project/) as the site's base URL path. Node 24 and
-# Python 3.12 are available. Remove deploy.sh to take a demo down.
+# build a static site into "$OUTPUT_DIR" (an absolute path). Each demo is its
+# own site served from the root, so "$BASE_PATH" is "/". Node 24 and Python
+# 3.12 are available. Remove deploy.sh to take a demo down: its Cloudflare
+# Pages project (automat-demo-<project>) is deleted on the next run.
 #
-# Each demo is served at https://<owner>.github.io/<repo>/<project>/ and listed
-# on an index page at the site root.
+# Pages should include the Automat tracking script (CI enforces it on change).
+# The index site (automat-demos) lists every demo and serves demos.json with
+# the live URLs, which the agents read.
 #
 # Owned by the founder. The AI developer may not modify workflows.
 name: Demos
@@ -17,14 +19,14 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pages
+  group: demos
   cancel-in-progress: false
 
 jobs:
   build:
     name: Build demos
     runs-on: ubuntu-latest
-    # The AI-written deploy.sh scripts run here with a read-only token.
+    # The AI-written deploy.sh scripts run here: read-only token, no secrets.
     permissions:
       contents: read
     steps:
@@ -36,57 +38,96 @@ jobs:
         with:
           python-version: "3.12"
       - name: Build each project with a deploy.sh
-        env:
-          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           set -euo pipefail
           SITE="$RUNNER_TEMP/site"
           mkdir -p "$SITE"
-          : > "$RUNNER_TEMP/demos.txt"
           for script in */deploy.sh; do
             [ -f "$script" ] || continue
             project=$(dirname "$script")
             echo "::group::Building $project"
-            (
-              cd "$project"
-              OUTPUT_DIR="$SITE/$project" BASE_PATH="/$REPO_NAME/$project/" bash deploy.sh
-            )
+            (cd "$project" && OUTPUT_DIR="$SITE/$project" BASE_PATH="/" bash deploy.sh)
             if [ ! -f "$SITE/$project/index.html" ]; then
               echo "::error::$project/deploy.sh did not produce \$OUTPUT_DIR/index.html"
               exit 1
             fi
-            echo "$project" >> "$RUNNER_TEMP/demos.txt"
+            if ! grep -q "/v1/automat.js" "$SITE/$project/index.html"; then
+              echo "::warning::$project has no Automat tracking script: its results won't be measured."
+            fi
             echo "::endgroup::"
           done
-          # Index page linking every demo.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: demos
+          path: ${{ runner.temp }}/site
+          include-hidden-files: true
+          if-no-files-found: ignore
+
+  deploy:
+    name: Publish to Cloudflare Pages
+    needs: build
+    runs-on: ubuntu-latest
+    # Only this job has the Cloudflare token, and it runs no project code.
+    permissions:
+      contents: read
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          name: demos
+          path: site
+        continue-on-error: true  # no demos at all
+      - name: Deploy each demo, remove demos that were taken down
+        run: |
+          set -euo pipefail
+          mkdir -p site
+          API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects"
+          AUTH="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+          ensure_project() {
+            curl -sf -H "$AUTH" "$API/$1" > /dev/null || \
+              curl -sf -X POST -H "$AUTH" -H "Content-Type: application/json" \
+                -d "{\"name\":\"$1\",\"production_branch\":\"main\"}" "$API" > /dev/null
+          }
+          subdomain() { curl -sf -H "$AUTH" "$API/$1" | jq -r '.result.subdomain'; }
+
+          echo '[]' > demos.json
+          for dir in site/*/; do
+            [ -d "$dir" ] || continue
+            project=$(basename "$dir")
+            name="automat-demo-$project"
+            ensure_project "$name"
+            npx -y wrangler@4 pages deploy "$dir" --project-name="$name" --branch=main --commit-dirty=true
+            url="https://$(subdomain "$name")"
+            jq --arg p "$project" --arg u "$url" '. + [{project: $p, url: $u}]' demos.json > tmp.json && mv tmp.json demos.json
+          done
+
+          # Take down demos whose deploy.sh was removed (only automat-demo-* projects).
+          curl -sf -H "$AUTH" "$API?per_page=100" | jq -r '.result[].name' | grep '^automat-demo-' | while read -r name; do
+            project="${name#automat-demo-}"
+            if ! jq -e --arg p "$project" 'any(.[]; .project == $p)' demos.json > /dev/null; then
+              echo "Taking down $name"
+              curl -sf -X DELETE -H "$AUTH" "$API/$name" > /dev/null || echo "::warning::could not delete $name"
+            fi
+          done
+
+          # Index site with the list of demos and demos.json for the agents.
+          mkdir -p index
+          cp demos.json index/demos.json
           {
             echo '<!doctype html><html><head><meta charset="utf-8">'
             echo '<meta name="viewport" content="width=device-width, initial-scale=1">'
             echo '<title>Automat demos</title>'
             echo '<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1rem}a{color:#0a58ca}</style>'
             echo '</head><body><h1>Automat demos</h1><ul>'
-            while read -r project; do
-              echo "<li><a href=\"./$project/\">$project</a></li>"
-            done < "$RUNNER_TEMP/demos.txt"
+            jq -r '.[] | "<li><a href=\"\(.url)\">\(.project)</a></li>"' demos.json
             echo '</ul></body></html>'
-          } > "$SITE/index.html"
-          touch "$SITE/.nojekyll"
-          echo "Deployed demos: $(paste -sd, "$RUNNER_TEMP/demos.txt")"
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{ runner.temp }}/site
-
-  deploy:
-    name: Publish to GitHub Pages
-    needs: build
-    runs-on: ubuntu-latest
-    # Only this job can publish, and it runs no project code.
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          } > index/index.html
+          ensure_project automat-demos
+          npx -y wrangler@4 pages deploy index --project-name=automat-demos --branch=main --commit-dirty=true
+          echo "Demo index: https://$(subdomain automat-demos)"
+          echo "Demos: $(jq -c . demos.json)"
