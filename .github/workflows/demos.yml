@@ -107,7 +107,7 @@ jobs:
           done
 
           # Take down demos whose deploy.sh was removed (only automat-demo-* projects).
-          curl -sf -H "$AUTH" "$API?per_page=100" | jq -r '.result[].name' | grep '^automat-demo-' | while read -r name; do
+          curl -sf -H "$AUTH" "$API" | jq -r '.result[].name' | { grep '^automat-demo-' || true; } | while read -r name; do
             project="${name#automat-demo-}"
             if ! jq -e --arg p "$project" 'any(.[]; .project == $p)' demos.json > /dev/null; then
               echo "Taking down $name"
