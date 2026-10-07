@@ -1,0 +1,32 @@
+{
+  "name": "pulse-gym-software",
+  "version": "1.0.0",
+  "description": "Modern all-in-one gym management software and high-converting marketing website for gym owners.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --runInBand --detectOpenHandles --verbose"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  },
+  "keywords": [
+    "gym-management",
+    "fitness-saas",
+    "gym-software",
+    "member-retention",
+    "recurring-billing",
+    "access-control"
+  ],
+  "author": "Automat",
+  "license": "MIT"
+}
