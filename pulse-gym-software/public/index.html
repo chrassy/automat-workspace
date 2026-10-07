@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseGym OS — The All-In-One Gym Management Software for Modern Gym Owners</title>
+  <meta name="description" content="Turn member churn into record retention. PulseGym OS combines 24/7 access control, smart dunning billing, frictionless class booking, and branded mobile apps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <div class="container announcement-inner">
+      <span class="badge-pill">NEW RELEASE 3.4</span>
+      <span>⚡ Automated Card Account Updater + Turnstile Biometric Gateway is now live.</span>
+      <a href="#migration-tool" class="announcement-link">Switch from Mindbody in 48h →</a>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </div>
+        <span class="logo-text">Pulse<span class="logo-accent">Gym</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#interactive-sandbox" class="nav-item">Live Demo Sandbox</a>
+        <a href="#roi-calculator" class="nav-item">ROI Calculator</a>
+        <a href="#facility-types" class="nav-item">Gym Types</a>
+        <a href="#migration-tool" class="nav-item">Switch & Save</a>
+        <a href="#pricing" class="nav-item">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#pricing" class="btn-ghost">Log In</a>
+        <button class="btn-primary open-demo-modal-btn" data-cta="nav-book-demo">Book 1-on-1 Demo</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> Built Exclusively for Gym, Studio & Box Owners
+      </div>
+      <h1 class="hero-title">
+        The Gym Operating System That <span class="gradient-text">Eliminates Churn</span> and Automates Your Revenue.
+      </h1>
+      <p class="hero-subtitle">
+        Stop fighting outdated legacy software. PulseGym combines automated member retention alerts, hands-free 24/7 access control, smart billing recovery, and high-converting class scheduling into one lightning-fast platform.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn-primary btn-large open-demo-modal-btn" data-cta="hero-start-trial">
+          Start 14-Day Free Trial
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <a href="#interactive-sandbox" class="btn-secondary btn-large">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Try Live System Sandbox
+        </a>
+      </div>
+
+      <!-- Trust Metrics Strip -->
+      <div class="hero-metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">36.4%</div>
+          <div class="metric-label">Average Churn Reduction</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">74.2%</div>
+          <div class="metric-label">Failed Card Recovery Rate</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">18.5 hrs</div>
+          <div class="metric-label">Weekly Admin Saved / Gym</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">4,200+</div>
+          <div class="metric-label">Active Gyms & Studios</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain vs Solution Section -->
+  <section class="problem-solution-section" id="why-pulse">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">THE REALITY OF RUNNING A GYM</span>
+        <h2>Why 83% of Gym Owners Are Fed Up With Legacy Software</h2>
+        <p>You built your gym to transform lives, not to spend 20 hours a week troubleshooting clunky portals and chasing declined credit cards.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="pain-column">
+          <div class="column-header danger">
+            <span class="status-icon">✕</span>
+            <h3>Legacy Gym Software (Mindbody, Glofox, Spreadsheets)</h3>
+          </div>
+          <ul class="pain-list">
+            <li>
+              <strong>Exorbitant Merchant Fees:</strong> Sneaky 3.5% + 30¢ processing fees eat thousands out of your monthly margin.
+            </li>
+            <li>
+              <strong>Ghost Members Slip Away:</strong> Zero early warning when a member stops attending; you only notice when they cancel.
+            </li>
+            <li>
+              <strong>Awkward Front Desk Dunning:</strong> Staff forced to confront members at the turnstile when monthly payments fail.
+            </li>
+            <li>
+              <strong>Hardware Lock-in:</strong> Proprietary door controllers that break often and cost $3,000+ per turnstile.
+            </li>
+            <li>
+              <strong>Sluggish, Bloated Interface:</strong> 6 clicks just to check in a member or look up an emergency contact.
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-column">
+          <div class="column-header success">
+            <span class="status-icon">✓</span>
+            <h3>The PulseGym Experience</h3>
+          </div>
+          <ul class="solution-list">
+            <li>
+              <strong>Transparent Flat Processing:</strong> Keep 100% of your gym margins. Direct Stripe terminal and interchange-plus rates.
+            </li>
+            <li>
+              <strong>Predictive Churn Radar:</strong> AI flags attendance drop-offs at Day 14, automatically triggering coach SMS check-ins.
+            </li>
+            <li>
+              <strong>Smart Dunning Sequences:</strong> 74% of declined cards recovered via silent auto-retry and frictionless mobile SMS update links.
+            </li>
+            <li>
+              <strong>Hardware-Agnostic Access:</strong> Works with existing Kisi, Paxton, HID, turnstiles, and Apple/Google Wallet NFC passes.
+            </li>
+            <li>
+              <strong>Sub-Second Check-In:</strong> 0.2s turnstile release, instant waiver verification, and live capacity heatmaps.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive ROI Calculator Section -->
+  <section class="roi-section" id="roi-calculator">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">FINANCIAL IMPACT ENGINE</span>
+        <h2>Calculate Exactly How Much Revenue PulseGym Recovers for You</h2>
+        <p>Slide your numbers below to see the estimated annual recovered revenue, retention value, and staff time saved.</p>
+      </div>
+
+      <div class="roi-calculator-card">
+        <div class="roi-inputs-column">
+          <h3 class="card-inner-title">Your Facility Parameters</h3>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="sliderMembers">Active Members Count</label>
+              <span class="slider-val" id="valMembers">250</span>
+            </div>
+            <input type="range" id="sliderMembers" min="50" max="1500" step="10" value="250" class="custom-range">
+            <div class="range-bounds"><span>50</span><span>500</span><span>1,500</span></div>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="sliderFee">Average Monthly Fee (USD)</label>
+              <span class="slider-val" id="valFee">$110</span>
+            </div>
+            <input type="range" id="sliderFee" min="40" max="250" step="5" value="110" class="custom-range">
+            <div class="range-bounds"><span>$40</span><span>$140</span><span>$250</span></div>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="sliderChurn">Estimated Monthly Member Churn Rate</label>
+              <span class="slider-val" id="valChurn">7%</span>
+            </div>
+            <input type="range" id="sliderChurn" min="2" max="15" step="0.5" value="7" class="custom-range">
+            <div class="range-bounds"><span>2%</span><span>8%</span><span>15%</span></div>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="sliderFailed">Monthly Failed Card Payments Rate</label>
+              <span class="slider-val" id="valFailed">6%</span>
+            </div>
+            <input type="range" id="sliderFailed" min="1" max="12" step="0.5" value="6" class="custom-range">
+            <div class="range-bounds"><span>1%</span><span>6%</span><span>12%</span></div>
+          </div>
+        </div>
+
+        <div class="roi-results-column">
+          <div class="roi-highlight-banner">
+            <div class="highlight-tag">ESTIMATED ANNUAL FINANCIAL VALUE</div>
+            <div class="highlight-number" id="calcTotalGain">$41,580</div>
+            <div class="highlight-sub" id="calcRoiMultiplier">17.4x Annual Software ROI</div>
+          </div>
+
+          <div class="roi-breakdown-list">
+            <div class="breakdown-row">
+              <div class="row-info">
+                <span class="dot-accent green"></span>
+                <span>Recovered from Member Retention</span>
+                <small class="helper-text" id="calcMembersSaved">~76 members retained longer</small>
+              </div>
+              <span class="row-value" id="calcRetentionGain">$25,080</span>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="row-info">
+                <span class="dot-accent blue"></span>
+                <span>Recovered from Automated Dunning</span>
+                <small class="helper-text">74% recovered vs lost charges</small>
+              </div>
+              <span class="row-value" id="calcDunningGain">$5,500</span>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="row-info">
+                <span class="dot-accent purple"></span>
+                <span>Front Desk Admin Hours Saved</span>
+                <small class="helper-text" id="calcAdminHours">10 hrs/week saved on billing & check-in</small>
+              </div>
+              <span class="row-value" id="calcAdminGain">$11,000</span>
+            </div>
+
+            <div class="breakdown-row recommended-plan-row">
+              <div class="row-info">
+                <span class="dot-accent yellow"></span>
+                <span>Recommended PulseGym Plan</span>
+                <small class="helper-text" id="calcPlanCost">$199/month ($2,388/yr)</small>
+              </div>
+              <span class="plan-badge" id="calcPlanName">Growth Plan</span>
+            </div>
+          </div>
+
+          <button class="btn-primary btn-block open-demo-modal-btn" data-cta="roi-calculator-lockin">
+            Claim These Savings — Book Demo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Interactive Product Sandbox -->
+  <section class="interactive-sandbox-section" id="interactive-sandbox">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">HANDS-ON SIMULATION</span>
+        <h2>Test Drive the PulseGym Front Desk in Real Time</h2>
+        <p>Don't just take our word for it. Test member check-ins, automated billing flags, and class booking right here.</p>
+      </div>
+
+      <!-- Sandbox Tabs -->
+      <div class="sandbox-tabs">
+        <button class="sandbox-tab-btn active" data-tab="tab-checkin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7.5" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          24/7 Access & Kiosk Scanner
+        </button>
+        <button class="sandbox-tab-btn" data-tab="tab-classes">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Class Scheduling & Waitlists
+        </button>
+        <button class="sandbox-tab-btn" data-tab="tab-telemetry">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Real-Time Gym Floor Telemetry
+        </button>
+      </div>
+
+      <!-- Tab 1: Check-in & Access Control Simulator -->
+      <div class="sandbox-panel active" id="tab-checkin">
+        <div class="sandbox-split">
+          <div class="sandbox-controls">
+            <h4 class="panel-subtitle">Simulate Member Badge Scan</h4>
+            <p class="panel-desc">Click any sample member card to test how turnstiles and staff dashboards respond instantaneously.</p>
+
+            <div class="member-roster-list" id="memberRosterContainer">
+              <!-- Rendered via JS -->
+              <div class="loader-placeholder">Loading live member profiles...</div>
+            </div>
+
+            <div class="manual-scan-box">
+              <label for="manualBarcodeInput">Or enter Barcode / Member ID:</label>
+              <div class="input-with-btn">
+                <input type="text" id="manualBarcodeInput" placeholder="e.g. BAR-1001" value="BAR-1001">
+                <button class="btn-secondary" id="btnRunManualScan">Scan Gate</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="sandbox-terminal">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
+              <span class="terminal-title">PulseGym Hardware Gateway Console (Turnstile A)</span>
+              <span class="terminal-status"><span class="pulse-green"></span> Online</span>
+            </div>
+
+            <div class="terminal-body" id="scanResultOutput">
+              <div class="terminal-idle-state">
+                <div class="idle-icon">⚡</div>
+                <div class="idle-text">Ready for member scan. Click any member on the left or press "Scan Gate".</div>
+              </div>
+            </div>
+
+            <div class="terminal-logs-wrapper">
+              <div class="logs-header">Recent Access Log (Live Stream):</div>
+              <div class="logs-list" id="recentAccessLogs">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Class Scheduling & Waitlist -->
+      <div class="sandbox-panel" id="tab-classes">
+        <div class="classes-container">
+          <div class="classes-intro">
+            <h4>Today's High-Energy Class Schedule</h4>
+            <p>Test the athlete booking workflow. Members can book via mobile app or front-desk touchscreens in 1 click.</p>
+          </div>
+          <div class="classes-grid" id="classScheduleGrid">
+            <!-- Rendered dynamically -->
+          </div>
+          <div id="classBookingNotification" class="toast-banner hidden"></div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Real-Time Telemetry & Heatmap -->
+      <div class="sandbox-panel" id="tab-telemetry">
+        <div class="telemetry-grid">
+          <div class="telemetry-card">
+            <div class="telemetry-head">
+              <span>Current Floor Occupancy</span>
+              <span class="badge-live">LIVE</span>
+            </div>
+            <div class="telemetry-big-val" id="telemOccupancy">48 / 120</div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width: 40%;"></div>
+            </div>
+            <div class="telemetry-meta">Peak gym capacity forecasted at 5:30 PM (88% load)</div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-head">
+              <span>Today's Total Check-Ins</span>
+              <span class="badge-trend">+14% vs last Tues</span>
+            </div>
+            <div class="telemetry-big-val" id="telemCheckins">194</div>
+            <div class="telemetry-meta">Average workout duration: 52 minutes</div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-head">
+              <span>30-Day Retention Cohort</span>
+              <span class="badge-trend positive">96.4%</span>
+            </div>
+            <div class="telemetry-big-val">96.4%</div>
+            <div class="telemetry-meta">12 at-risk members received automatic coach SMS</div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-head">
+              <span>Automated Dunning Yield</span>
+              <span class="badge-trend positive">$4,180 recovered</span>
+            </div>
+            <div class="telemetry-big-val">78.2%</div>
+            <div class="telemetry-meta">Zero awkward front desk conversations needed</div>
+          </div>
+        </div>
+
+        <div class="occupancy-hours-chart">
+          <h4 class="chart-title">Facility Hourly Traffic Heatmap</h4>
+          <div class="chart-bars">
+            <div class="bar-col"><div class="bar" style="height: 25%;"></div><span>6A</span></div>
+            <div class="bar-col"><div class="bar" style="height: 65%;"></div><span>7A</span></div>
+            <div class="bar-col"><div class="bar" style="height: 50%;"></div><span>8A</span></div>
+            <div class="bar-col"><div class="bar" style="height: 30%;"></div><span>9A</span></div>
+            <div class="bar-col"><div class="bar" style="height: 20%;"></div><span>10A</span></div>
+            <div class="bar-col"><div class="bar" style="height: 25%;"></div><span>11A</span></div>
+            <div class="bar-col"><div class="bar" style="height: 75%;"></div><span>12P</span></div>
+            <div class="bar-col"><div class="bar" style="height: 35%;"></div><span>2P</span></div>
+            <div class="bar-col"><div class="bar" style="height: 45%;"></div><span>4P</span></div>
+            <div class="bar-col"><div class="bar peak" style="height: 92%;"></div><span>5P</span></div>
+            <div class="bar-col"><div class="bar peak" style="height: 95%;"></div><span>6P</span></div>
+            <div class="bar-col"><div class="bar" style="height: 70%;"></div><span>7P</span></div>
+            <div class="bar-col"><div class="bar" style="height: 30%;"></div><span>8P</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">BUILT FOR SCALE</span>
+        <h2>Everything You Need to Run a Profitable, Hands-Off Gym</h2>
+        <p>Replace 6 disconnected software tools with one unified gym management suite.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>24/7 Turnstile & Access Control</h3>
+          <p>Seamlessly unlocks RFID fobs, mobile Bluetooth NFC passes, and barcode keychains in 0.2 seconds. Auto-rejects expired or past-due memberships instantly.</p>
+          <ul class="feature-bullets">
+            <li>Integrates with Kisi, Paxton, HID, and dormakaba</li>
+            <li>Anti-tailgating occupancy sensors</li>
+            <li>Emergency offline mode keeps doors operational</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Intelligent Billing & Smart Dunning</h3>
+          <p>Never lose a paying member to an expired card again. PulseGym retries charges at optimal banking windows and sends instant 1-click Apple Pay recovery links.</p>
+          <ul class="feature-bullets">
+            <li>Automated card account updater via Visa/Mastercard</li>
+            <li>Flexible weekly, bi-weekly, monthly billing cycles</li>
+            <li>Custom cancellation fee & pause management</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Automated Member Retention Radar</h3>
+          <p>Detect members at risk of quitting before they cancel. When regular attendance drops by 40%, the system alerts your coaches to reach out via personalized SMS.</p>
+          <ul class="feature-bullets">
+            <li>Attendance drop-off trigger sequences</li>
+            <li>Milestone celebrations (100th check-in, PR days)</li>
+            <li>Two-way coach SMS messaging inbox</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Branded Member App (iOS & Android)</h3>
+          <p>Give your members a white-label mobile app with your gym's logo and aesthetic. Book classes, track workouts, buy supplements, and unlock doors.</p>
+          <ul class="feature-bullets">
+            <li>Digital member barcode & Apple Wallet pass</li>
+            <li>Integrated workout tracker & leaderboard</li>
+            <li>Push notifications for class spot openings</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Trainer Commission & Payroll Engine</h3>
+          <p>Calculate trainer commissions, class attendance splits, and private coaching payouts with zero spreadsheet headaches at the end of the month.</p>
+          <ul class="feature-bullets">
+            <li>Dynamic rate splits per class capacity</li>
+            <li>Direct integration with Gusto & Quickbooks</li>
+            <li>Trainer performance and member retention KPIs</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Front Desk Kiosk & Digital Waivers</h3>
+          <p>Speed up front desk throughput during rush hours. New visitors sign liability waivers and drop-in passes directly on an iPad kiosk in 30 seconds.</p>
+          <ul class="feature-bullets">
+            <li>Legally binding e-signatures with timestamp</li>
+            <li>Instant photo capture and member badge generation</li>
+            <li>Drop-in pass POS checkout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gym Types Specific Solutions -->
+  <section class="facility-section" id="facility-types">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">TAILORED FOR YOUR BUSINESS MODEL</span>
+        <h2>Engineered for Every Type of Gym Facility</h2>
+        <p>Whether you run an intimate boutique studio or a 24/7 multi-club fitness empire.</p>
+      </div>
+
+      <div class="facility-tabs-wrap">
+        <div class="facility-pills">
+          <button class="facility-pill active" data-type="boutique">Boutique Studios</button>
+          <button class="facility-pill" data-type="crossfit">Strength & CrossFit Boxes</button>
+          <button class="facility-pill" data-type="access247">24/7 Keycard Gyms</button>
+          <button class="facility-pill" data-type="multiclub">Multi-Location Franchises</button>
+        </div>
+
+        <div class="facility-content-card" id="facilityContentCard">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitor Migration Tool -->
+  <section class="migration-section" id="migration-tool">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">HASSLE-FREE ONBOARDING</span>
+        <h2>Tired of Mindbody or Glofox? Switch in 48 Hours.</h2>
+        <p>Our dedicated Concierge Migration Team transfers 100% of your member data, recurring billing tokens, and waivers with 0 downtime.</p>
+      </div>
+
+      <div class="migration-box">
+        <div class="migration-selector-row">
+          <label for="compSelector">Select your current software:</label>
+          <select id="compSelector" class="custom-select">
+            <option value="mindbody" selected>Mindbody</option>
+            <option value="glofox">Glofox</option>
+            <option value="zenplanner">Zen Planner</option>
+            <option value="pushpress">PushPress</option>
+            <option value="spreadsheets">Spreadsheets / Excel</option>
+            <option value="other">Other Legacy Software</option>
+          </select>
+        </div>
+
+        <div class="migration-details-grid" id="migrationDetailsOutput">
+          <!-- Rendered via JS/API -->
+        </div>
+
+        <div class="migration-guarantee-strip">
+          <div class="guarantee-shield">🛡️</div>
+          <div class="guarantee-copy">
+            <strong>The Pulse Zero-Interruption Guarantee:</strong> Your member billings will not skip a beat. If you experience even 1 cent of billing interruption during migration, we waive software fees for 6 months.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Case Studies -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">REAL GYM OWNERS, REAL NUMBERS</span>
+        <h2>Loved by 4,200+ Gym Founders Nationwide</h2>
+        <p>See how fitness business owners took control of their operations and maximized profitability.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"We cut our monthly card declines from 8.2% down to 1.8% in the first 45 days. The automated dunning alone paid for PulseGym ten times over. Plus, our members actually love using the branded app."</p>
+          <div class="author-block">
+            <div class="author-avatar">MS</div>
+            <div class="author-details">
+              <strong>Marcus Steel</strong>
+              <span>Founder, Iron Vault Athletics (Austin, TX • 420 Members)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Mindbody was charging us nearly $650 a month when factoring in merchant add-ons and SMS fees. Switching to PulseGym saved us over $4,500 a year, and their 24/7 turnstile integration never misses a beat."</p>
+          <div class="author-block">
+            <div class="author-avatar">SR</div>
+            <div class="author-details">
+              <strong>Sarah Rossi</strong>
+              <span>Owner, Pulse Cycle & Reformer Studio (Miami, FL • 3 Locations)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The predictive churn radar is game-changing. It flags athletes who haven't logged a workout in 12 days so my coaches can check in before they decide to cancel. We've retained dozens of members each month."</p>
+          <div class="author-block">
+            <div class="author-avatar">DW</div>
+            <div class="author-details">
+              <strong>Dave Warner</strong>
+              <span>Head Coach, Metcon CrossFit Box (Denver, CO • 290 Members)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparent Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">SIMPLE, PREDICTABLE PRICING</span>
+        <h2>No Hidden Merchant Add-ons. No Lock-in Contracts.</h2>
+        <p>All plans include full feature access, unlimited staff accounts, and dedicated onboarding support.</p>
+
+        <!-- Billing cycle toggle -->
+        <div class="billing-toggle-wrap">
+          <span class="cycle-label">Monthly</span>
+          <label class="switch">
+            <input type="checkbox" id="billingCycleToggle" checked>
+            <span class="slider round"></span>
+          </label>
+          <span class="cycle-label">Annual <span class="discount-badge">Save 20%</span></span>
+        </div>
+      </div>
+
+      <div class="pricing-cards-grid">
+        <!-- Starter Plan -->
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Starter</h3>
+            <p class="price-sub">For boutique studios & private training facilities.</p>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount" id="starterPrice">79</span>
+              <span class="period">/mo</span>
+            </div>
+            <span class="billed-text" id="starterBilled">Billed annually ($948/yr)</span>
+          </div>
+
+          <ul class="plan-features">
+            <li>✓ Up to 150 Active Members</li>
+            <li>✓ 24/7 Access Control Integration (1 Gate)</li>
+            <li>✓ Class Scheduling & Member Booking</li>
+            <li>✓ Automated Card Dunning & Billing</li>
+            <li>✓ Digital Waiver & iPad Kiosk Mode</li>
+            <li>✓ Email & SMS Support (4hr SLA)</li>
+          </ul>
+
+          <button class="btn-secondary btn-block open-demo-modal-btn" data-plan="Starter">Start Free 14-Day Trial</button>
+        </div>
+
+        <!-- Growth Plan (Featured) -->
+        <div class="price-card featured">
+          <div class="featured-badge">MOST POPULAR FOR GROWING GYMS</div>
+          <div class="price-header">
+            <h3>Growth</h3>
+            <p class="price-sub">For established gyms & fitness centers scaling up.</p>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount" id="growthPrice">159</span>
+              <span class="period">/mo</span>
+            </div>
+            <span class="billed-text" id="growthBilled">Billed annually ($1,908/yr)</span>
+          </div>
+
+          <ul class="plan-features">
+            <li>✓ Up to 600 Active Members</li>
+            <li>✓ Unlimited Turnstiles & Access Doors</li>
+            <li>✓ Custom Branded iOS & Android App</li>
+            <li>✓ Predictive Churn Radar & Coach Alerts</li>
+            <li>✓ Trainer Commission & Payroll Engine</li>
+            <li>✓ Point-of-Sale (POS) & Inventory</li>
+            <li>✓ Priority VIP Support (1hr SLA)</li>
+          </ul>
+
+          <button class="btn-primary btn-block open-demo-modal-btn" data-plan="Growth">Start Free 14-Day Trial</button>
+        </div>
+
+        <!-- Scale Plan -->
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Scale / Multi-Club</h3>
+            <p class="price-sub">For high-volume clubs & multi-location franchises.</p>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount" id="scalePrice">279</span>
+              <span class="period">/mo</span>
+            </div>
+            <span class="billed-text" id="scaleBilled">Billed annually ($3,348/yr)</span>
+          </div>
+
+          <ul class="plan-features">
+            <li>✓ Unlimited Active Members</li>
+            <li>✓ Multi-Location Roaming & Consolidated P&L</li>
+            <li>✓ Anti-Tailgating AI Camera Sync</li>
+            <li>✓ Dedicated Migration Engineer</li>
+            <li>✓ Custom API & Webhook Access</li>
+            <li>✓ 24/7 Dedicated Account Manager</li>
+          </ul>
+
+          <button class="btn-secondary btn-block open-demo-modal-btn" data-plan="Scale">Start Free 14-Day Trial</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline Lead Generation Form -->
+  <section class="lead-section" id="book-demo">
+    <div class="container lead-container">
+      <div class="lead-info">
+        <span class="sub-tag">GET STARTED TODAY</span>
+        <h2>See PulseGym Live on a 20-Minute Private Tour</h2>
+        <p>Talk with a former gym owner who understands your daily bottlenecks. We'll show you exactly how to automate check-ins, eliminate billing leakage, and launch your branded app.</p>
+        <ul class="lead-perks">
+          <li>✨ 100% Free 14-Day Sandbox Account</li>
+          <li>🛡️ Zero-Pressure Custom ROI Breakdown</li>
+          <li>⚡ Free Data Migration Concierge Included</li>
+        </ul>
+      </div>
+
+      <div class="lead-form-card">
+        <form id="inlineLeadForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inlineGymName">Gym / Studio Name *</label>
+              <input type="text" id="inlineGymName" required placeholder="e.g. Iron Forge Fitness">
+            </div>
+            <div class="form-group">
+              <label for="inlineOwnerName">Your Full Name *</label>
+              <input type="text" id="inlineOwnerName" required placeholder="e.g. Marcus Vance">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inlineEmail">Work Email *</label>
+              <input type="email" id="inlineEmail" required placeholder="marcus@ironforge.com">
+            </div>
+            <div class="form-group">
+              <label for="inlinePhone">Phone / Mobile</label>
+              <input type="tel" id="inlinePhone" placeholder="(555) 019-2831">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inlineFacilityType">Facility Type</label>
+              <select id="inlineFacilityType" class="custom-select">
+                <option value="general_gym">Commercial Gym / Health Club</option>
+                <option value="boutique_studio">Boutique Studio (Pilates/Spin/Yoga)</option>
+                <option value="strength_box">Strength / CrossFit Box</option>
+                <option value="247_access">24/7 Keycard Access Gym</option>
+                <option value="multi_location">Multi-Location Franchise</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inlineMemberCount">Active Members Count</label>
+              <input type="number" id="inlineMemberCount" min="1" value="250" placeholder="e.g. 250">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inlineCurrentSoftware">Current Software</label>
+            <select id="inlineCurrentSoftware" class="custom-select">
+              <option value="mindbody">Mindbody</option>
+              <option value="glofox">Glofox</option>
+              <option value="zenplanner">Zen Planner</option>
+              <option value="pushpress">PushPress</option>
+              <option value="spreadsheets">Excel / Google Sheets</option>
+              <option value="none">None (Opening New Gym)</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary btn-block btn-large" id="btnSubmitInlineLead">
+            Request VIP Walkthrough & Free Trial
+          </button>
+
+          <p class="form-note">🔒 We respect your privacy. No credit card required. Cancel anytime.</p>
+        </form>
+
+        <div id="inlineFormSuccess" class="form-success-message hidden">
+          <div class="success-icon">🎉</div>
+          <h3>Demo Request Confirmed!</h3>
+          <p id="inlineSuccessMsg">Your personal demo dossier is ready. Reference ID: <strong id="inlineRefId">#LEAD-101</strong></p>
+          <p class="next-step">One of our gym operations specialists will email you within 2 business hours with calendar options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2>Everything You Need to Know Before Switching</h2>
+      </div>
+
+      <div class="faq-accordion-list">
+        <details class="faq-item">
+          <summary class="faq-question">
+            Does PulseGym work with my existing turnstiles and door locks?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-answer">
+            Yes! PulseGym is hardware-agnostic. Our relay gateway connects effortlessly to Kisi, Paxton, HID, dormakaba, and generic 12V/24V magnetic strike and turnstile relays. Members can unlock doors via Apple Wallet NFC, Android Bluetooth, RFID key fobs, or barcode cards.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            How difficult is it to migrate from Mindbody or Glofox?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-answer">
+            Our Concierge Migration Team handles the entire process for you in under 48 hours. We export your active members, payment credentials (via PCI-compliant token transfer so members don't have to re-enter their cards), class histories, and waivers with zero downtime.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            How does the automated dunning recover failed payments?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-answer">
+            When a monthly card charge declines, PulseGym instantly activates an intelligent retry sequence at optimal banking intervals. If still declined, the member receives a gentle, white-labeled SMS with a secure 1-click Apple Pay or card update link. 74% of declined payments are resolved within 48 hours without staff intervention.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            Can we have our own gym logo on the mobile app?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-answer">
+            Yes! On our Growth and Scale plans, your mobile app is published directly under your gym's brand name in the Apple App Store and Google Play Store, customized with your colors, logo, and community board.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            Are there long-term contracts or cancellation fees?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-answer">
+            Never. All PulseGym plans are month-to-month by default with no long-term contracts. If you choose our discounted annual plan, you are covered by a 30-day money-back satisfaction guarantee.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand-logo">
+          <div class="logo-mark">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <span class="logo-text">Pulse<span class="logo-accent">Gym</span></span>
+        </div>
+        <p class="footer-desc">The modern gym operating system designed to eliminate member churn, streamline access control, and maximize fitness business profits.</p>
+        <div class="compliance-badges">
+          <span class="compliance-badge">🔒 SOC2 Type II Certified</span>
+          <span class="compliance-badge">💳 PCI-DSS Level 1 Compliant</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">24/7 Access Control</a>
+        <a href="#features">Smart Dunning & Billing</a>
+        <a href="#features">Predictive Churn Radar</a>
+        <a href="#features">Class & PT Scheduling</a>
+        <a href="#features">Custom Branded Mobile App</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Gym Types</h4>
+        <a href="#facility-types">Boutique Studios</a>
+        <a href="#facility-types">CrossFit & Strength Boxes</a>
+        <a href="#facility-types">24/7 Access Gyms</a>
+        <a href="#facility-types">Multi-Club Franchises</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#roi-calculator">Gym ROI Calculator</a>
+        <a href="#migration-tool">Mindbody Migration Guide</a>
+        <a href="#interactive-sandbox">Interactive Sandbox</a>
+        <a href="#pricing">Pricing Plans</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>© 2026 PulseGym Software Inc. Built for gym founders worldwide.</div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security Overview</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Book Demo & Free Trial -->
+  <div class="modal-overlay hidden" id="demoModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <div class="modal-header">
+        <div class="modal-tag">SCHEDULE 1-ON-1 DEMO</div>
+        <h3 class="modal-title">Experience PulseGym in Action</h3>
+        <p class="modal-sub">Customized live walkthrough for your gym's specific capacity and workflow.</p>
+      </div>
+
+      <form id="modalLeadForm" class="modal-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modalGymName">Gym / Studio Name *</label>
+            <input type="text" id="modalGymName" required placeholder="e.g. Apex Health & Fitness">
+          </div>
+          <div class="form-group">
+            <label for="modalOwnerName">Owner / Manager Name *</label>
+            <input type="text" id="modalOwnerName" required placeholder="e.g. Rachel Adams">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modalEmail">Work Email *</label>
+            <input type="email" id="modalEmail" required placeholder="rachel@apexfit.com">
+          </div>
+          <div class="form-group">
+            <label for="modalPhone">Phone</label>
+            <input type="tel" id="modalPhone" placeholder="(555) 019-3344">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modalFacilityType">Gym Type</label>
+            <select id="modalFacilityType" class="custom-select">
+              <option value="general_gym">Commercial Gym</option>
+              <option value="boutique_studio">Boutique Studio</option>
+              <option value="strength_box">Strength / Box</option>
+              <option value="247_access">24/7 Keycard Facility</option>
+              <option value="multi_location">Multi-Location</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="modalMemberCount">Member Count</label>
+            <input type="number" id="modalMemberCount" value="250" min="1">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modalSoftware">Current Software</label>
+          <select id="modalSoftware" class="custom-select">
+            <option value="mindbody">Mindbody</option>
+            <option value="glofox">Glofox</option>
+            <option value="zenplanner">Zen Planner</option>
+            <option value="pushpress">PushPress</option>
+            <option value="spreadsheets">Spreadsheets / Manual</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary btn-block btn-large" id="btnSubmitModal">
+          Confirm Demo Booking
+        </button>
+      </form>
+
+      <div id="modalSuccessView" class="modal-success hidden">
+        <div class="success-icon">🚀</div>
+        <h3>You're All Set!</h3>
+        <p>We've reserved your priority demo slot.</p>
+        <div class="ref-badge" id="modalRefId">ID: #LEAD-789</div>
+        <p class="modal-sub">Check your inbox for the calendar invite and preparation checklist.</p>
+        <button class="btn-secondary btn-block" id="modalCloseDoneBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
