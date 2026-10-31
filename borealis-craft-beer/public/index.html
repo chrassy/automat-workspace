@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borealis Cold IPA — Crisp Glacial Fermentation Meets Explosive Lupulin</title>
+  <meta name="description" content="Discover Borealis Cold IPA, Batch #001. Fermented with Nordic lager yeast at sub-zero cold-hopping temperatures for an ultra-crisp, bone-dry craft beer breakthrough. Reserve your coming soon allocation today.">
+
+  <!-- Automat Tracking Script (CI Required) -->
+  <script src="https://automat.cloud/v1/automat.js" data-project="borealis-craft-beer" defer></script>
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Borealis Cold IPA — The Breakthrough Cold-Fermented Craft Beer">
+  <meta property="og:description" content="Crisp as Sub-Zero Glaciers. Bold as West Coast Hops. Batch #001 allocation now open.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Age Gate Modal (Legal 21+ compliance) -->
+  <div id="ageGateModal" class="age-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle">
+    <div class="age-modal-card">
+      <div class="brand-emblem-small">❄️ 🍺</div>
+      <h2 id="ageGateTitle" class="age-modal-title">Welcome to Borealis Brewing</h2>
+      <p class="age-modal-sub">You must be of legal drinking age in your country or region to enter this site (21+ in the US).</p>
+      <div class="age-modal-actions">
+        <button id="btnAgeYes" class="btn-primary" type="button">I Am 21 or Older</button>
+        <button id="btnAgeNo" class="btn-secondary" type="button">I Am Under 21</button>
+      </div>
+      <p class="age-modal-foot">Crafted with passion. Please drink responsibly.</p>
+    </div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement">
+    <div class="announcement-content">
+      <span class="badge-pulsing"></span>
+      <span class="announcement-text">
+        <strong>BATCH #001 ALLOCATION:</strong> Limited to 2,500 Collector 4-Packs • <strong>Coming Soon (Fall 2025)</strong> • No payment taken today
+      </span>
+      <a href="#reserve" class="announcement-link" id="announcementCta">Claim Your Spot &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="Borealis Brewing Co.">
+        <span class="logo-icon">▲</span>
+        <div class="logo-text">
+          <span class="brand-name">BOREALIS</span>
+          <span class="brand-tag">CRAFT BREWING CO.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">The Cold IPA</a>
+        <a href="#specs" class="nav-link">Flavor Specs</a>
+        <a href="#pairings" class="nav-link">Pairings</a>
+        <a href="#quiz" class="nav-link">Flavor Matcher</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#reserve" class="btn-primary-sm" id="navReserveBtn">Reserve Batch #001 (Coming Soon)</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-backdrop"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">❄️</span>
+            <span>INNOVATION BREW • BATCH #001 PREVIEW</span>
+          </div>
+          <h1 class="hero-title">
+            Crisp as Sub-Zero Glaciers.<br>
+            <span class="text-gradient">Explosive as West Coast Hops.</span>
+          </h1>
+          <p class="hero-description">
+            Meet <strong>Borealis Cold IPA</strong>: cold-fermented with clean Bavarian lager yeast at ale temperatures and dry-hopped at sub-zero frost with Citra Cryo &amp; Nelson Sauvin. An ultra-dry, bone-crisp craft beer with zero syrupy heaviness.
+          </p>
+
+          <div class="hero-specs-pill">
+            <div class="spec-item">
+              <span class="spec-label">ABV</span>
+              <span class="spec-val">6.5%</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-item">
+              <span class="spec-label">IBU</span>
+              <span class="spec-val">48</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-item">
+              <span class="spec-label">FERMENTATION</span>
+              <span class="spec-val">Cold-Lagered</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-item">
+              <span class="spec-label">FINISH</span>
+              <span class="spec-val">Bone Dry</span>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#reserve" class="btn-primary btn-large" id="heroReserveBtn">
+              <span>Reserve Batch #001 (Coming Soon)</span>
+              <span class="btn-subtext">Free reservation • No payment today</span>
+            </a>
+            <a href="#about" class="btn-secondary" id="heroLearnBtn">Explore The Science &darr;</a>
+          </div>
+
+          <div class="allocation-ticker">
+            <div class="ticker-header">
+              <span>Batch #001 Allocation Progress:</span>
+              <span id="allocationPct" class="ticker-val">74% Reserved</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" id="allocationBar" style="width: 74%;"></div>
+            </div>
+            <div class="ticker-footer">
+              <span id="spotsRemainingText"><strong>658 of 2,500</strong> collector 4-packs remaining</span>
+              <span class="ticker-dot">• Target Canning: Oct 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Interactive Can & Sensory Aura -->
+        <div class="hero-visual">
+          <div class="can-stage">
+            <div class="aurora-glow"></div>
+            
+            <!-- Graphic Beer Can Illustration -->
+            <div class="beer-can-wrapper" id="beerCanContainer" title="Borealis Cold IPA Batch 001">
+              <div class="beer-can">
+                <div class="can-top"></div>
+                <div class="can-body">
+                  <div class="can-condensate-1"></div>
+                  <div class="can-condensate-2"></div>
+                  <div class="can-label">
+                    <div class="can-mountains">
+                      <svg viewBox="0 0 100 45" class="mountain-svg" aria-hidden="true">
+                        <polygon points="0,45 25,12 50,32 75,8 100,45" fill="rgba(255,255,255,0.12)" />
+                        <polygon points="15,45 38,18 65,40 85,20 100,45" fill="rgba(0,242,254,0.15)" />
+                      </svg>
+                    </div>
+                    <div class="can-brand">BOREALIS</div>
+                    <div class="can-style">COLD IPA</div>
+                    <div class="can-tagline">NORDIC LAGER YEAST • CRYO CITRA &amp; NELSON</div>
+                    <div class="can-specs-badge">
+                      <span>6.5% ABV</span> • <span>48 IBU</span>
+                    </div>
+                    <div class="can-volume">16 FL. OZ. (473 mL)</div>
+                  </div>
+                </div>
+                <div class="can-bottom"></div>
+              </div>
+            </div>
+
+            <!-- Floating Sensory Tags -->
+            <div class="floating-tag tag-top">
+              <span class="tag-icon">🍊</span>
+              <div class="tag-body">
+                <strong>Citra Cryo &amp; Grapefruit</strong>
+                <span>Sub-zero terpene extraction</span>
+              </div>
+            </div>
+
+            <div class="floating-tag tag-middle">
+              <span class="tag-icon">🌲</span>
+              <div class="tag-body">
+                <strong>Glacial Alpine Pine</strong>
+                <span>Pacific Northwest Chinook &amp; Nelson</span>
+              </div>
+            </div>
+
+            <div class="floating-tag tag-bottom">
+              <span class="tag-icon">⚡</span>
+              <div class="tag-body">
+                <strong>Crisp Champagne Snap</strong>
+                <span>Pilsner malt + toasted rice body</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Brewing Innovation (Why Cold IPA?) -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-subtitle">THE NEW FRONTIER OF IPA</span>
+          <h2 class="section-title">Why the World Doesn't Need Another Hazy IPA</h2>
+          <p class="section-lead">
+            Traditional IPAs hit two extremes: either heavily bitter and caramel-sweet (old-school West Coast) or sweet, thick, and palate-fatiguing (modern Hazy/NEIPA). Borealis is the third way.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">❄️</div>
+            <h3>Fermented Cold, Fermented Clean</h3>
+            <p>
+              We ferment with pure Bavarian lager yeast (W-34/70) at 58°F under counter-pressure. This eliminates fruity yeast esters and heavy fusel oils, giving the beer a pristine, neutral canvas that showcases raw hop oils.
+            </p>
+            <ul class="feature-points">
+              <li>Zero yeast esters or diacetyl</li>
+              <li>Surgically clean palate clearance</li>
+              <li>Laser-focused hop definition</li>
+            </ul>
+          </div>
+
+          <div class="feature-card highlight-card">
+            <div class="feature-icon">🌿</div>
+            <h3>Cryogenic Sub-Zero Dry Hopping</h3>
+            <p>
+              Hops are introduced at sub-zero temperatures using frozen nitrogen cryo pellets. Volatile aromatic terpenes (myrcene, linalool, geraniol) are retained without leaching harsh, astringent vegetative chlorophyll.
+            </p>
+            <ul class="feature-points">
+              <li>Concentrated lupulin without grassy bite</li>
+              <li>Citra Cryo + New Zealand Nelson Sauvin</li>
+              <li>Pours radiant straw gold (4.2 SRM)</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🌾</div>
+            <h3>Toasted Jasmine Rice Adjunct</h3>
+            <p>
+              By combining 90% premium German Barke Pilsner malt with 10% toasted flaked jasmine rice, we achieve an extraordinarily dry finish (under 1.006 FG) with fine champagne-like effervescence.
+            </p>
+            <ul class="feature-points">
+              <li>Ultra-refreshing, bone-dry finish</li>
+              <li>Only 155 calories &amp; 4.5g carbs</li>
+              <li>No heavy aftertaste or fullness</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Comparison Matrix -->
+        <div class="comparison-container">
+          <h3 class="comparison-title text-center">How Borealis Outperforms Other IPA Styles</h3>
+          <div class="table-responsive">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Characteristic</th>
+                  <th class="col-highlight">Borealis Cold IPA</th>
+                  <th>Hazy / NEIPA</th>
+                  <th>Traditional West Coast</th>
+                  <th>Standard American Lager</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fermentation Yeast</strong></td>
+                  <td class="col-highlight"><strong>Lager (Cold-fermented)</strong></td>
+                  <td>English Ale (warm, fruity)</td>
+                  <td>American Ale (warm)</td>
+                  <td>Lager (Cold)</td>
+                </tr>
+                <tr>
+                  <td><strong>Hop Saturation</strong></td>
+                  <td class="col-highlight"><strong>Explosive Cryo Terpenes</strong></td>
+                  <td>High (Sweet &amp; juice-forward)</td>
+                  <td>High (Bitter &amp; resinous)</td>
+                  <td>Minimal</td>
+                </tr>
+                <tr>
+                  <td><strong>Palate Heaviness</strong></td>
+                  <td class="col-highlight"><strong>Bone-Dry &amp; Crisp (1.006 FG)</strong></td>
+                  <td>Heavy, Creamy, Full (1.020 FG)</td>
+                  <td>Medium-Heavy (Caramel malt)</td>
+                  <td>Light</td>
+                </tr>
+                <tr>
+                  <td><strong>Drinkability After 1 Pint</strong></td>
+                  <td class="col-highlight"><strong>Zero Palate Fatigue</strong></td>
+                  <td>Palate fills up quickly</td>
+                  <td>High lingering bitterness</td>
+                  <td>High, but low flavor</td>
+                </tr>
+                <tr>
+                  <td><strong>Clarity &amp; Effervescence</strong></td>
+                  <td class="col-highlight"><strong>Luminous Gold, Fine Carbonation</strong></td>
+                  <td>Opaque &amp; Turbid</td>
+                  <td>Amber / Copper</td>
+                  <td>Pale Yellow</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Flavor Profile & Specs -->
+    <section id="specs" class="section specs-section">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-subtitle">SENSORY BLUEPRINT</span>
+          <h2 class="section-title">Anatomy of Borealis Batch #001</h2>
+          <p class="section-lead">
+            Every drop is scientifically dialed for maximum aroma release and refreshing snap.
+          </p>
+        </div>
+
+        <div class="specs-grid">
+          <!-- Interactive Sensory Sliders / Radar -->
+          <div class="specs-card sensory-card">
+            <div class="card-header">
+              <h3>Flavor Radar &amp; Sensory Metrics</h3>
+              <span class="badge-subtle">Certified Lab Metrics</span>
+            </div>
+
+            <div class="sensory-meter-list">
+              <div class="sensory-meter">
+                <div class="meter-info">
+                  <span class="meter-name">Palate Crispness &amp; Snap</span>
+                  <span class="meter-score">9.5 / 10</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-cyan" style="width: 95%;"></div>
+                </div>
+              </div>
+
+              <div class="sensory-meter">
+                <div class="meter-info">
+                  <span class="meter-name">Tropical &amp; Citrus Aroma (Citra Cryo)</span>
+                  <span class="meter-score">9.2 / 10</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-gold" style="width: 92%;"></div>
+                </div>
+              </div>
+
+              <div class="sensory-meter">
+                <div class="meter-info">
+                  <span class="meter-name">Clean Balanced Bitterness (48 IBU)</span>
+                  <span class="meter-score">6.8 / 10</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-teal" style="width: 68%;"></div>
+                </div>
+              </div>
+
+              <div class="sensory-meter">
+                <div class="meter-info">
+                  <span class="meter-name">Glacial Pine &amp; Gooseberry Resonance</span>
+                  <span class="meter-score">6.0 / 10</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-green" style="width: 60%;"></div>
+                </div>
+              </div>
+
+              <div class="sensory-meter">
+                <div class="meter-info">
+                  <span class="meter-name">Malt Sweetness (Ultra Dry)</span>
+                  <span class="meter-score">2.5 / 10</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-muted" style="width: 25%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sensory-key-takeaway">
+              <div class="takeaway-icon">💡</div>
+              <p>
+                <strong>Brewmaster Note:</strong> By keeping malt sweetness at 2.5/10 and crispness at 9.5/10, the hop oils don't have to fight sugar coatings. You taste pure hop essence with the drinkability of a fine pilsner.
+              </p>
+            </div>
+          </div>
+
+          <!-- Technical Specs Table -->
+          <div class="specs-card tech-card">
+            <div class="card-header">
+              <h3>Technical Specifications</h3>
+              <span class="badge-subtle">Batch #001 Standard</span>
+            </div>
+
+            <dl class="tech-specs-dl">
+              <div class="tech-row">
+                <dt>Style</dt>
+                <dd>Modern Cold IPA (Lager-Fermented)</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Alcohol by Volume (ABV)</dt>
+                <dd>6.5%</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Bitterness (IBU)</dt>
+                <dd>48 IBU (Crisp, zero harshness)</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Color (SRM)</dt>
+                <dd>4.2 (Luminous Straw Gold)</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Grain Bill</dt>
+                <dd>German Barke Pilsner, Flaked Jasmine Rice, Acidulated Malt</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Hop Varieties</dt>
+                <dd>Citra Cryo, Nelson Sauvin, Idaho 7, Pacific Chinook</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Yeast</dt>
+                <dd>Weihenstephaner W-34/70 Bavarian Lager</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Carbonation</dt>
+                <dd>2.60 Volumes CO₂ (Fine champagne bead)</dd>
+              </div>
+              <div class="tech-row">
+                <dt>Serving Temperature</dt>
+                <dd>42°F (5.5°C) in a stemmed tulip glass</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Food Pairings -->
+    <section id="pairings" class="section pairings-section">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-subtitle">CULINARY SYNERGY</span>
+          <h2 class="section-title">Designed for the Modern Table</h2>
+          <p class="section-lead">
+            Because Borealis is bone-dry with champagne-fine carbonation, it bridges the gap between rich, fatty comfort food and delicate fresh seafood.
+          </p>
+        </div>
+
+        <div class="pairing-tabs">
+          <button class="pairing-tab active" data-pair="burger" type="button">🍔 Charred Smash Burger</button>
+          <button class="pairing-tab" data-pair="salmon" type="button">🐟 Cedar-Plank Wild Salmon</button>
+          <button class="pairing-tab" data-pair="thai" type="button">🌶️ Spicy Thai Papaya Salad</button>
+          <button class="pairing-tab" data-pair="pizza" type="button">🍕 Woodfired Margherita</button>
+        </div>
+
+        <div class="pairing-display" id="pairingCard">
+          <div class="pairing-content">
+            <span class="pairing-dish-tag" id="pairingCategory">Comfort &amp; Craft</span>
+            <h3 class="pairing-dish-title" id="pairingTitle">Charred Smash Burger with Sharp White Cheddar</h3>
+            <p class="pairing-dish-desc" id="pairingDesc">
+              Rich dry-aged ground chuck, caramelized onion crust, and sharp cheddar have high fat content that normally coats the palate. Borealis's 2.6 volumes of CO₂ and crisp 48 IBU act like a culinary laser, scrubbing the palate between every decadent bite.
+            </p>
+            <div class="pairing-highlight-box">
+              <span class="pairing-sub-title">Why it's a 10/10 pairing:</span>
+              <p id="pairingWhy">Hops accentuate toasted bun sweetness while the cold lager finish resets your tastebuds for the next bite.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Flavor Matcher Quiz -->
+    <section id="quiz" class="section quiz-section">
+      <div class="container">
+        <div class="quiz-wrapper">
+          <div class="quiz-header text-center">
+            <span class="section-subtitle">INTERACTIVE PALATE FINDER</span>
+            <h2 class="section-title">Is Borealis Your Next Favorite Beer?</h2>
+            <p class="section-lead">
+              Take our 45-second palate calibration quiz to see how your flavor preferences map to Borealis Cold IPA.
+            </p>
+          </div>
+
+          <div class="quiz-card" id="quizCard">
+            <!-- Step 1 -->
+            <div class="quiz-step active" id="quizStep1">
+              <div class="quiz-step-indicator">Question 1 of 3</div>
+              <h3 class="quiz-question">When ordering a draft at a craft taproom, what's your instinctive choice?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="stylePreference" value="crisp_lager" checked>
+                  <div class="option-content">
+                    <strong>Crisp German or Czech Pilsner / Helles</strong>
+                    <span>Clean, refreshing, snappy, ultra-drinkable</span>
+                  </div>
+                </label>
+
+                <label class="quiz-option">
+                  <input type="radio" name="stylePreference" value="west_coast_ipa">
+                  <div class="option-content">
+                    <strong>West Coast IPA</strong>
+                    <span>Bold pine, resin, firm bitterness, golden malt</span>
+                  </div>
+                </label>
+
+                <label class="quiz-option">
+                  <input type="radio" name="stylePreference" value="hazy_ipa">
+                  <div class="option-content">
+                    <strong>Hazy / New England IPA</strong>
+                    <span>Juicy, mango, stone fruit, thick velvety mouthfeel</span>
+                  </div>
+                </label>
+
+                <label class="quiz-option">
+                  <input type="radio" name="stylePreference" value="sour_wheat">
+                  <div class="option-content">
+                    <strong>Crisp Sours, Gose or Belgian Wit</strong>
+                    <span>Tart, effervescent, citrus-forward, wheat</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="quiz-actions">
+                <button class="btn-primary" type="button" id="btnQuizNext1">Next Question &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="quiz-step" id="quizStep2">
+              <div class="quiz-step-indicator">Question 2 of 3</div>
+              <h3 class="quiz-question">Which aromatic profile excites your senses most?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="hopPreference" value="citrus_tropical" checked>
+                  <div class="option-content">
+                    <strong>Pink Grapefruit, Passionfruit &amp; Gooseberry</strong>
+                    <span>Explosive high-terpene aromatics with bright natural acidity</span>
+                  </div>
+                </label>
+
+                <label class="quiz-option">
+                  <input type="radio" name="hopPreference" value="crisp_pine">
+                  <div class="option-content">
+                    <strong>Pacific Northwest Mountain Pine &amp; Resin</strong>
+                    <span>Earthy, clean, herbal, and invigorating forest air</span>
+                  </div>
+                </label>
+
+                <label class="quiz-option">
+                  <input type="radio" name="hopPreference" value="subtle_floral">
+                  <div class="option-content">
+                    <strong>Subtle Noble Hops &amp; Cracker Malt</strong>
+                    <span>Gentle spicy floral notes with biscuit undertones</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="quiz-actions">
+                <button class="btn-secondary" type="button" id="btnQuizBack1">&larr; Back</button>
+                <button class="btn-primary" type="button" id="btnQuizNext2">Next Question &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="quiz-step" id="quizStep3">
+              <div class="quiz-step-indicator">Question 3 of 3</div>
+              <h3 class="quiz-question">What is your dream craft beer drinking moment?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="occasion" value="bbq_patio" checked>
+                  <div class="option-content">
+                    <strong>Sunny patio cookouts &amp; backyard gatherings</strong>
+                    <span>Pairing with grilled foods without feeling weighed down</span>
+                  </div>
+                </label>
+
+                <label class="quiz-option">
+                  <input type="radio" name="occasion" value="fireside_chill">
+                  <div class="option-content">
+                    <strong>Après-ski, mountain cabin, or evening fireside</strong>
+                    <span>Refreshing reward after outdoor adventure</span>
+                  </div>
+                </label>
+
+                <label class="quiz-option">
+                  <input type="radio" name="occasion" value="dinner_pairing">
+                  <div class="option-content">
+                    <strong>Elevated multi-course dinner pairings</strong>
+                    <span>Cutting through culinary creations like fine wine</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="quiz-actions">
+                <button class="btn-secondary" type="button" id="btnQuizBack2">&larr; Back</button>
+                <button class="btn-primary" type="button" id="btnQuizSubmit">Calculate Match Score &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Quiz Result View -->
+            <div class="quiz-result" id="quizResult" style="display: none;">
+              <div class="result-badge-wrap">
+                <div class="result-score" id="resultScore">98%</div>
+                <div class="result-verdict" id="resultVerdict">Perfect Palate Match</div>
+              </div>
+              <h3 class="result-headline" id="resultHeadline">Borealis Cold IPA was crafted for your exact taste.</h3>
+              <p class="result-summary" id="resultSummary">
+                You love hop intensity, but you hate the sticky syrupy bloat that ruins modern hazies. Borealis's cold lager fermentation gives you all the Citra lupulin fireworks on a bone-crisp chassis.
+              </p>
+              <div class="result-box">
+                <div><strong>Suggested Serve:</strong> <span id="resultServe">Stemmed tulip at 42°F</span></div>
+                <div><strong>Recommended Pairing:</strong> <span id="resultPairing">Charred smash burger or woodfired margherita pizza</span></div>
+              </div>
+              <div class="result-actions">
+                <a href="#reserve" class="btn-primary" id="btnQuizClaim">Claim Batch #001 Spot (Coming Soon) &rarr;</a>
+                <button class="btn-secondary" type="button" id="btnQuizRetake">Retake Quiz</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-Order Reservation & Waitlist Section -->
+    <section id="reserve" class="section reserve-section">
+      <div class="container">
+        <div class="reserve-card-wrap">
+          <div class="reserve-grid">
+            <div class="reserve-info">
+              <div class="coming-soon-pill">
+                <span class="pulse-indicator"></span>
+                <span>COMING SOON • BATCH #001 ALLOCATION</span>
+              </div>
+              <h2 class="reserve-title">Claim Your Collector 4-Pack of Batch #001</h2>
+              <p class="reserve-description">
+                Batch #001 is strictly limited to <strong>2,500 numbered collector 4-packs</strong> (16 oz cans). We collect <strong>zero payment today</strong>. By reserving now, you secure your priority allocation code 48 hours before public release in Fall 2025.
+              </p>
+
+              <div class="reserve-perks">
+                <div class="perk-item">
+                  <div class="perk-check">✓</div>
+                  <div class="perk-text">
+                    <strong>Guaranteed Allocation:</strong> No sellout risk when canning opens.
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-check">✓</div>
+                  <div class="perk-text">
+                    <strong>Collector First-Run Badge:</strong> Numbered can hologram (#0001–#2500).
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-check">✓</div>
+                  <div class="perk-text">
+                    <strong>100% Risk Free:</strong> No credit card required. Free cancellation anytime.
+                  </div>
+                </div>
+              </div>
+
+              <div class="batch-metrics-box">
+                <div class="metric">
+                  <span class="m-val" id="reserveClaimedNum">1,842</span>
+                  <span class="m-lbl">Reserved Packs</span>
+                </div>
+                <div class="metric-sep">/</div>
+                <div class="metric">
+                  <span class="m-val">2,500</span>
+                  <span class="m-lbl">Total Batch Limit</span>
+                </div>
+                <div class="metric-sep">•</div>
+                <div class="metric">
+                  <span class="m-val" id="reserveRemainingNum">658</span>
+                  <span class="m-lbl">Packs Left</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pre-Order Form Card -->
+            <div class="reserve-form-container">
+              <div class="form-box" id="formBox">
+                <div class="form-header">
+                  <h3>Reserve Your Batch #001 Spot</h3>
+                  <span class="form-badge">Coming Soon • No Payment Today</span>
+                </div>
+
+                <form id="waitlistForm" novalidate>
+                  <div class="form-group">
+                    <label for="emailInput" class="form-label">Your Email Address <span class="req">*</span></label>
+                    <input 
+                      type="email" 
+                      id="emailInput" 
+                      name="email" 
+                      class="form-control" 
+                      placeholder="e.g. brewer@craftenthusiast.com" 
+                      required 
+                      autocomplete="email"
+                    >
+                    <!-- REQUIRED 1-LINE EXPLANATION PER WORKFLOW SPEC -->
+                    <p class="form-disclaimer" id="emailDisclaimer">
+                      We'll only email you about Batch #001 allocation updates and canning release dates. No spam, unsubscribe anytime.
+                    </p>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group half">
+                      <label for="packPreference" class="form-label">Preferred Allocation</label>
+                      <select id="packPreference" name="packPreference" class="form-control">
+                        <option value="4-pack" selected>One 4-Pack (4 × 16oz cans)</option>
+                        <option value="case-16">One Case (16 × 16oz cans)</option>
+                        <option value="tasting-duo">Collector Tasting Duo (2 × 4-packs)</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group half">
+                      <label for="locationInput" class="form-label">Delivery Preference</label>
+                      <select id="locationInput" name="location" class="form-control">
+                        <option value="Direct Ship" selected>Cold-Chain Direct Ship (38 States)</option>
+                        <option value="Portland Taproom">Partner Taproom Pickup (Portland, OR)</option>
+                        <option value="Denver Taproom">Partner Taproom Pickup (Denver, CO)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-notice">
+                    <span class="notice-icon">ℹ️</span>
+                    <span><strong>Coming Soon Notice:</strong> This product does not exist yet for immediate shipment. This is a zero-obligation reservation. Payment will only be collected upon official canning release. Must be 21+.</span>
+                  </div>
+
+                  <div id="formErrorMessage" class="form-error" style="display: none;" role="alert"></div>
+
+                  <button type="submit" class="btn-primary btn-block btn-lg" id="btnSubmitReservation">
+                    <span>Reserve Batch #001 (Coming Soon)</span>
+                    <span class="btn-subtext">$0 Today • Instant Priority Reservation</span>
+                  </button>
+                </form>
+              </div>
+
+              <!-- Success Card -->
+              <div class="success-box" id="successBox" style="display: none;">
+                <div class="success-icon">🎉</div>
+                <div class="success-badge">ALLOCATION CONFIRMED</div>
+                <h3 class="success-title">You're on the Batch #001 Priority List!</h3>
+                <p class="success-desc">
+                  Your reservation is locked in. We will notify you at <strong id="confirmedEmail"></strong> 48 hours before official sales go live.
+                </p>
+
+                <div class="ticket-card">
+                  <div class="ticket-header">
+                    <span>BOREALIS BREWING CO.</span>
+                    <span>VIP FIRST RUN</span>
+                  </div>
+                  <div class="ticket-id" id="ticketReservationId">BOR-01843</div>
+                  <div class="ticket-meta">
+                    <div>Status: <strong>Confirmed (Coming Soon)</strong></div>
+                    <div>Payment: <strong>$0 Collected</strong></div>
+                  </div>
+                </div>
+
+                <p class="success-footnote">
+                  Remember: Batch #001 is canned fresh and shipped cold. Look out for our brewmaster condition reports in your inbox.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="section faq-section">
+      <div class="container container-sm">
+        <div class="section-head text-center">
+          <span class="section-subtitle">TRANSPARENCY &amp; LOGISTICS</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-lead">Everything you need to know about our cold brewing process and Batch #001 reservation.</p>
+        </div>
+
+        <div class="faq-list" id="faqAccordion">
+          <!-- Populated by JavaScript and statically pre-rendered for fallback -->
+          <details class="faq-item" open>
+            <summary class="faq-question">What exactly is a "Cold IPA" and how does it differ from a West Coast or Hazy IPA?</summary>
+            <div class="faq-answer">
+              <p>A Cold IPA is a modern brewing innovation. Unlike Hazy IPAs (which are thick, sweet, and low bitterness) or traditional West Coast IPAs (fermented with ale yeast and heavier crystal malts), a Cold IPA is fermented with lager yeast at ale temperatures with an adjunct grain like flaked rice. This produces an ultra-crisp, bone-dry body that allows explosive dry hops (Citra Cryo, Nelson Sauvin) to shine with laser clarity and zero malt syrupy heaviness.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is Batch #001 ready now or is this a pre-order?</summary>
+            <div class="faq-answer">
+              <p>Batch #001 is currently entering cold conditioning and is scheduled for canning in Fall 2025. This landing page is an allocation reservation: you are securing your guaranteed claim on one of the 2,500 limited 4-packs. We collect zero payment today. You will receive an exclusive claim link 48 hours before general public release.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How does shipping and direct-to-consumer delivery work?</summary>
+            <div class="faq-answer">
+              <p>We ship in temperature-controlled, insulated cold-chain boxes with adult signature required (21+). We currently ship directly to 38 US states where direct craft brewery shipping is legally permitted. If your state is restricted, your reservation reserves taproom pickup at our Portland, OR and Denver, CO partner tasting rooms.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What makes Borealis sustainably brewed?</summary>
+            <div class="faq-answer">
+              <p>100% of our hops are certified Salmon-Safe from family-run farms in the Pacific Northwest and New Zealand. Our brewery runs on 100% renewable wind electricity, and 98% of our spent grain is repurposed with local organic cattle ranches and bakeries.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the shelf life and ideal drinking temperature?</summary>
+            <div class="faq-answer">
+              <p>For maximum terpene brilliance and crisp aromatics, drink within 90 days of canning and store refrigerated at 38–42°F (3–5°C). Pour into a stemmed tulip glass or Willi Becher at 42°F.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <span class="logo-icon">▲</span>
+          <span class="brand-name">BOREALIS BREWING CO.</span>
+        </div>
+        <p class="footer-text">
+          Cold-fermented craft beer engineered for luminous hop saturation and surgical crispness. Handcrafted in small batches.
+        </p>
+        <p class="footer-compliance">
+          <strong>GOVERNMENT WARNING:</strong> (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems. Drink responsibly. 21+ only.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#about">The Cold IPA Science</a></li>
+          <li><a href="#specs">Sensory Specs</a></li>
+          <li><a href="#pairings">Food Pairings</a></li>
+          <li><a href="#quiz">Flavor Matcher Quiz</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Batch #001 Status</h4>
+        <p class="footer-text">
+          Status: <strong>Conditioning Under Cold Spunding</strong><br>
+          Target Release: <strong>Fall 2025</strong><br>
+          Collector Allocation: <strong>2,500 4-Packs</strong><br>
+          Notice: <strong>Pre-order reservation only. Product is coming soon.</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container bottom-flex">
+        <span>&copy; 2025 Borealis Brewing Co. All rights reserved.</span>
+        <div class="bottom-links">
+          <span>Crafted with pure glacial water &amp; Salmon-Safe hops.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
