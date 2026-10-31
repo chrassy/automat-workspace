@@ -20,5 +20,6 @@ independent project.
 ## Projects
 
 <!-- One line per project: - [folder](folder/): description -->
+- [borealis-craft-beer](borealis-craft-beer/): High-converting product launch landing page and validation platform for Borealis Cold IPA — a breakthrough cold-fermented craft beer.
 - [chess-course-validation](chess-course-validation/): Market validation platform and interactive prototype for a web-based, no-video beginner chess course focused on core survival tactics and blunder elimination.
 - [pulse-gym-software](pulse-gym-software/): Modern all-in-one gym management software and lead generation platform for gym owners featuring 24/7 access control, smart dunning billing, and churn prevention.

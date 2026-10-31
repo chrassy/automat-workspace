@@ -1,0 +1,32 @@
+{
+  "name": "borealis-craft-beer",
+  "version": "1.0.0",
+  "description": "High-converting launch landing page and validation platform for Borealis Cold IPA — a breakthrough cold-fermented craft beer.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "keywords": [
+    "craft-beer",
+    "cold-ipa",
+    "landing-page",
+    "market-validation",
+    "beverage",
+    "product-launch"
+  ],
+  "author": "Automat",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  }
+}

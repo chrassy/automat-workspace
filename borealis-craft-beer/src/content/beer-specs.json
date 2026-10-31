@@ -1,0 +1,77 @@
+{
+  "product": {
+    "name": "Borealis Cold IPA",
+    "batch": "Batch #001: Glacier Cryo Edition",
+    "tagline": "Crisp as Sub-Zero Glaciers. Explosive as West Coast Hops.",
+    "status": "Coming Soon — Batch #001 Allocation Open",
+    "targetRelease": "Fall 2025",
+    "totalAllocation": 2500,
+    "priceEstimate": "$18.50 per 4-Pack (16oz collector cans)",
+    "specs": {
+      "abv": "6.5%",
+      "ibu": 48,
+      "srm": "4.2 (Luminous Straw Gold)",
+      "carbonation": "2.6 vols (Champagne-fine)",
+      "calories": 155,
+      "carbs": "4.5g",
+      "servingTemp": "42°F (5.5°C)",
+      "glassware": "Nordic Stemmed Tulip or Willi Becher"
+    },
+    "ingredients": {
+      "malts": [
+        "Single-origin German Barke Pilsner Malt (crisp foundation)",
+        "Toasted Puffed Jasmine Rice (creates bone-dry, refreshing mouthfeel)",
+        "Acidulated Malt (pure pH balance for hop vibrancy)"
+      ],
+      "hops": [
+        "Citra Cryo (concentrated lupulin, pink grapefruit & mango burst)",
+        "Nelson Sauvin (New Zealand harvest, white wine & crushed gooseberry)",
+        "Idaho 7 & Simcoe (late dry-hop for delicate pine & resin snap)"
+      ],
+      "yeast": "Authentic Bavarian Lager Yeast (W-34/70) fermented warm under pressure (58°F)",
+      "water": "Glacial soft water treated with calcium sulfate for surgical hop clarity"
+    },
+    "flavorProfile": {
+      "crispness": 9.5,
+      "hopAroma": 9.2,
+      "bitterness": 6.8,
+      "pineResin": 6.0,
+      "maltSweetness": 2.5
+    },
+    "tastingNotes": [
+      {
+        "tone": "Top Note",
+        "title": "Zesty Citrus & White Peach",
+        "description": "Bright burst of freshly squeezed ruby red grapefruit, white peach blossom, and passionfruit peel."
+      },
+      {
+        "tone": "Heart Note",
+        "title": "Nordic Pine & Crushed Gooseberry",
+        "description": "Crisp alpine pine needle undertones backed by Nelson Sauvin's signature white wine minerality."
+      },
+      {
+        "tone": "Finish",
+        "title": "Ultra-Dry Glacial Snap",
+        "description": "Bone-dry, champagne-like carbonation cleanses the palate instantly, leaving zero cloying sweetness."
+      }
+    ],
+    "foodPairings": [
+      {
+        "dish": "Charred Smash Burger with Aged White Cheddar",
+        "why": "High carbonation and bright hop acidity cut through rich beef fat and creamy aged cheese."
+      },
+      {
+        "dish": "Crispy Cedar-Plank Wild Salmon",
+        "why": "Citrus aromas elevate the smoky salmon oils without overpowering delicate flaky fish."
+      },
+      {
+        "dish": "Spicy Thai Green Papaya Salad (Som Tum)",
+        "why": "Crisp 48 IBU bitterness and cold-ferment finish soothe bird's eye chili heat effortlessly."
+      },
+      {
+        "dish": "Woodfired Margherita Pizza with Fresh Basil",
+        "why": "Clean pilsner malt foundation echoes blistered sourdough crust while hops elevate fresh basil."
+      }
+    ]
+  }
+}
